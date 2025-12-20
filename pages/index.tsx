@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import Head from 'next/head';
-import { GetServerSideProps } from 'next';
+import { GetStaticProps } from 'next';
 import fs from 'fs';
 import path from 'path';
 
@@ -269,14 +269,35 @@ export default function Home({ surveyData }: HomeProps) {
   );
 }
 
-export const getServerSideProps: GetServerSideProps = async () => {
-  const filePath = path.join(process.cwd(), 'public', 'survey.json');
-  const fileContents = fs.readFileSync(filePath, 'utf8');
-  const surveyData = JSON.parse(fileContents);
+export const getStaticProps: GetStaticProps = async () => {
+  try {
+    const filePath = path.join(process.cwd(), 'public', 'survey.json');
+    const fileContents = fs.readFileSync(filePath, 'utf8');
+    const surveyData = JSON.parse(fileContents);
 
-  return {
-    props: {
-      surveyData,
-    },
-  };
+    return {
+      props: {
+        surveyData,
+      },
+    };
+  } catch (error) {
+    // 파일을 찾을 수 없는 경우 기본값 반환
+    console.error('Error loading survey.json:', error);
+    return {
+      props: {
+        surveyData: {
+          title: '식물성 케톤식 영양강좌 수요조사',
+          description: '설문지 데이터를 불러오는 중 오류가 발생했습니다.',
+          scale: {
+            '1': '매우 아니오',
+            '2': '아니오',
+            '3': '보통',
+            '4': '그렇다',
+            '5': '매우 그렇다'
+          },
+          questions: []
+        },
+      },
+    };
+  }
 };
