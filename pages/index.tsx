@@ -1,8 +1,5 @@
 import { useState, useEffect } from 'react';
 import Head from 'next/head';
-import { GetStaticProps } from 'next';
-import fs from 'fs';
-import path from 'path';
 
 interface Question {
   id: number;
@@ -18,14 +15,34 @@ interface SurveyData {
   questions: Question[];
 }
 
-interface HomeProps {
-  surveyData: SurveyData;
-}
-
-export default function Home({ surveyData }: HomeProps) {
+export default function Home() {
+  const [surveyData, setSurveyData] = useState<SurveyData | null>(null);
+  const [loading, setLoading] = useState(true);
   const [responses, setResponses] = useState<Record<number, number>>({});
   const [textResponses, setTextResponses] = useState<Record<number, string>>({});
   const [progress, setProgress] = useState(0);
+
+  // 설문지 데이터 로드
+  useEffect(() => {
+    fetch('/survey.json')
+      .then(res => res.json())
+      .then(data => {
+        setSurveyData(data);
+        setLoading(false);
+      })
+      .catch(err => {
+        console.error('Error loading survey data:', err);
+        setLoading(false);
+      });
+  }, []);
+
+  if (loading || !surveyData) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-[#667eea] via-[#5568d3] to-[#764ba2] flex items-center justify-center">
+        <div className="text-white text-xl">로딩 중...</div>
+      </div>
+    );
+  }
 
   const questions = surveyData.questions;
   const objectiveQuestions = questions.filter(q => !q.type || q.type !== 'text');
@@ -269,35 +286,3 @@ export default function Home({ surveyData }: HomeProps) {
   );
 }
 
-export const getStaticProps: GetStaticProps = async () => {
-  try {
-    const filePath = path.join(process.cwd(), 'public', 'survey.json');
-    const fileContents = fs.readFileSync(filePath, 'utf8');
-    const surveyData = JSON.parse(fileContents);
-
-    return {
-      props: {
-        surveyData,
-      },
-    };
-  } catch (error) {
-    // 파일을 찾을 수 없는 경우 기본값 반환
-    console.error('Error loading survey.json:', error);
-    return {
-      props: {
-        surveyData: {
-          title: '식물성 케톤식 영양강좌 수요조사',
-          description: '설문지 데이터를 불러오는 중 오류가 발생했습니다.',
-          scale: {
-            '1': '매우 아니오',
-            '2': '아니오',
-            '3': '보통',
-            '4': '그렇다',
-            '5': '매우 그렇다'
-          },
-          questions: []
-        },
-      },
-    };
-  }
-};
