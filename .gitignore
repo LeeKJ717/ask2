@@ -1,0 +1,19 @@
+# 결과 파일
+result/
+*.json
+!survey.json
+
+# 로그 파일
+*.log
+
+# 임시 파일
+*.tmp
+*.temp
+
+# OS 파일
+.DS_Store
+Thumbs.db
+
+# Vercel
+.vercel
+

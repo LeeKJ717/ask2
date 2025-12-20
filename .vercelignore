@@ -1,0 +1,17 @@
+# 배치 파일 제외
+*.bat
+
+# 가이드 파일 제외
+*.md
+!README.md
+
+# 로컬 설정 파일
+.gitignore
+setup_xampp.bat
+start_apache.bat
+start_server.bat
+upload_to_github.bat
+
+# 결과 폴더 (서버리스에서는 사용 불가)
+result/
+
