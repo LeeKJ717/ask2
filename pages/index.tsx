@@ -1,5 +1,8 @@
 import { useState, useEffect, useMemo } from 'react';
 import Head from 'next/head';
+import { GetStaticProps } from 'next';
+import fs from 'fs';
+import path from 'path';
 
 interface Question {
   id: number;
@@ -15,34 +18,18 @@ interface SurveyData {
   questions: Question[];
 }
 
-export default function Home() {
-  const [surveyData, setSurveyData] = useState<SurveyData | null>(null);
-  const [loading, setLoading] = useState(true);
+interface HomeProps {
+  surveyData: SurveyData;
+}
+
+export default function Home({ surveyData }: HomeProps) {
   const [responses, setResponses] = useState<Record<number, number>>({});
   const [textResponses, setTextResponses] = useState<Record<number, string>>({});
   const [progress, setProgress] = useState(0);
 
-  // 설문지 데이터 로드
-  useEffect(() => {
-    fetch('/survey.json')
-      .then(res => res.json())
-      .then(data => {
-        setSurveyData(data);
-        setLoading(false);
-      })
-      .catch(err => {
-        console.error('Error loading survey data:', err);
-        setLoading(false);
-      });
-  }, []);
-
-  // 진행률 계산 (모든 hooks는 early return 전에 호출되어야 함)
-  const totalQuestions = useMemo(() => {
-    if (!surveyData) return 0;
-    const questions = surveyData.questions;
-    const objectiveQuestions = questions.filter(q => !q.type || q.type !== 'text');
-    return objectiveQuestions.length;
-  }, [surveyData]);
+  const questions = surveyData.questions;
+  const objectiveQuestions = questions.filter(q => !q.type || q.type !== 'text');
+  const totalQuestions = objectiveQuestions.length;
 
   useEffect(() => {
     if (totalQuestions > 0) {
@@ -52,16 +39,6 @@ export default function Home() {
       setProgress(0);
     }
   }, [responses, totalQuestions]);
-
-  if (loading || !surveyData) {
-    return (
-      <div className="min-h-screen bg-gradient-to-br from-[#667eea] via-[#5568d3] to-[#764ba2] flex items-center justify-center">
-        <div className="text-white text-xl">로딩 중...</div>
-      </div>
-    );
-  }
-
-  const questions = surveyData.questions;
   
   // 카테고리별로 그룹화
   const questionsByCategory: Record<string, Question[]> = {};
@@ -271,4 +248,36 @@ export default function Home() {
     </>
   );
 }
+
+export const getStaticProps: GetStaticProps = async () => {
+  try {
+    const filePath = path.join(process.cwd(), 'public', 'survey.json');
+    const fileContents = fs.readFileSync(filePath, 'utf8');
+    const surveyData: SurveyData = JSON.parse(fileContents);
+
+    return {
+      props: {
+        surveyData,
+      },
+    };
+  } catch (error) {
+    console.error('Error loading survey.json:', error);
+    return {
+      props: {
+        surveyData: {
+          title: '식물성 케톤식 영양강좌 수요조사',
+          description: '설문지 데이터를 불러오는 중 오류가 발생했습니다.',
+          scale: {
+            '1': '매우 아니오',
+            '2': '아니오',
+            '3': '보통',
+            '4': '그렇다',
+            '5': '매우 그렇다'
+          },
+          questions: []
+        },
+      },
+    };
+  }
+};
 
