@@ -1,60 +1,67 @@
-# 식물성 케톤식 영양강좌 수요조사 - Vercel 배포 버전
+# 식물성 케톤식 영양강좌 수요조사 - Next.js 버전
 
-## Vercel 배포 방법
+Vercel 배포용 Next.js 프로젝트입니다.
 
-### 1. Vercel CLI 설치 (선택사항)
+## 🚀 빠른 시작
+
+### 로컬 개발
+
 ```bash
-npm i -g vercel
+npm install
+npm run dev
 ```
 
-### 2. Vercel에 배포
-```bash
-vercel
-```
+브라우저에서 http://localhost:3000 접속
 
-또는
+### Vercel 배포
 
-### 3. GitHub 연동
-1. https://vercel.com 접속
-2. GitHub 계정으로 로그인
-3. "New Project" 클릭
-4. 이 저장소 선택
-5. 자동 배포
+1. GitHub에 푸시
+2. https://vercel.com 접속
+3. GitHub 저장소 연결
+4. 자동 배포 완료!
+
+## 📝 주요 기능
+
+- ✅ 설문지 표시 및 응답 수집
+- ✅ 주관식 질문 지원
+- ✅ 관리자 로그인
+- ✅ 반응형 디자인 (모바일/데스크톱)
 
 ## ⚠️ 주의사항
 
-### Vercel의 PHP 제한사항
-1. **파일 쓰기**: Vercel은 서버리스 환경이므로 파일 시스템에 직접 쓰기가 제한됩니다.
-   - `result/` 폴더에 파일 저장이 작동하지 않을 수 있습니다.
-   - 대안: 데이터베이스나 클라우드 스토리지 사용 권장
+### 데이터 저장
+Vercel은 서버리스 환경이므로 파일 저장이 제한적입니다.
 
-2. **세션**: 세션 저장도 제한적일 수 있습니다.
+**현재 상태:**
+- 설문 제출은 성공하지만 실제 저장은 구현되지 않음
 
-3. **환경 변수**: 민감한 정보는 Vercel 환경 변수로 설정하세요.
+**해결 방법:**
+1. **Vercel KV** 사용 (Key-Value 저장소)
+2. **Supabase** 또는 **MongoDB** 등 데이터베이스 연동
+3. **Vercel Blob Storage** 사용
 
-## 🔧 해결 방법
+### 다음 단계
+데이터베이스 연동을 통해 완전한 기능 구현 필요
 
-### 파일 저장 문제 해결
-- Vercel KV (Key-Value 저장소) 사용
-- 또는 Supabase, MongoDB 등 외부 데이터베이스 사용
-- 또는 Vercel Blob Storage 사용
-
-## 📝 파일 구조
+## 📁 프로젝트 구조
 
 ```
 ask2/
-├── index.php          # 설문지 메인 페이지
-├── submit.php         # 설문 제출 처리
-├── admin.php          # 관리자 로그인
-├── admin_login.php    # 로그인 처리
-├── admin_logout.php   # 로그아웃
-├── statistics.php     # 통계 페이지
-├── survey.json        # 설문지 데이터
-└── vercel.json        # Vercel 설정
+├── pages/
+│   ├── index.tsx          # 메인 설문 페이지
+│   ├── admin.tsx          # 관리자 로그인
+│   ├── statistics.tsx     # 통계 페이지
+│   ├── submit-success.tsx # 제출 성공 페이지
+│   └── api/
+│       ├── submit.ts      # 설문 제출 API
+│       └── admin/
+│           └── login.ts   # 로그인 API
+├── public/
+│   └── survey.json        # 설문지 데이터
+└── package.json
 ```
 
-## 🚀 배포 후
+## 🔐 관리자 계정
 
-배포가 완료되면 Vercel이 제공하는 URL로 접속할 수 있습니다.
-예: `https://your-project.vercel.app`
-
+- 아이디: `admin`
+- 비밀번호: `1234`
