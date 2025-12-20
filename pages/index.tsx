@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import Head from 'next/head';
 
 interface Question {
@@ -36,6 +36,23 @@ export default function Home() {
       });
   }, []);
 
+  // 진행률 계산 (모든 hooks는 early return 전에 호출되어야 함)
+  const totalQuestions = useMemo(() => {
+    if (!surveyData) return 0;
+    const questions = surveyData.questions;
+    const objectiveQuestions = questions.filter(q => !q.type || q.type !== 'text');
+    return objectiveQuestions.length;
+  }, [surveyData]);
+
+  useEffect(() => {
+    if (totalQuestions > 0) {
+      const answered = Object.keys(responses).length;
+      setProgress((answered / totalQuestions) * 100);
+    } else {
+      setProgress(0);
+    }
+  }, [responses, totalQuestions]);
+
   if (loading || !surveyData) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-[#667eea] via-[#5568d3] to-[#764ba2] flex items-center justify-center">
@@ -45,9 +62,7 @@ export default function Home() {
   }
 
   const questions = surveyData.questions;
-  const objectiveQuestions = questions.filter(q => !q.type || q.type !== 'text');
-  const totalQuestions = objectiveQuestions.length;
-
+  
   // 카테고리별로 그룹화
   const questionsByCategory: Record<string, Question[]> = {};
   questions.forEach((question) => {
@@ -57,11 +72,6 @@ export default function Home() {
     }
     questionsByCategory[category].push(question);
   });
-
-  useEffect(() => {
-    const answered = Object.keys(responses).length;
-    setProgress((answered / totalQuestions) * 100);
-  }, [responses, totalQuestions]);
 
   const handleRadioChange = (questionId: number, value: number) => {
     setResponses(prev => ({ ...prev, [questionId]: value }));
@@ -108,30 +118,6 @@ export default function Home() {
       <Head>
         <title>{surveyData.title}</title>
         <meta name="description" content={surveyData.description} />
-        <script src="https://cdn.tailwindcss.com"></script>
-        <script dangerouslySetInnerHTML={{
-          __html: `
-            tailwind.config = {
-              theme: {
-                extend: {
-                  colors: {
-                    primary: {
-                      50: '#f0f4ff',
-                      100: '#e0e9ff',
-                      500: '#667eea',
-                      600: '#5568d3',
-                      700: '#4c5dbb',
-                    },
-                    secondary: {
-                      500: '#764ba2',
-                      600: '#6a3d8f',
-                    }
-                  }
-                }
-              }
-            }
-          `
-        }} />
       </Head>
       
       <div className="progress-bar" style={{ width: `${progress}%`, position: 'fixed', top: 0, left: 0, height: '4px', background: 'linear-gradient(to right, #667eea, #764ba2)', zIndex: 1000, transition: 'width 0.3s ease' }}></div>
