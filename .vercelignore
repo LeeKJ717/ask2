@@ -15,3 +15,6 @@ upload_to_github.bat
 # 결과 폴더 (서버리스에서는 사용 불가)
 result/
 
+
+# 비만책 원고(웹 배포 제외)
+obese2/

@@ -1,0 +1,905 @@
+<!doctype html><html><head><meta charset='utf-8'><style>
+html{font-family:'Noto Serif CJK KR','Malgun Gothic',serif;font-size:10pt;line-height:1.75;color:#111}
+body{margin:0;padding:0}
+/* 쪽 좌우 여백은 0으로 두고, 글 요소에만 왼쪽 20%(35.2mm)·오른쪽 14mm를 준다. 그림·표는 여백 없이 쪽 전체 폭(176mm)을 쓴다 */
+h1,h2,h3,h4,p,blockquote,ul,ol,.toc,.refs,.cover{margin-left:35.2mm;margin-right:14mm}
+h1{font-family:'Noto Sans CJK KR',sans-serif;font-size:17pt;margin-top:0;margin-bottom:4mm}
+h2{font-family:'Noto Sans CJK KR',sans-serif;font-size:15pt;margin-top:0;margin-bottom:5mm;page-break-before:always;border-bottom:1.5px solid #2f5f7a;padding-bottom:2mm}
+h1.part{page-break-before:always;font-size:19pt;margin-top:70mm;text-align:left;color:#2f5f7a}
+h1.part + h2{page-break-before:avoid;margin-top:12mm}
+h3{font-family:'Noto Sans CJK KR',sans-serif;font-size:11.5pt;margin-top:6mm;margin-bottom:2mm;color:#2f5f7a}
+h4{font-family:'Noto Sans CJK KR',sans-serif;font-size:10.5pt;margin-top:8mm;margin-bottom:2mm}
+p{margin-top:0;margin-bottom:2.4mm;text-align:justify;word-break:keep-all}
+blockquote{margin-top:3mm;margin-bottom:3mm;padding:2mm 3mm;border-left:3px solid #2f5f7a;background:#e8eef2;font-size:9.5pt}
+img{display:block;margin:4mm 0 2mm 0;width:176mm;max-width:none;page-break-inside:avoid}
+table{border-collapse:collapse;margin:3mm 0;width:176mm;font-size:9pt;line-height:1.45;page-break-inside:avoid}
+th,td{border:1px solid #888;padding:1.6mm 2mm;vertical-align:top}th{background:#e8eef2}
+.refs{font-size:9pt;line-height:1.5}.refs p{text-align:left;margin-left:0;margin-right:0;margin-bottom:1.6mm;padding-left:6mm;text-indent:-6mm}
+.refs h4{margin-left:0;margin-right:0}
+.toc{font-family:'Noto Sans CJK KR',sans-serif;font-size:10pt}.toc div{display:flex;margin:1mm 0}.toc span.t{flex:1;border-bottom:1px dotted #888;margin-right:2mm}
+.cover{height:200mm;display:flex;flex-direction:column;justify-content:center}
+em{font-style:italic}
+</style></head><body><div class="cover"><h1 style="font-size:24pt">비만치료약물의 신호전달과 신약 설계</h1><p style="font-size:13pt">1권 원리편 · 조판 시험본 v1 (컬러)</p><p>이광조 · 과학과영성출판사</p></div><h2 style="page-break-before:always;border:none">차례</h2><div class="toc"><div style="font-weight:700;margin-top:3mm"><span class="t">제1부 출발점</span><span>3</span></div><div style="margin-left:6mm"><span class="t">제1장 비만이라는 병, 그리고 실패의 역사</span><span>3</span></div><div style="margin-left:6mm"><span class="t">제2장 인크레틴의 발견에서 위고비까지</span><span>10</span></div><div style="font-weight:700;margin-top:3mm"><span class="t">제2부 생리학: 몸 전체에서</span><span>16</span></div><div style="margin-left:6mm"><span class="t">제3장 에너지 항상성의 뇌: 시상하부, 뇌간, 보상회로</span><span>16</span></div><div style="margin-left:6mm"><span class="t">제4장 몸이 보내는 신호: 장·췌장·지방의 호르몬 지도</span><span>22</span></div><div style="margin-left:6mm"><span class="t">제5장 표적 장기: 췌장, 지방, 간, 근육, 신장, 심장</span><span>28</span></div><div style="font-weight:700;margin-top:3mm"><span class="t">제3부 세포학과 신호전달</span><span>33</span></div><div style="margin-left:6mm"><span class="t">제6장 수용체의 세포학: B군 G단백질 연결 수용체와 세포막</span><span>33</span></div><div style="margin-left:6mm"><span class="t">제7장 cAMP에서 인슐린 분비까지: 신호의 하류</span><span>39</span></div></div><h1 class="part" id="제1부-출발점">제1부 출발점</h1>
+<h2 id="제1장-비만이라는-병-그리고-실패의-역사">제1장 비만이라는 병, 그리고 실패의 역사</h2>
+<blockquote>
+<p><strong>이 장의 출발점</strong> 에너지는 들어오고 나가며, 남은 만큼 몸에 쌓인다. 이 단순한 계산이 어떻게 한 세기 동안 약물 개발자들을 좌절시켰는지, 그리고 그 좌절에서 무엇을 배웠는지를 본다. 이 장은 2권 「세포에너지대사학」의 1장(에너지란 무엇인가)과 17장(식후 대사 에너지), 22장(공복의 시간표)으로 이어진다.</p>
+</blockquote>
+<h3 id="몸이-에너지를-쌓는-방식">1.1 몸이 에너지를 쌓는 방식</h3>
+<p>우리 몸은 하루에도 수없이 에너지를 받아들이고 내보낸다. 밥을 먹으면 탄수화물, 지방, 단백질이 들어오고, 그 화학에너지는 숨 쉬고, 체온을 유지하고, 걷고, 소화하는 데 쓰인다. 쓰고 남은 에너지는 버려지지 않는다. 몸은 남은 에너지를 <strong>지방조직(adipose tissue)</strong> 에 <strong>중성지방(triglyceride)</strong> 의 형태로 저장한다. 중성지방은 글리세롤 한 분자에 지방산 세 분자가 붙은 구조로, 같은 무게로 비교하면 글리코겐보다 훨씬 많은 에너지를 담을 수 있는 저장 형태다.</p>
+<p>그림 1-2는 이 관계를 개념도로 나타낸 것이다. 왼쪽 위의 섭취 에너지는 지방조직으로 들어가고, 지방조직은 필요할 때 오른쪽 위의 소비 에너지로 쓰인다. 아래쪽에는 이 흐름을 조절하는 두 층이 있다. 하나는 렙틴, 인슐린, 인크레틴 같은 호르몬 신호이고, 다른 하나는 이 신호를 받아 식욕과 에너지 소비를 조정하는 <strong>시상하부(hypothalamus)</strong> 다. 이 그림에서 눈여겨볼 곳은 폐곡선이다. 지방조직이 늘면 호르몬 신호가 바뀌고, 신호가 바뀌면 시상하부가 섭취와 소비를 다시 조정한다. 비만이 어려운 이유는 이 되먹임 회로가 체중을 낮추려는 시도에 저항하도록 짜여 있기 때문이다. 이 회로의 구성 요소를 하나씩 해부하는 것이 이 책 전체의 일이다.</p>
+<p><strong>그림 1-2. 에너지 수지의 개념도.</strong> 섭취, 저장, 소비의 흐름과 이를 조절하는 호르몬 신호·시상하부의 되먹임 고리를 나타낸 개념도다. 정량 자료가 아니다.</p>
+<figure>
+<img src="../figures/out/그림1-2.png" alt="그림 1-2" />
+<figcaption aria-hidden="true">그림 1-2</figcaption>
+</figure>
+<p>에너지 수지를 정량으로 다룬 대표적인 연구가 Hall 등(2011)의 모형이다. 이들은 섭취와 소비의 차이가 체중을 어떻게 바꾸는지를 수학 모형으로 계산하여, 흔히 말하는 “지방 1kg은 약 7,700kcal”라는 단순 규칙이 장기 체중 변화를 과대 예측한다는 점을 보였다. 체중이 줄면 에너지 소비도 함께 줄기 때문이다. 이 사실은 뒤의 여러 장에서 거듭 등장한다. 체중 감량이 정체기에 이르는 것은 의지의 문제가 아니라 생리의 문제이고, 약물이 풀어야 할 과제도 여기에 있다.</p>
+<p>비만의 규모는 이미 개인의 문제를 넘어섰다. 세계 성인 비만 유병률은 1990년 이후 크게 늘었고, 2022년에는 10억 명이 넘는 사람이 비만 상태에 있다고 추정된다(NCD Risk Factor Collaboration, 2024). 이런 규모에서 약물은 오래전부터 가장 기대를 받은 해법이면서, 가장 많이 실패한 해법이기도 했다.</p>
+<h3 id="불붙는-약-디니트로페놀의-짧은-전성기">1.2 불붙는 약: 디니트로페놀의 짧은 전성기</h3>
+<p>비만 약물의 역사에서 가장 극적인 첫 장면은 1930년대 미국 스탠퍼드대학에서 벌어졌다. 제1차 세계대전 때 군수공장에서 폭약 재료인 <strong>디니트로페놀(2,4-dinitrophenol, DNP)</strong> 을 다루던 노동자들이 체온이 오르고 땀을 흘리며 살이 빠진다는 사실이 보고되어 있었다. Tainter와 동료들은 이 물질을 환자에게 투여해 보았고, 기초대사율이 크게 오르면서 체중이 줄어드는 것을 관찰했다(Cutting et al., 1933). 당시에는 작용 원리가 알려지지 않았다. 훗날 DNP가 미토콘드리아 내막에서 양성자를 통과시켜 <strong>ATP 합성효소(ATP synthase)</strong> 를 거치지 않고 열로 에너지를 흘려버리는 <strong>탈공역제(uncoupler)</strong> 임이 밝혀졌다. 먹은 에너지를 ATP로 바꾸지 않고 열로 태워 없애는 약이었던 셈이다. 이 원리는 2권 10~13장에서 미토콘드리아의 화학삼투 이론과 함께 자세히 설명한다.</p>
+<p>DNP는 체중을 줄였지만 용량 안전역이 좁았다. 체온이 조절 범위를 넘으면 고열과 사망으로 이어졌고, 백내장과 피부 발진, 말초신경 장애 등도 보고되었다. 이 약은 1938년 미국에서 시장에서 사라졌다. 이 사건의 교훈은 단순하다. 에너지 소비를 높이는 방향은 맞았지만, 모든 세포의 미토콘드리아를 동시에 건드리면 어떤 조직에서든 조절 불능이 생길 수 있다. 오늘날 UCP1을 가진 갈색지방만 선택적으로 겨냥하려는 연구가 계속되는 이유가 여기에 있다.</p>
+<h3 id="식욕을-누르는-약의-시대">1.3 식욕을 누르는 약의 시대</h3>
+<p>DNP 이후 약물 개발은 소비를 늘리는 쪽에서 섭취를 줄이는 쪽으로 방향을 틀었다. 1930년대 후반에 <strong>암페타민(amphetamine)</strong> 이 식욕을 억제한다는 임상 보고가 나왔고, 이후 수십 년 동안 암페타민 계열과 그 유도체가 체중 감량 목적으로 널리 처방되었다. 효과는 있었으나 중추신경 흥분, 불면, 의존이라는 대가가 따랐다.</p>
+<p>1960년대에는 <strong>아미노렉스(aminorex)</strong> 라는 식욕억제제가 유럽 일부 국가에서 판매되었다. 이 약을 복용한 사람들 사이에서 <strong>폐동맥고혈압(pulmonary arterial hypertension)</strong> 이 이례적으로 늘어나자 약은 시장에서 회수되었다. 이 일은 한 가지 사실을 처음 보여 주었다. 식욕을 누르려고 뇌의 모노아민 신호를 바꾸는 약은 폐 혈관 같은 말초 조직에서도 같은 수용체를 건드릴 수 있다는 것이다. 이 교훈은 곧 더 큰 규모로 반복되었다.</p>
+<h3 id="펜플루라민-펜터민-사건">1.4 펜플루라민-펜터민 사건</h3>
+<p>1990년대 초 미국에서는 비만 약물에 대한 기대가 다시 높아졌다. <strong>펜플루라민(fenfluramine)</strong> 은 뇌의 세로토닌 신경말단에서 세로토닌을 방출시키고 재흡수를 막아 포만감을 높이는 약이고, <strong>펜터민(phentermine)</strong> 은 카테콜아민 계열 자극제였다. 두 약을 함께 쓰는 “펜-펜(fen-phen)” 요법은 성공적인 조합으로 소개되어 1990년대 중반 미국에서만 수백만 건의 처방이 이루어졌다. 이후 펜플루라민의 오른손 이성질체인 <strong>덱스펜플루라민(dexfenfluramine)</strong> 도 1996년 미국에서 승인되었다.</p>
+<p>1997년, 미국 메이오 클리닉의 심장내과 의사 Heidi Connolly와 동료들이 이상한 패턴을 발견했다. 펜-펜을 복용한 여성들에게서 정상적이지 않은 심장판막 질환이 나타난 것이다. 그들은 24명의 환자를 보고했는데, 이 환자들은 심초음파에서 대동맥판과 승모판 등에 판막 역류가 있었고, 병리 소견에서는 판막 표면에 섬유증식이 덮여 있었다(Connolly et al., 1997). 이 판막의 모습은 종양에서 분비된 세로토닌이 과다한 <strong>카르시노이드 증후군(carcinoid syndrome)</strong> 환자의 심장판막과 닮아 있었다. 연구자들은 여기서 단서를 얻었다. 세로토닌 신호를 과하게 켜는 일이 판막 섬유증식을 일으킨다는 가설이다.</p>
+<p>그 가설을 분자 수준에서 확인한 것이 Rothman 등(2000)의 연구다. 이들은 펜플루라민 자체가 아니라 그 대사체인 <strong>노르펜플루라민(norfenfluramine)</strong> 이 <strong>세로토닌 2B 수용체(5-hydroxytryptamine receptor 2B, 5-HT2B)</strong> 에 강하게 결합하여 활성화시킨다는 것을 시험관 실험에서 보였다. 판막의 섬유모세포는 5-HT2B를 가지고 있고, 이 수용체가 지속적으로 자극되면 세포 증식이 일어난다. 결국 식욕을 낮추기 위해 겨냥한 뇌의 세로토닌 경로와, 판막에 병을 일으킨 말초의 세로토닌 수용체는 같은 신호 체계의 다른 가지였다. 펜플루라민과 덱스펜플루라민은 1997년 시장에서 철수되었다.</p>
+<p>이 사건에서 얻은 중요한 교훈은 약의 <strong>수용체 선택성(receptor selectivity)</strong> 이다. 표적 수용체 하나를 켜는 것으로 충분하지 않고, 비슷한 계열의 다른 수용체를 건드리지 않는다는 것을 <strong>전 수용체 수준에서 확인</strong>해야 한다. 이 확인은 오늘날 약물 개발 초기 단계의 필수 절차가 되었다. 3권에서 다룰 분자 도킹과 선택성 예측은 이 요구에서 출발한다.</p>
+<h3 id="시부트라민-리모나반트-로카세린-심혈관과-정신의-벽">1.5 시부트라민, 리모나반트, 로카세린: 심혈관과 정신의 벽</h3>
+<p>1990년대 후반 이후에도 신약은 이어졌다. <strong>시부트라민(sibutramine)</strong> 은 세로토닌과 노르에피네프린의 재흡수를 함께 막는 약으로 1997년 미국에서 승인되었다. 체중 감량 효과는 분명했지만, 혈압과 맥박을 올리는 작용이 있었다. 이를 확인하기 위해 설계된 대규모 시험이 SCOUT(Sibutramine Cardiovascular Outcomes) 시험이었다. 이 시험은 심혈관 위험이 높은 과체중·비만 성인 9,804명을 대상으로 했고, 시부트라민군에서 비치명적 심근경색과 뇌졸중을 포함한 주요 심혈관 사건의 위험이 위약군보다 높게 나왔다(위험비 1.16)(James et al., 2010). 시부트라민은 2010년에 시장에서 철수되었다.</p>
+<p><strong>리모나반트(rimonabant)</strong> 는 전혀 다른 표적을 겨냥했다. 대마초가 식욕을 높이는 현상에서 출발하여, 뇌의 <strong>칸나비노이드 1형 수용체(cannabinoid receptor type 1, CB1)</strong> 를 막으면 식욕이 줄 것이라는 가설이다. 이 약은 2006년 유럽에서 승인되었으나, 불안과 우울 같은 정신과 이상반응이 보고되었다. Christensen 등(2007)은 무작위 대조시험을 합친 메타분석에서 리모나반트를 복용한 사람들이 위약군보다 우울과 불안 같은 정신과 이상반응을 더 많이 겪는다는 것을 보였다. 약은 2008년 유럽에서 철수되었다. CB1 수용체는 시상하부에만 있는 것이 아니라 편도체, 해마를 포함한 뇌 전반에 분포하기 때문에, 식욕 조절 회로만 선택적으로 막을 수 없었던 것이다.</p>
+<p><strong>로카세린(lorcaserin)</strong> 은 펜플루라민의 교훈을 반영하여 <strong>5-HT2C 수용체(5-hydroxytryptamine receptor 2C)</strong> 에 선택적인 작용제로 설계되었고, 2012년 승인되었다. 5-HT2B와 5-HT2A에 대한 선택성을 높이는 것이 설계 목표였다. 대규모 안전성 시험인 CAMELLIA-TIMI 61에서는 심혈관 안전성 비열등성이 확인되었다(Bohula et al., 2018). 그러나 이후 암 발생 신호가 제기되었고, 약은 2020년 미국 시장에서 철수되었다. 선택성을 개선해도, 장기 사용 시 예상하지 못한 안전성 문제가 나타날 수 있다는 점을 보여 준 사례다.</p>
+<p>그림 1-1은 이 약물들의 판매 기간을 연도별로 나열한 것이다. 막대의 왼쪽 끝은 출시 시점, 오른쪽 끝은 철수 시점이다. 이 그림에서 두 가지가 읽힌다. 첫째, 막대의 길이는 대체로 수년에서 십여 년이다. 시장에 나와 사용된 기간이 충분했지만, 문제는 승인 전 시험에서 잡히지 않고 출시 후에 드러났다는 뜻이다. 둘째, 1994년의 점선(렙틴 클로닝)을 기준으로 보면, 이 점선 이후에도 철수는 계속되었다. 호르몬 하나가 발견되어도 신약은 바로 나오지 않았다.</p>
+<p><strong>그림 1-1. 20세기 이후 주요 비만 약물의 시장 사용 기간.</strong> 각 막대는 대표 약물의 시장 사용 시작과 종료 연도를 나타낸다. 시점은 근사값을 포함하며 장 끝 검증 목록에 정리했다. (자료: 그림 데이터 <code>figures/data/fig1-1-timeline.csv</code>)</p>
+<figure>
+<img src="../figures/out/그림1-1.png" alt="그림 1-1" />
+<figcaption aria-hidden="true">그림 1-1</figcaption>
+</figure>
+<p>표 1-1은 같은 약물을 작용 표적과 실패 원인으로 비교한 것이다.</p>
+<p><strong>표 1-1. 초기 비만 약물의 표적과 철수 원인.</strong></p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>약물</th>
+<th>표적·기전</th>
+<th>철수·규제 시기</th>
+<th>핵심 문제</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>디니트로페놀</td>
+<td>미토콘드리아 탈공역</td>
+<td>1930년대 후반</td>
+<td>고열, 좁은 안전역</td>
+</tr>
+<tr class="even">
+<td>아미노렉스</td>
+<td>모노아민 방출</td>
+<td>1960년대 후반</td>
+<td>폐동맥고혈압</td>
+</tr>
+<tr class="odd">
+<td>펜플루라민·덱스펜플루라민</td>
+<td>세로토닌 방출</td>
+<td>1997년</td>
+<td>심장판막 질환(5-HT2B)</td>
+</tr>
+<tr class="even">
+<td>시부트라민</td>
+<td>세로토닌·노르에피네프린 재흡수 억제</td>
+<td>2010년</td>
+<td>심혈관 사건 증가</td>
+</tr>
+<tr class="odd">
+<td>리모나반트</td>
+<td>CB1 수용체 차단</td>
+<td>2008년 (유럽)</td>
+<td>우울·불안</td>
+</tr>
+<tr class="even">
+<td>로카세린</td>
+<td>5-HT2C 선택 작용</td>
+<td>2020년</td>
+<td>암 발생 신호</td>
+</tr>
+</tbody>
+</table>
+<p>표를 읽는 방법은 간단하다. 오른쪽 열의 문제를 왼쪽 열의 표적과 연결해 보면, 거의 모든 사례에서 문제는 <strong>표적이 몸 전체에 퍼져 있다</strong>는 사실에서 나온다. 세로토닌 수용체는 뇌, 판막, 폐, 장에 모두 있고, CB1 수용체는 뇌 전반에, 미토콘드리아는 모든 세포에 있다. 이 표가 이 책 전체에서 되풀이될 질문을 만든다. 식욕과 에너지 소비를 조절하면서도 다른 조직에서는 조용한 표적이 있는가?</p>
+<h3 id="렙틴-처음으로-보인-지방의-목소리">1.6 렙틴: 처음으로 보인 지방의 목소리</h3>
+<p>약물이 실패를 거듭하는 동안, 기초과학은 다른 질문에 도달해 있었다. 몸은 자기 지방의 양을 어떻게 아는가?</p>
+<p>1950년 미국 잭슨 연구소의 Ingalls 등은 실험실 마우스 집단에서 극단적으로 살이 찐 돌연변이 마우스를 발견하여 <em>obese</em>(<em>ob</em>)라 이름 붙였다(Ingalls et al., 1950). 뒤이어 다른 계통에서는 <em>diabetes</em>(<em>db</em>) 마우스가 발견되었다. 두 마우스는 모두 살이 쪘지만, 원인이 같은지는 알려져 있지 않았다. 이 질문에 답한 것이 1970년대 Douglas Coleman의 <strong>병체결합(parabiosis)</strong> 실험이다. 두 마리의 혈액 순환을 수술로 연결하면 한쪽에 있는 순환 인자가 다른 쪽으로 넘어간다. Coleman은 <em>ob</em> 마우스를 정상 마우스와 연결하면 <em>ob</em> 마우스의 체중이 줄고, <em>db</em> 마우스를 정상 마우스와 연결하면 정상 마우스가 굶어 죽는다는 것을 보였다(Coleman, 1973). 해석은 이렇다. <em>ob</em> 마우스는 포만 신호 물질을 만들지 못하는 것이고, <em>db</em> 마우스는 그 신호를 받는 수용체가 고장 난 것이다. 결국 혈액에는 지방의 양을 알려 주는 호르몬이 있어야 한다는 예측이 나왔다.</p>
+<p>그 호르몬을 찾는 데는 20년 넘게 걸렸다. 1994년 록펠러대학의 Jeffrey Friedman 연구실에서 Yiying Zhang 등이 <em>ob</em> 유전자를 위치 클로닝으로 분리하고 사람의 대응 유전자도 확인했다(Zhang et al., 1994). 이 유전자가 만드는 단백질이 <strong>렙틴(leptin)</strong> 이다. 이름은 그리스어로 “가늘다”를 뜻하는 <em>leptos</em>에서 왔다. 지방세포가 지방량에 비례하여 렙틴을 분비하고, 렙틴은 시상하부에 도달해 식욕을 낮춘다. 1997년에는 렙틴 유전자에 변이가 있어 어릴 때부터 심한 비만이 나타나는 사람이 보고되었다(Montague et al., 1997). 이로써 마우스의 유전 현상이 사람에게도 성립한다는 것이 확인되었다.</p>
+<p>렙틴 발견은 비만 연구의 방향을 바꾸었다. 비만은 의지의 문제가 아니라 신호 체계의 문제일 수 있게 된 것이다. 그러나 약으로는 기대에 미치지 못했다. 대부분의 비만 환자는 렙틴 농도가 이미 높았고, 렙틴을 더 주사해도 체중이 줄지 않았다. 이를 <strong>렙틴 저항성(leptin resistance)</strong> 이라 한다. 렙틴 결핍이 원인인 희귀 비만에서만 렙틴 치료가 극적으로 작용했다. 이 사건은 이 책의 중요한 대비를 마련한다. 한 신호 경로를 발견하는 것과 그 경로를 약으로 바꾸는 것 사이에는 큰 거리가 있다. 이 거리를 메운 사례가 2장에서 다룰 인크레틴이다.</p>
+<h3 id="실패에서-얻은-설계-원칙">1.7 실패에서 얻은 설계 원칙</h3>
+<p>앞의 사례들을 한꺼번에 놓고 보면 몇 가지 원칙이 보인다. 이 원칙들은 이 책이 3권에서 신약 설계를 다룰 때 점검표로 되돌아온다.</p>
+<p>첫째, 표적의 <strong>조직 분포</strong>를 먼저 확인한다. 표적이 뇌 한 곳에서만 일하는지, 심장과 폐에서도 발현되는지는 설계 이전에 알 수 있다. 이 질문에는 GTEx 같은 공개 발현 데이터가 쓰인다(3권 6장).</p>
+<p>둘째, <strong>수용체 선택성</strong>을 같은 계열 전체에서 시험한다. 펜플루라민의 5-HT2B 문제는 처음부터 수용체 패널 시험을 했다면 확인할 수 있었던 일이다.</p>
+<p>셋째, <strong>장기 안전성</strong>은 시간이 지나야 보인다. 로카세린의 암 신호는 승인 후 대규모 시험에서 나타났다. 약을 설계하는 단계부터 장기 추적을 전제하여 위험 신호를 계량하는 틀이 필요하다.</p>
+<p>넷째, 체중 감량의 <strong>생리적 저항</strong>을 고려한다. 체중이 줄면 에너지 소비가 낮아지고 식욕은 오른다. 표적 하나로 식욕만 누르면 몸이 다른 경로로 보상한다. 이 점이 이후 여러 호르몬을 동시에 겨냥하는 이중·삼중 작용제의 근거가 된다.</p>
+<p>다음 장에서는 이 문제들을 한꺼번에 푼 것처럼 보이는 분자, <strong>글루카곤유사펩타이드-1(glucagon-like peptide-1, GLP-1)</strong> 의 이야기를 시작한다. 위장관 호르몬이 어떻게 발견되었고, 왜 처음에는 약이 될 수 없었으며, 어떤 분자 설계가 이를 바꾸었는지를 따라간다.</p>
+<hr />
+<section id="참고문헌" class="refs">
+<h4>참고문헌</h4>
+<p>Bohula, E. A., Wiviott, S. D., McGuire, D. K., Inzucchi, S. E., Kuder, J., Im, K., Fanola, C. L., Qamar, A., Brown, C., Budaj, A., Garcia-Castillo, A., Gupta, M., Leiter, L. A., Weerakkody, G. J., Sattar, N., Bays, H. E., Kozlovski, P., … Scirica, B. M. (2018). Cardiovascular safety of lorcaserin in overweight or obese patients. <em>New England Journal of Medicine, 379</em>(12), 1107–1117. https://doi.org/10.1056/NEJMoa1808721</p>
+<p>Christensen, R., Kristensen, P. K., Bartels, E. M., Bliddal, H., &amp; Astrup, A. (2007). Efficacy and safety of the weight-loss drug rimonabant: A meta-analysis of randomised trials. <em>The Lancet, 370</em>(9600), 1706–1713. https://doi.org/10.1016/S0140-6736(07)61721-8</p>
+<p>Coleman, D. L. (1973). Effects of parabiosis of obese with diabetes and normal mice. <em>Diabetologia, 9</em>(4), 294–298. https://doi.org/10.1007/BF01221857</p>
+<p>Connolly, H. M., Crary, J. L., McGoon, M. D., Hensrud, D. D., Edwards, B. S., Edwards, W. D., &amp; Schaff, H. V. (1997). Valvular heart disease associated with fenfluramine–phentermine. <em>New England Journal of Medicine, 337</em>(9), 581–588. https://doi.org/10.1056/NEJM199708283370901</p>
+<p>Cutting, W. C., Mehrtens, H. G., &amp; Tainter, M. L. (1933). Actions and uses of dinitrophenol: Promising metabolic applications. <em>JAMA, 101</em>(3), 193–195.</p>
+<p>Hall, K. D., Sacks, G., Chandramohan, D., Chow, C. C., Wang, Y. C., Gortmaker, S. L., &amp; Swinburn, B. A. (2011). Quantification of the effect of energy imbalance on bodyweight. <em>The Lancet, 378</em>(9793), 826–834. https://doi.org/10.1016/S0140-6736(11)60812-X</p>
+<p>Ingalls, A. M., Dickie, M. M., &amp; Snell, G. D. (1950). Obese, a new mutation in the house mouse. <em>Journal of Heredity, 41</em>(12), 317–318.</p>
+<p>James, W. P. T., Caterson, I. D., Coutinho, W., Finer, N., Van Gaal, L. F., Maggioni, A. P., Torp-Pedersen, C., Sharma, A. M., Shepherd, G. M., Rode, R. A., &amp; Renz, C. L. (2010). Effect of sibutramine on cardiovascular outcomes in overweight and obese subjects. <em>New England Journal of Medicine, 363</em>(10), 905–917. https://doi.org/10.1056/NEJMoa1003114</p>
+<p>Montague, C. T., Farooqi, I. S., Whitehead, J. P., Soos, M. A., Rau, H., Wareham, N. J., Sewter, C. P., Digby, J. E., Mohammed, S. N., Hurst, J. A., Cheetham, C. H., Earley, A. R., Barnett, A. H., Prins, J. B., &amp; O’Rahilly, S. (1997). Congenital leptin deficiency is associated with severe early-onset obesity in humans. <em>Nature, 387</em>(6636), 903–908. https://doi.org/10.1038/43185</p>
+<p>NCD Risk Factor Collaboration. (2024). Worldwide trends in underweight and obesity from 1990 to 2022: A pooled analysis of 3663 population-representative studies with 222 million children, adolescents, and adults. <em>The Lancet, 403</em>(10431), 1027–1050. https://doi.org/10.1016/S0140-6736(23)02750-2</p>
+<p>Rothman, R. B., Baumann, M. H., Savage, J. E., Rauser, L., McBride, A., Hufeisen, S. J., &amp; Roth, B. L. (2000). Evidence for possible involvement of 5-HT2B receptors in the cardiac valvulopathy associated with fenfluramine and other serotonergic medications. <em>Circulation, 102</em>(23), 2836–2841. https://doi.org/10.1161/01.CIR.102.23.2836</p>
+<p>Zhang, Y., Proenca, R., Maffei, M., Barone, M., Leopold, L., &amp; Friedman, J. M. (1994). Positional cloning of the mouse obese gene and its human homologue. <em>Nature, 372</em>(6505), 425–432. https://doi.org/10.1038/372425a0</p>
+</section>
+
+<h2 id="제2장-인크레틴의-발견에서-위고비까지">제2장 인크레틴의 발견에서 위고비까지</h2>
+<blockquote>
+<p><strong>이 장의 출발점</strong> 1장에서 우리는 식욕과 에너지 소비를 건드리는 약이 왜 번번이 실패했는지 보았다. 이 장은 장(腸)이 보내는 호르몬 신호에서 출발한 약이 어떻게 이 실패의 고리를 끊었는지를 따라간다. 이 장의 호르몬은 2권 17장(식후 대사 에너지)에서 식후 상태를 조절하는 핵심 신호로 다시 등장한다.</p>
+</blockquote>
+<h3 id="십이지장-추출물과-최초의-호르몬">2.1 십이지장 추출물과 최초의 호르몬</h3>
+<p>호르몬이라는 개념은 한 실험에서 태어났다. 1902년 런던 유니버시티 칼리지의 William Bayliss와 Ernest Starling은 마취한 개의 십이지장 점막을 산으로 처리해 분쇄한 추출물을 혈관에 주사하면 췌장이 소화액을 분비한다는 것을 보였다(Bayliss &amp; Starling, 1902). 신경이 끊어진 상태에서도 반응이 일어났으므로, 장이 혈액을 통해 췌장에 화학 신호를 보낸다는 결론이 나왔다. 이들은 이 물질을 <strong>세크레틴(secretin)</strong> 이라 불렀고, 1905년 Starling이 이런 물질들을 통틀어 “호르몬(hormone)”이라 부르자고 제안했다. 장이 단순한 소화관이 아니라 내분비 기관이라는 발상이 여기서 시작되었다.</p>
+<p>이 발상은 곧 당뇨병과 연결되었다. 1906년 Moore 등은 장 점막 추출물을 당뇨 환자에게 먹이면 소변 당이 줄지 않을까 하는 시도를 했다. 결과는 성공적이지 않았지만, 장에서 혈당을 낮추는 물질이 나올 수 있다는 가설은 이후 수십 년 동안 살아남았다. 1920~30년대에는 장 추출물이 혈당을 낮춘다는 보고가 이어졌고, 1932년 La Barre는 이 가설적 물질을 “인슐린을 자극하는 장 호르몬”이라는 뜻으로 <strong>인크레틴(incretin)</strong> 이라 이름 붙였다. 이름은 붙었으나 정체는 이후 30년 넘게 알려지지 않았다.</p>
+<h3 id="같은-포도당-다른-반응">2.2 같은 포도당, 다른 반응</h3>
+<p>결정적인 단서는 1960년대에 나왔다. 포도당을 입으로 먹을 때와 정맥으로 주사할 때를 비교하는 단순한 실험이다. 혈중 포도당 농도를 두 방법에서 똑같이 만들어도, 먹은 경우의 <strong>인슐린 분비</strong>가 훨씬 컸다. Elrick 등(1964)과 McIntyre 등(1964)이 독립적으로 이 결과를 보고했다. 포도당이 같은데 인슐린이 다르다면, 입으로 들어간 포도당이 장을 지나면서 무언가 다른 신호를 만들어 췌장의 β세포에 전달한다는 뜻이다. 이 차이를 <strong>인크레틴 효과(incretin effect)</strong> 라 부른다. 건강한 사람에서 경구 포도당 부하 시 인슐린 분비의 상당 부분(대략 절반 이상)이 이 효과에서 나온다는 것이 이후 연구의 정설이 되었다.</p>
+<p>이 현상은 이 책의 큰 주제와 맞닿아 있다. 몸은 먹은 음식이 장에 도착하는 순간 이미 그 사실을 췌장, 뇌, 위에 알린다. 먹은 뒤의 몸이 어떻게 달라지는가에 대한 이야기는 2권 17장에서 자세히 다룬다.</p>
+<p>이 효과를 일으키는 물질로 처음 분리된 것이 <strong>포도당 의존성 인슐린 분비 자극 폴리펩타이드(glucose-dependent insulinotropic polypeptide, GIP)</strong> 다. 1971년 John Brown 등이 돼지 장 추출물에서 위산 분비를 억제하는 펩타이드로 처음 분리했고, 이후 포도당이 있을 때 인슐린 분비를 자극한다는 것이 밝혀지면서 현재의 이름을 얻었다. 그러나 GIP는 당뇨병 환자에서 인슐린 분비 효과가 약해져 있어 당뇨병 치료제로 쓰기에는 매력이 적었다. 이 점은 훗날 티르제파타이드의 설계에서 의외의 반전을 맞는다.</p>
+<h3 id="글루카곤-유전자-속에-숨은-두-번째-호르몬">2.3 글루카곤 유전자 속에 숨은 두 번째 호르몬</h3>
+<p>두 번째 인크레틴의 발견은 분자생물학의 이야기다. 1980년대 초 Graeme Bell 등은 혈당을 올리는 호르몬 <strong>글루카곤(glucagon)</strong> 의 전구체 유전자를 햄스터에서 복제했다. 놀랍게도 <strong>프로글루카곤(proglucagon)</strong> 이라는 하나의 전구체 단백질이 글루카곤 하나만이 아니라 글루카곤과 비슷한 서열을 가진 펩타이드를 두 개 더 포함하고 있었다(Bell et al., 1983). 글루카곤과 닮았다는 뜻에서 이들을 <strong>글루카곤유사펩타이드-1과 -2(glucagon-like peptide-1, GLP-1; glucagon-like peptide-2, GLP-2)</strong> 라 부르게 되었다.</p>
+<p>처음에는 이 펩타이드의 기능을 아무도 몰랐다. 1987년 Mojsov, Weir, Habener는 GLP-1의 한 형태인 <strong>GLP-1(7–37)</strong> 이 관류시킨 쥐 췌장에서 인슐린 분비를 강하게 자극한다는 것을 보였다(Mojsov et al., 1987). 같은 해 Drucker 등(1987)은 배양한 췌장 세포에서, Kreymann 등(1987)은 사람 실험에서 같은 결과를 확인했다. 이 펩타이드의 번호 7–37은 전구체에서 잘려 나온 활성형의 위치를 가리킨다. 첫 여섯 개의 아미노산이 떨어져 나간 뒤에야 활성이 나타난다.</p>
+<p>이 발견이 중요했던 이유는 GLP-1이 포도당 의존적으로만 인슐린을 분비시킨다는 점 때문이다. 혈당이 정상이면 효과가 작아지므로, 인슐린 주사나 설폰요소제의 약점이었던 저혈당 위험이 낮을 것이라는 기대가 생겼다. 1993년 Nauck 등은 제2형 당뇨병 환자에게 GLP-1(7–36 amide)을 정맥 주입했을 때 공복 고혈당이 정상화된다고 보고했다(Nauck et al., 1993). 약으로서의 가능성은 이제 증명되었다. 문제는 그 분자를 약으로 쓸 수 없다는 것이었다.</p>
+<h3 id="몇-분-만에-사라지는-호르몬">2.4 몇 분 만에 사라지는 호르몬</h3>
+<p>천연 GLP-1은 혈중에서 반감기가 몇 분에 지나지 않는다. 혈액 속 효소 <strong>디펩티딜 펩티데이스-4(dipeptidyl peptidase-4, DPP-4)</strong> 가 펩타이드 N-말단에서 두 번째 위치의 알라닌 뒤를 잘라 7번과 8번 아미노산을 떼어 내면 활성이 사라지고, 신장에서도 빠르게 제거된다. 하루 한 번의 주사로는 약이 될 수 없었다. 환자가 연속으로 주입받는 방법 외에는 쓸 수 없는 분자였던 셈이다.</p>
+<p>이 문제를 푸는 길은 두 갈래였다. 하나는 DPP-4 효소 자체를 막는 약(시타글립틴 등)이고, 다른 하나는 DPP-4에 잘리지 않는 GLP-1 유사체를 설계하는 것이다. 이 책은 두 번째 길을 따른다. 그 출발점에 뜻밖의 동물이 있었다.</p>
+<h3 id="도마뱀의-독에서-온-단서">2.5 도마뱀의 독에서 온 단서</h3>
+<p>1992년 뉴욕 브롱크스 재향군인병원의 John Eng은 북미 사막에 사는 독도마뱀인 <strong>길라 몬스터(Gila monster, <em>Heloderma suspectum</em>)</strong> 의 독에서 새로운 펩타이드를 분리하고 <strong>엑센딘-4(exendin-4)</strong> 라 불렀다(Eng et al., 1992). 이 펩타이드는 서열이 GLP-1과 약 반 정도 같았고, 췌장 세포에서 GLP-1 수용체를 활성화시켰다. 중요한 것은 엑센딘-4의 N-말단 두 번째 아미노산이 DPP-4가 인식하는 알라닌이 아니었다는 점이다. 그 때문에 이 펩타이드는 DPP-4에 의해 쉽게 분해되지 않았고, 사람에게서의 반감기도 몇 시간 수준으로 훨씬 길었다.</p>
+<p>도마뱀의 독은 먹이를 포획한 뒤 오래 먹지 않고 살아가야 하는 이 동물의 생리와 관련이 있다고 해석되지만, 이 가설은 이 책의 중심 논지가 아니다. 중요한 것은 자연이 이미 DPP-4에 저항하는 GLP-1 작용제를 만들어 두었다는 사실이다. 이 분자에서 파생된 <strong>엑세나타이드(exenatide)</strong> 는 2005년 미국에서 제2형 당뇨병 치료제로 승인된 첫 GLP-1 수용체 작용제가 되었다. 하루 두 번 주사해야 했지만 개념은 증명되었다. 환자들은 혈당뿐 아니라 체중도 줄었다.</p>
+<h3 id="지방산을-붙여-알부민에-매달다">2.6 지방산을 붙여 알부민에 매달다</h3>
+<p>다음 단계는 천연 GLP-1의 서열을 바탕으로 사람의 몸에 오래 머무는 분자를 설계하는 일이었다. 덴마크 노보 노디스크의 Lotte Bjerre Knudsen 연구진이 택한 전략은 몸에 가장 흔한 운반 단백질, <strong>알부민(albumin)</strong> 에 약을 매다는 것이었다. 알부민은 혈액 속에 많이 있고 신장에서 잘 걸러지지 않으며 반감기가 약 3주로 길다. 지방산이 알부민에 잘 결합한다는 성질을 이용해, GLP-1 펩타이드에 지방산 곁사슬을 붙이면 약이 알부민과 느슨하게 결합하여 분해와 배설을 늦출 수 있다.</p>
+<p><strong>리라글루타이드(liraglutide)</strong> 는 이 전략의 첫 성공작이다. 사람 GLP-1 서열에서 34번 라이신을 아르기닌으로 바꾸고, 26번 라이신에 글루탐산 연결 고리를 거쳐 16탄소 지방산(팔미토일)을 붙였다(Knudsen et al., 2000). 반감기는 약 13시간으로 늘어 하루 한 번 주사가 가능해졌다. 2009~2010년에 당뇨병 치료제로 승인되었고, 용량을 3.0 mg까지 높인 제형이 2014년 비만 치료제 사세다(Saxenda)로 승인되었다. 무작위 대조시험에서 리라글루타이드 3.0 mg은 56주 후 체중을 평균 약 8% 줄였고 위약군은 약 2.6% 줄였다(Pi-Sunyer et al., 2015).</p>
+<p><strong>세마글루타이드(semaglutide)</strong> 는 이 설계를 더 밀어붙인 분자다. 연구진은 DPP-4가 자르는 위치인 8번 아미노산을 일반 알라닌 대신 비천연 아미노산인 <strong>아미노이소부티르산(α-aminoisobutyric acid, Aib)</strong> 으로 바꾸었다. Aib는 메틸기가 둘 달린 구조라서 효소가 접근하기 어렵다. 동시에 지방산 곁사슬을 16탄소에서 18탄소 이산(diacid)으로 바꾸고 연결 고리를 길게 만들어 알부민과 훨씬 단단히 결합하도록 했다(Lau et al., 2015). 그 결과 반감기는 약 일주일에 이르렀고, 주 1회 주사가 가능해졌다. 표 2-1은 세 분자의 설계 차이를 비교한 것이다.</p>
+<p><strong>표 2-1. 천연 GLP-1과 두 약물의 구조·약동학 비교.</strong></p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>항목</th>
+<th>천연 GLP-1</th>
+<th>리라글루타이드</th>
+<th>세마글루타이드</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>DPP-4 저항</td>
+<td>없음(2번 알라닌 절단)</td>
+<td>부분적(지방산 결합에 의한 보호)</td>
+<td>높음(8번 Aib 치환)</td>
+</tr>
+<tr class="even">
+<td>지방산 곁사슬</td>
+<td>없음</td>
+<td>C16 팔미토일</td>
+<td>C18 이산</td>
+</tr>
+<tr class="odd">
+<td>알부민 결합</td>
+<td>없음</td>
+<td>있음</td>
+<td>더 강함</td>
+</tr>
+<tr class="even">
+<td>혈중 반감기</td>
+<td>1~2분</td>
+<td>약 13시간</td>
+<td>약 1주</td>
+</tr>
+<tr class="odd">
+<td>투여 간격</td>
+<td>연속 주입 필요</td>
+<td>하루 1회</td>
+<td>주 1회</td>
+</tr>
+</tbody>
+</table>
+<p>표를 읽는 방법은 간단하다. 위에서 아래로 갈수록 분해에 대한 저항과 알부민에 매달리는 정도가 커지고, 그 결과 반감기가 분 단위에서 시간 단위, 일 단위로 늘어난다. 같은 호르몬의 서열을 바꾸지 않고도 약동학만 바꿔 약으로 만든 사례다. 이후 설계 원리는 이 책 3권에서 펩타이드 약물 설계 실습의 출발점이 된다.</p>
+<h3 id="체중이-숫자로-증명되다">2.7 체중이 숫자로 증명되다</h3>
+<p>세마글루타이드를 비만 치료제로 평가한 STEP 시험 프로그램의 첫 시험, STEP 1은 당뇨병이 없는 과체중·비만 성인 1,961명을 대상으로 했다. 참가자들은 생활습관 중재와 함께 주 1회 세마글루타이드 2.4 mg 또는 위약을 68주 동안 맞았고, 세마글루타이드군은 평균 14.9%, 위약군은 2.4%의 체중이 줄었다(Wilding et al., 2021). 세마글루타이드는 이 결과를 바탕으로 2021년 미국에서 위고비(Wegovy)라는 이름으로 비만 치료제로 승인되었다.</p>
+<p>그다음 이정표는 <strong>GIP</strong>(앞에서 본 포도당 의존성 인슐린 분비 자극 폴리펩타이드)와 GLP-1의 두 수용체를 동시에 활성화시키는 <strong>티르제파타이드(tirzepatide)</strong> 였다. GIP는 한때 당뇨병 치료 표적으로 매력이 적다고 평가되었으나, Coskun 등(2018)은 두 수용체를 함께 겨냥한 단일 펩타이드가 마우스와 사람에서 GLP-1 단독보다 큰 효과를 낸다는 것을 보였다. 이어 SURMOUNT-1 시험에서 비만 성인 2,539명이 72주 동안 티르제파타이드 5, 10, 15 mg 또는 위약을 주 1회 맞았고, 평균 체중 감소는 각각 15.0%, 19.5%, 20.9%였으며 위약군은 3.1%였다(Jastreboff et al., 2022).</p>
+<p>그림 2-1은 두 시험의 결과를 함께 나타낸 것이다. 막대의 아래쪽 끝이 평균 체중 감소율이다. 이 그림에서 세 가지가 읽힌다. 첫째, 두 시험 모두 위약군도 체중이 약간 줄었다. 생활습관 중재의 몫이 있다는 뜻이다. 둘째, 약물군과 위약군의 차이는 1장에서 본 이전 약물들의 차이보다 훨씬 크다. 셋째, 티르제파타이드는 용량이 늘수록 감소폭이 커지는 용량 반응을 보인다. 다만 두 시험은 설계, 대상, 기간이 달라서 막대의 높이를 곧바로 비교해 한 약이 다른 약보다 낫다고 결론 내릴 수는 없다.</p>
+<p><strong>그림 2-1. 세마글루타이드(STEP 1)와 티르제파타이드(SURMOUNT-1)의 평균 체중 변화율.</strong> 왼쪽 두 막대는 STEP 1의 세마글루타이드 2.4 mg과 위약(68주), 오른쪽 네 막대는 SURMOUNT-1의 티르제파타이드 5·10·15 mg과 위약(72주)이다. 서로 다른 시험이므로 직접 비교하지 않는다. (자료: <code>figures/data/fig2-1-trials.csv</code>)</p>
+<figure>
+<img src="../figures/out/그림2-1.png" alt="그림 2-1" />
+<figcaption aria-hidden="true">그림 2-1</figcaption>
+</figure>
+<h3 id="연대표-한-세기-반의-질문">2.8 연대표: 한 세기 반의 질문</h3>
+<p>표 2-2는 이 장에서 본 발견들을 연도 순으로 정리한 것이다.</p>
+<p><strong>표 2-2. 인크레틴 연구의 주요 이정표.</strong></p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>연도</th>
+<th>사건</th>
+<th>핵심 인물·문헌</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1902</td>
+<td>세크레틴 발견, 장 호르몬 개념의 탄생</td>
+<td>Bayliss &amp; Starling</td>
+</tr>
+<tr class="even">
+<td>1932</td>
+<td>“인크레틴” 명명</td>
+<td>La Barre</td>
+</tr>
+<tr class="odd">
+<td>1964</td>
+<td>경구 포도당이 정맥 주사보다 더 큰 인슐린 반응을 일으킴</td>
+<td>Elrick; McIntyre</td>
+</tr>
+<tr class="even">
+<td>1971</td>
+<td>GIP 분리</td>
+<td>Brown 등</td>
+</tr>
+<tr class="odd">
+<td>1983</td>
+<td>프로글루카곤 유전자에서 GLP-1·GLP-2 서열 확인</td>
+<td>Bell 등</td>
+</tr>
+<tr class="even">
+<td>1987</td>
+<td>GLP-1(7–37)의 인슐린 분비 효과 확인</td>
+<td>Mojsov; Drucker; Kreymann</td>
+</tr>
+<tr class="odd">
+<td>1992</td>
+<td>길라 몬스터 독에서 엑센딘-4 분리</td>
+<td>Eng 등</td>
+</tr>
+<tr class="even">
+<td>1993</td>
+<td>GLP-1 주입으로 제2형 당뇨병 공복 고혈당 정상화</td>
+<td>Nauck 등</td>
+</tr>
+<tr class="odd">
+<td>2005</td>
+<td>엑세나타이드 승인</td>
+<td>—</td>
+</tr>
+<tr class="even">
+<td>2009~2010</td>
+<td>리라글루타이드 당뇨병 승인</td>
+<td>—</td>
+</tr>
+<tr class="odd">
+<td>2021</td>
+<td>세마글루타이드(위고비) 비만 승인</td>
+<td>Wilding 등</td>
+</tr>
+<tr class="even">
+<td>2022~2023</td>
+<td>티르제파타이드 승인</td>
+<td>Jastreboff 등</td>
+</tr>
+</tbody>
+</table>
+<p>표의 오른쪽 열을 따라가면, 발견은 서로 다른 나라의 서로 다른 분야 연구자들에게서 나왔다. 생리학자는 현상을 보았고, 분자생물학자는 서열을 읽었고, 동물학적 우연이 안정한 분자를 제공했고, 약물화학자는 이를 약으로 바꾸었다. 이 책이 세포신호, 분자생물학, 구조, 컴퓨터 설계를 한 권으로 묶는 이유도 같다.</p>
+<h3 id="이-약들은-어떻게-작용하는가-이후-장의-지도">2.9 이 약들은 어떻게 작용하는가: 이후 장의 지도</h3>
+<p>이 장에서 본 약들은 모두 <strong>GLP-1 수용체(glucagon-like peptide-1 receptor, GLP1R)</strong> 를 활성화시킨다. GLP1R은 세포막을 일곱 번 가로지르는 <strong>G단백질 연결 수용체(G protein-coupled receptor, GPCR)</strong> 이며, 췌장의 β세포에서는 인슐린 분비를, 뇌의 시상하부와 뇌간에서는 식욕 억제를, 위에서는 위 배출 지연을 일으킨다. 이 세 가지 효과가 모여 체중을 줄인다고 이해되지만, 각각의 비중과 신호 경로는 아직도 연구 중이다. 3장부터 5장까지는 이 수용체의 구조와 신호전달을, 6장부터는 뇌와 조직 수준의 작용을 단계적으로 다룬다.</p>
+<p>1장의 점검표로 돌아가 보자. GLP1R은 표적이 몸 전체에 퍼져 있다는 1장의 문제를 피했는가? 완전히 피하지는 못했다. 오심과 구토 같은 위장관 이상반응은 뇌간 수용체의 활성화와 관련이 있고, 담낭 질환과 췌장염 위험 같은 문제가 지금도 감시되고 있다. 그러나 1장의 약물들과 달리 이 약들은 대규모 시험에서 심혈관 사건을 늘리지 않았다. 그 근거는 12장에서 다룬다.</p>
+<hr />
+<section id="참고문헌" class="refs">
+<h4>참고문헌</h4>
+<p>Bayliss, W. M., &amp; Starling, E. H. (1902). The mechanism of pancreatic secretion. <em>The Journal of Physiology, 28</em>(5), 325–353. https://doi.org/10.1113/jphysiol.1902.sp000920</p>
+<p>Bell, G. I., Santerre, R. F., &amp; Mullenbach, G. T. (1983). Hamster preproglucagon contains the sequence of glucagon and two related peptides. <em>Nature, 302</em>(5910), 716–718. https://doi.org/10.1038/302716a0</p>
+<p>Coskun, T., Sloop, K. W., Loghin, C., Alsina-Fernandez, J., Urva, S., Bokvist, K. B., Cui, X., Briere, D. A., Cabrera, O., Roell, W. C., Kuchibhotla, U., Moyers, J. S., Benson, C. T., Gimeno, R. E., D’Alessio, D. A., &amp; Haupt, A. (2018). LY3298176, a novel dual GIP and GLP-1 receptor agonist for the treatment of type 2 diabetes mellitus: From discovery to clinical proof of concept. <em>Molecular Metabolism, 18</em>, 3–14. https://doi.org/10.1016/j.molmet.2018.09.009</p>
+<p>Drucker, D. J., Philippe, J., Mojsov, S., Chick, W. L., &amp; Habener, J. F. (1987). Glucagon-like peptide I stimulates insulin gene expression and increases cyclic AMP levels in a rat islet cell line. <em>Proceedings of the National Academy of Sciences, 84</em>(10), 3434–3438. https://doi.org/10.1073/pnas.84.10.3434</p>
+<p>Elrick, H., Stimmler, L., Hlad, C. J., Jr., &amp; Arai, Y. (1964). Plasma insulin response to oral and intravenous glucose administration. <em>The Journal of Clinical Endocrinology &amp; Metabolism, 24</em>(10), 1076–1082. https://doi.org/10.1210/jcem-24-10-1076</p>
+<p>Eng, J., Kleinman, W. A., Singh, L., Singh, G., &amp; Raufman, J. P. (1992). Isolation and characterization of exendin-4, an exendin-3 analogue, from <em>Heloderma suspectum</em> venom. <em>Journal of Biological Chemistry, 267</em>(11), 7402–7405. https://doi.org/10.1016/S0021-9258(18)42531-8</p>
+<p>Jastreboff, A. M., Aronne, L. J., Ahmad, N. N., Wharton, S., Connery, L., Alves, B., Kiyosue, A., Zhang, S., Liu, B., Bunck, M. C., &amp; Stefanski, A. (2022). Tirzepatide once weekly for the treatment of obesity. <em>New England Journal of Medicine, 387</em>(3), 205–216. https://doi.org/10.1056/NEJMoa2206038</p>
+<p>Knudsen, L. B., Nielsen, P. F., Huusfeldt, P. O., Johansen, N. L., Madsen, K., Pedersen, F. Z., Thøgersen, H., Wilken, M., &amp; Agersø, H. (2000). Potent derivatives of glucagon-like peptide-1 with pharmacokinetic properties suitable for once daily administration. <em>Journal of Medicinal Chemistry, 43</em>(9), 1664–1669. https://doi.org/10.1021/jm9909645</p>
+<p>Kreymann, B., Williams, G., Ghatei, M. A., &amp; Bloom, S. R. (1987). Glucagon-like peptide-1 7-36: A physiological incretin in man. <em>The Lancet, 330</em>(8571), 1300–1304. https://doi.org/10.1016/S0140-6736(87)91194-9</p>
+<p>Lau, J., Bloch, P., Schäffer, L., Pettersson, I., Spetzler, J., Kofoed, J., Madsen, K., Knudsen, L. B., McGuire, J., Steensgaard, D. B., Strauss, H. M., Gram, D. X., Knudsen, S. M., Nielsen, F. S., Thygesen, P., Reedtz-Runge, S., &amp; Kruse, T. (2015). Discovery of the once-weekly glucagon-like peptide-1 (GLP-1) analogue semaglutide. <em>Journal of Medicinal Chemistry, 58</em>(18), 7370–7380. https://doi.org/10.1021/acs.jmedchem.5b00726</p>
+<p>McIntyre, N., Holdsworth, C. D., &amp; Turner, D. S. (1964). New interpretation of oral glucose tolerance. <em>The Lancet, 284</em>(7349), 20–21. https://doi.org/10.1016/S0140-6736(64)90011-X</p>
+<p>Mojsov, S., Weir, G. C., &amp; Habener, J. F. (1987). Insulinotropin: Glucagon-like peptide I (7-37) co-encoded in the glucagon gene is a potent stimulator of insulin release in the perfused rat pancreas. <em>Journal of Clinical Investigation, 79</em>(2), 616–619. https://doi.org/10.1172/JCI112855</p>
+<p>Nauck, M. A., Kleine, N., Ørskov, C., Holst, J. J., Willms, B., &amp; Creutzfeldt, W. (1993). Normalization of fasting hyperglycaemia by exogenous glucagon-like peptide 1 (7-36 amide) in type 2 (non-insulin-dependent) diabetic patients. <em>Diabetologia, 36</em>(8), 741–744. https://doi.org/10.1007/BF00401145</p>
+<p>Pi-Sunyer, X., Astrup, A., Fujioka, K., Greenway, F., Halpern, A., Krempf, M., Lau, D. C. W., le Roux, C. W., Violante Ortiz, R., Jensen, C. B., &amp; Wilding, J. P. H. (2015). A randomized, controlled trial of 3.0 mg of liraglutide in weight management. <em>New England Journal of Medicine, 373</em>(1), 11–22. https://doi.org/10.1056/NEJMoa1411892</p>
+<p>Wilding, J. P. H., Batterham, R. L., Calanna, S., Davies, M., Van Gaal, L. F., Lingvay, I., McGowan, B. M., Rosenstock, J., Tran, M. T. D., Wadden, T. A., Wharton, S., Yokote, K., Zeuthen, N., &amp; Kushner, R. F. (2021). Once-weekly semaglutide in adults with overweight or obesity. <em>New England Journal of Medicine, 384</em>(11), 989–1002. https://doi.org/10.1056/NEJMoa2032183</p>
+</section>
+
+<h1 class="part" id="제2부-생리학-몸-전체에서">제2부 생리학: 몸 전체에서</h1>
+<h2 id="제3장-에너지-항상성의-뇌-시상하부-뇌간-보상회로">제3장 에너지 항상성의 뇌: 시상하부, 뇌간, 보상회로</h2>
+<blockquote>
+<p><strong>이 장의 출발점</strong> 1~2장에서 우리는 약이 어디에서 실패했고, 어떤 분자가 처음으로 성공했는지를 보았다. 이제 질문은 “그 분자가 뇌의 어디에서 무엇을 바꾸는가”다. 이 장은 배고픔과 포만이 만들어지는 회로를 해부한다. 공복일 때 이 회로가 받는 신호(렙틴 감소, 그렐린 증가)는 2권 27장에서, 식후와 공복 사이의 전환은 2권 29장에서 다시 다룬다.</p>
+</blockquote>
+<h3 id="쥐의-뇌를-태우다-시상하부의-발견">3.1 쥐의 뇌를 태우다: 시상하부의 발견</h3>
+<p>시상하부가 몸무게와 관계있다는 사실은 임상 관찰에서 먼저 드러났다. 20세기 초 신경과 의사들은 뇌하수체 근처에 종양이 생긴 환자가 병적으로 살이 찌는 경우가 있다고 보고했다. 처음에는 뇌하수체 호르몬이 부족해서 생긴 문제로 해석되었으나, 이 설명에는 허점이 있었다. 뇌하수체를 제거해도 비만이 생기지 않는 동물이 있었기 때문이다.</p>
+<p>문제를 푼 것은 정교한 동물 실험이었다. 1940년 Hetherington과 Ranson은 쥐의 시상하부 복내측 부위에 전기 병변을 만들면 쥐가 과식하고 심하게 살이 찐다는 것을 보였다(Hetherington &amp; Ranson, 1940). 뇌하수체가 아니라 그 위에 있는 <strong>시상하부(hypothalamus)</strong> 가 원인이라는 증거였다. 1951년 Anand와 Brobeck은 반대쪽, 곧 시상하부 외측 부위를 파괴하면 동물이 먹기를 멈추고 굶어 죽는다는 것을 보였다(Anand &amp; Brobeck, 1951). 이 두 결과는 오랫동안 “복내측은 포만 중추, 외측은 섭식 중추”라는 단순한 그림으로 교과서에 실렸다.</p>
+<p>이 그림은 틀리지 않았지만 지나치게 거칠었다. 병변은 한 부위만 파괴하는 것이 아니라 그곳을 지나는 신경 섬유까지 함께 파괴한다. 그래서 어느 세포가 무슨 일을 하는지는 알 수 없었다. 이 질문에 답하려면 20세기 후반의 분자생물학과 21세기의 신경회로 기술이 필요했다. 1장에서 본 렙틴의 클로닝(1994)이 그 분기점이었다. 렙틴 수용체가 시상하부, 특히 <strong>궁상핵(arcuate nucleus)</strong> 에 풍부하다는 사실이 드러나자 연구는 이 작은 핵에 집중되었다.</p>
+<h3 id="궁상핵의-두-뉴런">3.2 궁상핵의 두 뉴런</h3>
+<p>궁상핵은 시상하부 바닥, 제3뇌실 바로 옆에 있다. 이 부위는 혈액-뇌 장벽이 비교적 느슨해서 혈액 속 호르몬이 뇌 조직에 닿기 쉽다. 렙틴, 인슐린, 그렐린 같은 말초 신호가 가장 먼저 도착하는 입구인 셈이다.</p>
+<p>여기에는 서로 반대로 일하는 두 뉴런 집단이 있다. 그림 3-1의 가운데 점선 상자가 궁상핵이고, 위쪽의 초록 상자와 아래쪽의 붉은 상자가 두 집단이다.</p>
+<p><strong>POMC/CART 뉴런</strong>은 <strong>프로오피오멜라노코르틴(pro-opiomelanocortin, POMC)</strong> 과 <strong>코카인-암페타민 조절 전사체(cocaine- and amphetamine-regulated transcript, CART)</strong> 를 만든다. POMC는 잘려서 <strong>알파-멜라닌세포자극호르몬(α-melanocyte-stimulating hormone, α-MSH)</strong> 이 되고, 이것이 <strong>멜라노코르틴 4형 수용체(melanocortin 4 receptor, MC4R)</strong> 를 활성화시키면 식욕이 줄고 에너지 소비가 늘어난다. 이 뉴런이 켜지면 포만 쪽으로 움직인다. Cowley 등(2001)은 렙틴이 이 뉴런을 직접 활성화시킨다는 것을 전기생리 실험으로 보였다.</p>
+<p><strong>AgRP/NPY 뉴런</strong>은 <strong>아구티 관련 단백질(agouti-related protein, AgRP)</strong> 과 <strong>신경펩타이드 Y(neuropeptide Y, NPY)</strong> 를 만든다. 이 뉴런이 켜지면 배고픔이 나타난다. AgRP는 MC4R에 대해 α-MSH와 경쟁하는 길항제이자 역작용제로 작용해 포만 신호를 막고(Ollmann et al., 1997), NPY는 식욕을 직접 높인다. 이 뉴런은 또한 같은 궁상핵 안의 POMC 뉴런을 신경전달물질 GABA로 억제한다. 그림 3-1에서 AgRP 뉴런에서 POMC 뉴런으로 올라가는 붉은 막대 화살표가 이 억제다.</p>
+<p><strong>그림 3-1. 에너지 항상성 회로도.</strong> 혈액의 말초 신호(왼쪽)가 궁상핵의 두 뉴런에 도달하고, 두 뉴런은 실방핵의 MC4R 뉴런에 반대 방향으로 작용한다. 뇌간(아래)은 장에서 오는 신호를 받아 포만과 구역 신호를 만든다. 초록 화살표는 촉진, 붉은 막대 화살표는 억제, 점선은 간접 경로를 나타낸다. 개념도이며 정량 자료가 아니다.</p>
+<figure>
+<img src="../figures/out/그림3-1.png" alt="그림 3-1" />
+<figcaption aria-hidden="true">그림 3-1</figcaption>
+</figure>
+<p>그림에서 읽을 것이 세 가지 있다. 첫째, 렙틴과 인슐린은 두 뉴런에 반대로 작용한다. POMC 뉴런은 켜고, AgRP 뉴런은 끈다. 둘째, 그렐린은 위에서 나와 AgRP 뉴런만 켠다. 배고플 때 위가 보내는 신호다. 셋째, 두 뉴런은 실방핵의 MC4R 뉴런에서 만난다. 한쪽은 가속기를 밟고 다른 쪽은 그 가속기를 막는다. 이 구조는 이후 장의 약물 표적을 이해하는 기본 지도가 된다.</p>
+<p>이 지도가 실제로 맞는지는 유전학이 먼저 확인했다. 1997년 Huszar 등은 MC4R 유전자를 없앤 마우스가 과식하고 심하게 살이 찐다는 것을 보였다(Huszar et al., 1997). 사람에게서도 같은 일이 일어났다. 1998년 Vaisse 등과 Yeo 등은 심한 비만 환자에서 MC4R 유전자의 변이를 보고했고(Vaisse et al., 1998; Yeo et al., 1998), 이후 연구들은 MC4R 변이가 심한 소아 비만의 흔한 단일 유전자 원인임을 보였다(Farooqi et al., 2003). 이 경로를 켜는 약물이 세트멜라노타이드(setmelanotide)다. 이 약은 16장에서 다룬다.</p>
+<h3 id="배고픔-뉴런을-켜고-끄다">3.3 배고픔 뉴런을 켜고 끄다</h3>
+<p>신경회로를 직접 조작하는 기술이 나오자 이 모형은 한층 더 분명해졌다. 광유전학과 화학유전학으로 AgRP 뉴런만 골라서 켜면 어떻게 될까? Aponte 등(2011)과 Krashes 등(2011)은 배부른 마우스에서 AgRP 뉴런을 인위로 활성화시켰더니, 마우스가 몇 분 안에 먹이를 찾아 먹기 시작한다는 것을 보였다. 켜기만 했는데 먹이를 먹은 것이다. 반대로 성체 마우스에서 AgRP 뉴런을 없애면 마우스가 먹기를 거부하고 굶어 죽었다(Luquet et al., 2005). 이 뉴런은 배고픔의 충분조건이자 필요조건에 가깝다.</p>
+<p>이 이야기에서 가장 놀라운 장면은 2015년에 나왔다. Chen 등(2015)은 AgRP 뉴런의 활동을 생쥐가 깨어 있는 동안 실시간으로 기록했다. 굶은 쥐의 AgRP 뉴런은 높은 활성을 보였다. 그런데 먹이를 보여 주거나 냄새를 맡게 하면, 한 입도 먹기 전에 이 뉴런의 활성이 빠르게 떨어졌다. 뇌는 칼로리가 실제로 들어오기 전에 먹이를 감각하는 것만으로 이 뉴런을 끈다. 몸이 영양소를 받기 전에 예측으로 배고픔 신호를 낮춘다는 뜻이다. 이 사실은 먹기 시작한 뒤의 포만 신호만으로는 식욕 조절을 설명할 수 없다는 것을 보여 준다. 이후 2권 17장의 식후 대사 에너지 설명에서, 몸이 먹기 전부터 식후 상태를 준비하는 과정이 다시 나온다.</p>
+<h3 id="실방핵과-병렬-회로">3.4 실방핵과 병렬 회로</h3>
+<p>두 뉴런이 모이는 곳이 <strong>실방핵(paraventricular nucleus, PVH)</strong> 이다. 이 핵의 MC4R 뉴런은 식욕, 에너지 소비, 스트레스 호르몬 분비를 조정한다. Atasoy 등(2012)은 AgRP 뉴런에서 실방핵으로 뻗은 축삭만 광유전학으로 자극해도 배고픔 행동이 일어난다는 것을 보였다.</p>
+<p>그러나 이 회로가 단순한 직렬 구조는 아니다. Betley 등(2013)은 AgRP 뉴런이 실방핵 외에도 여러 다른 뇌 영역으로 따로 축삭을 뻗고, 각 투사가 독립적으로 섭식을 일으킬 수 있다는 것을 보였다. 이를 병렬 회로라 한다. 병렬 구조에서는 한 경로를 약물로 막아도 다른 경로가 일을 이어 가므로 체중 감소에 한계가 생길 수 있다. 1장에서 말한 생리적 저항의 한 가지 회로학적 설명이다.</p>
+<h3 id="뇌간-장에서-올라오는-편지의-도착지">3.5 뇌간: 장에서 올라오는 편지의 도착지</h3>
+<p>궁상핵이 혈액의 호르몬을 읽는 곳이라면, <strong>뇌간(brainstem)</strong> 은 장에서 신경으로 올라오는 신호를 읽는 곳이다. 뇌간의 <strong>고립로핵(nucleus of the solitary tract, NTS)</strong> 은 <strong>미주신경(vagus nerve)</strong> 의 구심 섬유가 닿는 첫 중계소다. 위가 늘어나거나 소장에 영양소가 닿으면 이 신호가 NTS로 올라가 포만과 식사 종료를 알린다. 바로 옆에 있는 <strong>최후야(area postrema)</strong> 는 혈액-뇌 장벽이 없는 특수한 부위로, 혈액 속 독소와 약물을 감지해 구토를 일으키는 구역 중추다.</p>
+<p>GLP-1 수용체 작용제가 어디에서 체중 감소를 일으키는지는 활발히 연구되는 문제다. Secher 등(2014)은 리라글루타이드가 궁상핵에 접근해 POMC/CART 뉴런을 활성화하고, 간접적으로 AgRP/NPY 뉴런을 억제한다는 것을 보였다. Gabery 등(2020)은 세마글루타이드가 한 부위가 아닌 여러 뇌 영역의 신경경로를 통해 체중을 낮춘다는 것을 보고했다. 한편 뇌간의 최후야와 고립로핵에도 GLP-1 수용체가 있어서, 이 부위가 포만과 함께 오심·구토 같은 부작용에 관여할 가능성이 제기되었다. 이 부분의 증거와 한계는 17장에서 부작용 기전과 함께 자세히 본다.</p>
+<h3 id="배고픔과-즐거움-보상회로">3.6 배고픔과 즐거움: 보상회로</h3>
+<p>사람은 몸이 에너지를 필요로 하지 않을 때도 먹는다. 케이크 한 조각은 배가 불러도 먹히는 이유를 항상성 회로만으로는 설명할 수 없다. Berthoud(2011)는 식욕에 두 가지 구동력이 있다고 정리했다. 하나는 에너지 결핍을 채우려는 <strong>항상성적(homeostatic)</strong> 구동이고, 다른 하나는 맛있는 음식이 주는 쾌락을 쫓는 <strong>쾌락적(hedonic)</strong> 구동이다. 후자는 <strong>복측피개영역(ventral tegmental area, VTA)</strong> 에서 <strong>측좌핵(nucleus accumbens)</strong> 으로 가는 도파민 경로를 포함한 중뇌변연계 보상회로가 담당한다.</p>
+<p>두 구동력은 서로 영향을 준다. 궁상핵의 신호는 보상회로의 민감도를 바꾸고, 보상회로의 활동은 항상성 신호를 덮어쓸 수 있다. 환자들이 GLP-1 작용제를 쓰면서 “음식에 대한 생각이 줄었다”고 보고하는 현상이 후자와 관련되는지는 지금도 연구 중이다. 이 책은 근거가 확립된 범위에서만 이 가설을 다루고, 확인되지 않은 부분은 그렇다고 표시한다.</p>
+<h3 id="신경-집단-요약">3.7 신경 집단 요약</h3>
+<p>표 3-1은 이 장에서 다룬 신경 집단을 정리한 것이다.</p>
+<p><strong>표 3-1. 에너지 항상성 신경 집단의 신경펩타이드와 기능.</strong></p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>위치</th>
+<th>신경 집단</th>
+<th>주요 신경펩타이드·수용체</th>
+<th>켜졌을 때의 효과</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>궁상핵</td>
+<td>POMC/CART 뉴런</td>
+<td>α-MSH, CART</td>
+<td>식욕 감소, 에너지 소비 증가</td>
+</tr>
+<tr class="even">
+<td>궁상핵</td>
+<td>AgRP/NPY 뉴런</td>
+<td>AgRP, NPY, GABA</td>
+<td>식욕 증가, 에너지 소비 감소</td>
+</tr>
+<tr class="odd">
+<td>실방핵</td>
+<td>MC4R 뉴런</td>
+<td>MC4R</td>
+<td>식욕 감소, 에너지 소비 증가</td>
+</tr>
+<tr class="even">
+<td>뇌간</td>
+<td>고립로핵 뉴런</td>
+<td>미주신경 구심 입력</td>
+<td>포만, 식사 종료</td>
+</tr>
+<tr class="odd">
+<td>뇌간</td>
+<td>최후야 뉴런</td>
+<td>GLP-1 수용체 등</td>
+<td>구역·구토 관련 신호(연구 중)</td>
+</tr>
+<tr class="even">
+<td>중뇌</td>
+<td>VTA 도파민 뉴런</td>
+<td>도파민</td>
+<td>쾌락적 섭식 구동</td>
+</tr>
+</tbody>
+</table>
+<p>표를 읽는 방법은 간단하다. 가운데 열이 이 뉴런의 “언어”이고 오른쪽 열이 그 뉴런의 “행동”이다. 약물 설계의 관점에서 보면, 이 표의 각 줄이 후보 표적이다. 이 책의 3~5부는 이 가운데 어떤 줄이 약물 표적으로 쓰였고 어떤 줄이 아직 비어 있는지를 하나씩 확인해 간다.</p>
+<h3 id="이-장에서-얻은-것과-다음-장">3.8 이 장에서 얻은 것과 다음 장</h3>
+<p>시상하부는 하나의 “식욕 중추”가 아니라 서로 반대로 일하는 뉴런들의 균형이고, 그 균형은 혈액의 호르몬과 장에서 올라오는 신경 신호, 그리고 쾌락 회로의 영향을 함께 받는다. 약물이 체중을 줄이는 방법은 결국 이 균형을 포만 쪽으로 기울이는 것이다. 그런데 이 회로에 입력을 보내는 분자들은 어디에서 나오며, 하루 동안 어떤 모양으로 오르내리는가? 4장은 장이 보내는 호르몬 지도를 그린다.</p>
+<hr />
+<section id="참고문헌" class="refs">
+<h4>참고문헌</h4>
+<p>Anand, B. K., &amp; Brobeck, J. R. (1951). Hypothalamic control of food intake in rats and cats. <em>Yale Journal of Biology and Medicine, 24</em>(2), 123–140.</p>
+<p>Aponte, Y., Atasoy, D., &amp; Sternson, S. M. (2011). AGRP neurons are sufficient to orchestrate feeding behavior rapidly and without training. <em>Nature Neuroscience, 14</em>(3), 351–355. https://doi.org/10.1038/nn.2739</p>
+<p>Atasoy, D., Betley, J. N., Su, H. H., &amp; Sternson, S. M. (2012). Deconstruction of a neural circuit for hunger. <em>Nature, 488</em>(7410), 172–177. https://doi.org/10.1038/nature11270</p>
+<p>Berthoud, H.-R. (2011). Metabolic and hedonic drives in the neural control of appetite: Who is the boss? <em>Current Opinion in Neurobiology, 21</em>(6), 888–896. https://doi.org/10.1016/j.conb.2011.09.004</p>
+<p>Betley, J. N., Cao, Z. F. H., Ritola, K. D., &amp; Sternson, S. M. (2013). Parallel, redundant circuit organization for homeostatic control of feeding behavior. <em>Cell, 155</em>(6), 1337–1350. https://doi.org/10.1016/j.cell.2013.11.002</p>
+<p>Chen, Y., Lin, Y.-C., Kuo, T.-W., &amp; Knight, Z. A. (2015). Sensory detection of food rapidly modulates arcuate feeding circuits. <em>Cell, 160</em>(5), 829–841. https://doi.org/10.1016/j.cell.2015.01.033</p>
+<p>Cowley, M. A., Smart, J. L., Rubinstein, M., Cerdán, M. G., Diano, S., Horvath, T. L., Cone, R. D., &amp; Low, M. J. (2001). Leptin activates anorexigenic POMC neurons through a neural network in the arcuate nucleus. <em>Nature, 411</em>(6836), 480–484. https://doi.org/10.1038/35078085</p>
+<p>Farooqi, I. S., Keogh, J. M., Yeo, G. S. H., Lank, E. J., Cheetham, T., &amp; O’Rahilly, S. (2003). Clinical spectrum of obesity and mutations in the melanocortin 4 receptor gene. <em>New England Journal of Medicine, 348</em>(12), 1085–1095. https://doi.org/10.1056/NEJMoa022050</p>
+<p>Gabery, S., Salinas, C. G., Paulsen, S. J., Ahnfelt-Rønne, J., Alanentalo, T., Baquero, A. F., Buckley, S. T., Farkas, E., Fekete, C., Frederiksen, K. S., Helms, H. C. C., Jeppesen, J. F., John, L. M., Pyke, C., Nøhr, J., Lu, T. T., Polex-Wolf, J., Prevot, V., Raun, K., … Knudsen, L. B. (2020). Semaglutide lowers body weight in rodents via distributed neural pathways. <em>JCI Insight, 5</em>(6), e133429. https://doi.org/10.1172/jci.insight.133429</p>
+<p>Hetherington, A. W., &amp; Ranson, S. W. (1940). Hypothalamic lesions and adiposity in the rat. <em>The Anatomical Record, 78</em>(2), 149–172. https://doi.org/10.1002/ar.1090780203</p>
+<p>Huszar, D., Lynch, C. A., Fairchild-Huntress, V., Dunmore, J. H., Fang, Q., Berkemeier, L. R., Gu, W., Kesterson, R. A., Boston, B. A., Cone, R. D., Smith, F. J., Campfield, L. A., Burn, P., &amp; Lee, F. (1997). Targeted disruption of the melanocortin-4 receptor results in obesity in mice. <em>Cell, 88</em>(1), 131–141. https://doi.org/10.1016/S0092-8674(00)81865-6</p>
+<p>Krashes, M. J., Koda, S., Ye, C., Rogan, S. C., Adams, A. C., Cusher, D. S., Maratos-Flier, E., Roth, B. L., &amp; Lowell, B. B. (2011). Rapid, reversible activation of AgRP neurons drives feeding behavior in mice. <em>Journal of Clinical Investigation, 121</em>(4), 1424–1428. https://doi.org/10.1172/JCI46229</p>
+<p>Luquet, S., Perez, F. A., Hnasko, T. S., &amp; Palmiter, R. D. (2005). NPY/AgRP neurons are essential for feeding in adult mice but can be ablated in neonates. <em>Science, 310</em>(5748), 683–685. https://doi.org/10.1126/science.1115524</p>
+<p>Ollmann, M. M., Wilson, B. D., Yang, Y.-K., Kerns, J. A., Chen, Y., Gantz, I., &amp; Barsh, G. S. (1997). Antagonism of central melanocortin receptors in vitro and in vivo by agouti-related protein. <em>Science, 278</em>(5335), 135–138. https://doi.org/10.1126/science.278.5335.135</p>
+<p>Secher, A., Jelsing, J., Baquero, A. F., Hecksher-Sørensen, J., Cowley, M. A., Dalbøge, L. S., Hansen, G., Grove, K. L., Pyke, C., Raun, K., Schäffer, L., Tang-Christensen, M., Verma, S., Witgen, B. M., Vrang, N., &amp; Bjerre Knudsen, L. (2014). The arcuate nucleus mediates GLP-1 receptor agonist liraglutide-dependent weight loss. <em>Journal of Clinical Investigation, 124</em>(10), 4473–4488. https://doi.org/10.1172/JCI75276</p>
+<p>Vaisse, C., Clement, K., Guy-Grand, B., &amp; Froguel, P. (1998). A frameshift mutation in human MC4R is associated with a dominant form of obesity. <em>Nature Genetics, 20</em>(2), 113–114. https://doi.org/10.1038/2407</p>
+<p>Yeo, G. S. H., Farooqi, I. S., Aminian, S., Halsall, D. J., Stanhope, R. G., &amp; O’Rahilly, S. (1998). A frameshift mutation in MC4R associated with dominantly inherited human obesity. <em>Nature Genetics, 20</em>(2), 111–112. https://doi.org/10.1038/2404</p>
+</section>
+
+<h2 id="제4장-몸이-보내는-신호-장췌장지방의-호르몬-지도">제4장 몸이 보내는 신호: 장·췌장·지방의 호르몬 지도</h2>
+<blockquote>
+<p><strong>이 장의 출발점</strong> 3장에서 우리는 뇌가 신호를 받는 회로를 보았다. 이 장은 그 신호가 어디서 출발하는지, 곧 위·장·췌장·지방조직이 식사 전후에 어떤 호르몬을 내보내는지를 한 장의 지도로 정리한다. 각 호르몬이 수용체에 붙어 세포 안에서 일으키는 변화는 2권 15장에서, 식후 인크레틴 효과의 정량적 모형은 2권 19장에서, 공복 때 이 신호들이 어떻게 뒤집히는지는 2권 27~29장에서 이어 다룬다.</p>
+</blockquote>
+<h3 id="동물의-입에-호르몬을-넣다-포만-신호-발견-이야기">4.1 동물의 입에 호르몬을 넣다: 포만 신호 발견 이야기</h3>
+<p>1장과 2장에서 보았듯이 20세기의 비만약은 대부분 뇌를 직접 건드리는 분자였다. 그런데 뇌의 회로가 알려지자 한 가지 질문이 남았다. 뇌는 도대체 무엇을 보고 “배부르다”고 판단하는가. 답은 몸의 다른 곳에 있었다.</p>
+<p>1973년 Gibbs, Young, Smith는 쥐에게 <strong>콜레시스토키닌(cholecystokinin, CCK)</strong> 을 주사하면 식사량이 줄어든다는 실험을 발표했다(Gibbs et al., 1973). CCK는 원래 지방이 십이지장에 들어오면 담낭을 수축시키는 호르몬으로 알려져 있었다. 소화를 돕는 호르몬이 동시에 “이제 그만 먹어라”는 말도 한다는 발견이었다. 이 실험은 장 호르몬이 식욕 신호라는 개념의 출발점으로 자주 인용된다.</p>
+<p>반대 방향의 신호는 한참 뒤에야 나왔다. 1999년 Kojima 등은 위에서 <strong>그렐린(ghrelin)</strong> 을 분리했다(Kojima et al., 1999). 이 발견의 경로가 특이했다. 그들은 먼저 성장호르몬 분비 자극 약물이 붙는 수용체를 알고 있었지만 그 수용체에 붙는 천연 물질은 몰랐다. 이처럼 수용체는 알려졌으나 짝이 되는 리간드를 모르는 수용체를 <strong>고아 수용체(orphan receptor)</strong> 라 하고, 고아 수용체의 짝을 찾는 방식을 역약리학(reverse pharmacology)이라 한다. 위 추출물에서 그 짝을 찾아낸 것이 그렐린이었다. 이름은 성장호르몬을 뜻하는 어근 “ghre”에서 왔다. 그런데 이 물질은 성장호르몬만 올리는 것이 아니었다. 곧 사람에게 주사하면 배가 고파진다는 사실이 드러났다(Wren et al., 2001).</p>
+<p>2002년 Batterham 등은 장에서 나오는 <strong>펩타이드 YY(peptide YY, PYY)</strong> 의 일부 조각인 PYY3-36을 사람에게 주입하면 식사량이 줄어든다고 보고했다(Batterham et al., 2002). 이로써 하나의 그림이 완성되었다. 장은 먹을 때 포만 신호를 내고, 위는 비었을 때 배고픔 신호를 낸다. 이 호르몬들의 이름과 위치는 외워야 한다. 이후 모든 장에서 약물 표적으로 다시 나오기 때문이다.</p>
+<h3 id="장은-가장-큰-내분비-기관이다">4.2 장은 가장 큰 내분비 기관이다</h3>
+<p>소화관 점막에는 영양분을 감지해 호르몬을 내보내는 <strong>장내분비세포(enteroendocrine cell)</strong> 가 흩어져 있다. 이 세포들은 점막 상피 세포 중 아주 작은 비율이지만, 모두 합치면 몸에서 가장 많은 종류의 호르몬을 만드는 기관이 된다는 점에서 “가장 큰 내분비 기관”이라 불린다(Gribble &amp; Reimann, 2016).</p>
+<p>그림 4-1은 이 장에서 다룰 세포의 위치다. 위의 X/A형 세포는 그렐린을, 십이지장과 공장의 I세포는 CCK를, 같은 부위의 K세포는 <strong>포도당 의존성 인슐린 분비 자극 폴리펩타이드(GIP)</strong> 를 만든다. 회장과 대장에 많은 L세포는 <strong>글루카곤 유사 펩타이드 1(glucagon-like peptide 1, GLP-1)</strong>, PYY, 그리고 <strong>옥신토모듈린(oxyntomodulin, OXM)</strong> 을 만든다. 췌장의 β세포는 인슐린과 <strong>아밀린(amylin)</strong> 을, 지방세포는 1장에서 본 렙틴을 분비한다.</p>
+<p><strong>그림 4-1. 에너지 항상성 호르몬을 분비하는 세포의 위치.</strong> 위(그렐린), 십이지장·공장(CCK, GIP), 회장·대장(GLP-1, PYY, OXM), 췌장(인슐린, 아밀린), 지방조직(렙틴)에서 나온 신호는 혈액과 미주신경을 통해 뇌에 도달한다. 점선은 미주신경을 나타낸다. 개념도이며 크기와 비례는 실제와 다르다. OXM은 옥신토모듈린.</p>
+<figure>
+<img src="../figures/out/그림4-1.png" alt="그림 4-1" />
+<figcaption aria-hidden="true">그림 4-1</figcaption>
+</figure>
+<p>그림에서 두 가지를 읽는다. 첫째, 장 호르몬은 장의 길이를 따라 나뉘어 분비된다. GIP는 영양분이 먼저 닿는 윗부분(근위부)에서, GLP-1과 PYY는 더 아래쪽에서 많이 나온다. 그런데 GLP-1은 식사 직후 짧은 시간에 혈중 농도가 오르는 것으로 알려져 있어서, 소장 아래쪽까지 음식이 도달하기 전에 어떻게 분비되는가가 오래 논의되었다. 근위부에서 보내는 신경 신호나 다른 호르몬이 먼저 L세포를 자극한다는 가설과, 근위부에도 소수의 L세포가 있다는 설명이 함께 제시되어 있다(Holst, 2007; Gribble &amp; Reimann, 2016). 둘째, 세포들은 각자 감지하는 영양소가 다르다. 대체로 지방산, 아미노산, 포도당이 각기 다른 수용체와 수송체를 통해 세포를 자극한다. 이 감지 분자들은 약물 표적이 될 수 있어서 3권에서 다시 다룬다.</p>
+<h3 id="식후-호르몬의-합창">4.3 식후 호르몬의 합창</h3>
+<p>음식을 먹으면 호르몬들은 한꺼번에 변한다. 그림 4-2는 이 변화를 한 장에 겹쳐 그린 개념도다. 정량 곡선이 아니라, 문헌에서 반복해서 서술되는 방향과 대략적인 시간 순서만 옮긴 것이다. 실제 곡선은 식사의 크기와 성분, 사람에 따라 크게 달라서 2권 19장에서 논문의 원자료와 함께 다시 그린다.</p>
+<p><strong>그림 4-2. 식사 전후 호르몬 변화의 개념도.</strong> 식사(회색 띠) 뒤에 인슐린, GIP, GLP-1, PYY, CCK는 오르고 그렐린은 식전 정점에서 식후 감소한다. 곡선의 모양과 정점 시간은 방향을 설명하기 위한 도식이며 측정값이 아니다.</p>
+<figure>
+<img src="../figures/out/그림4-2.png" alt="그림 4-2" />
+<figcaption aria-hidden="true">그림 4-2</figcaption>
+</figure>
+<p>곡선을 보면 CCK와 GIP는 식사 직후 빠르게, GLP-1과 PYY는 조금 뒤에 오래 오른다고 서술된다. 그렐린은 반대로 식사 전에 정점이고 식후에 떨어진다. Cummings 등(2001)은 사람에서 그렐린이 식사 전에 오르고 식후에 감소하는 날 주기 패턴을 보고했다. 이 장에서 기억할 핵심은 곡선 모양이 아니라 <strong>방향</strong>이다. 대부분의 포만 호르몬은 식후에 오르고, 그렐린만 식전에 오른다.</p>
+<p>비만에서는 이 패턴이 약해진다는 보고가 있다. 예를 들어 식후 GLP-1이나 PYY 반응이 낮다는 연구가 있고, 반대로 차이가 없다는 연구도 있어서 일관되지 않다. 이 불일치는 논문 데이터베이스 검색으로 정리해야 하는 주제이므로 2권 19장에서 문헌 근거와 함께 다룬다. 여기서는 “신호 감소가 비만의 원인인가, 결과인가”가 아직 열린 질문이라는 점만 짚어 둔다.</p>
+<h3 id="그렐린-배고픔을-켜는-호르몬">4.4 그렐린: 배고픔을 켜는 호르몬</h3>
+<p>그렐린은 28개 아미노산으로 이루어진 펩타이드다. 이 호르몬의 특이한 점은 세 번째 아미노산(세린)에 지방산인 옥탄산이 붙어야 활성이 생긴다는 것이다. 이 지방산 부착을 맡는 효소가 <strong>그렐린 O-아실전달효소(ghrelin O-acyltransferase, GOAT)</strong> 다. 분비된 그렐린이 수용체 <strong>성장호르몬 분비 촉진 인자 수용체(growth hormone secretagogue receptor, GHSR)</strong> 에 붙으면 시상하부의 AgRP/NPY 뉴런이 켜진다. 3장의 그림 3-1에서 그렐린 화살표가 AgRP 뉴런으로만 들어가던 이유다.</p>
+<p>그렐린은 비만 약물 개발에서 독특한 위치를 차지한다. 대부분의 장 호르몬은 “늘려서” 약으로 쓰는데, 그렐린은 “막아서” 약으로 쓰려는 시도가 있었다. 그러나 그렐린 경로를 막는 약이 체중을 의미 있게 줄이지 못했다는 점은 이 신호가 중복 경로 가운데 하나일 뿐임을 시사한다. 이 서술의 구체적 임상 근거는 검증 대기 목록에 두었으며, 그렐린 경로의 약물 시도는 2권 15장과 3권에서 문헌으로 확인해 보강한다.</p>
+<h3 id="췌장과-지방-장기적인-신호">4.5 췌장과 지방: 장기적인 신호</h3>
+<p>장 호르몬이 “이번 식사”에 대한 신호라면, 췌장과 지방조직의 호르몬은 “몸에 쌓인 에너지”에 대한 신호다.</p>
+<p><strong>인슐린(insulin)</strong> 은 혈당이 오르면 췌장 β세포에서 분비되어 근육·지방·간의 포도당 이용을 높인다. 동시에 뇌에서도 작용한다. 1979년 Woods 등은 개코원숭이의 뇌실에 인슐린을 만성적으로 주입하면 섭식량과 체중이 줄어든다고 보고해, 인슐린이 뇌에서 에너지 균형 신호로 작동할 수 있음을 보였다(Woods et al., 1979). 따라서 인슐린은 혈당 호르몬이자 뇌에 보내는 비만 신호이기도 하다. 이 이중성 때문에 인슐린 투여는 혈당을 낮추면서 체중을 늘리는 방향으로 작용하기 쉽고, 이는 2권에서 에너지 저장과 분해의 균형으로 다시 다룬다.</p>
+<p><strong>아밀린(amylin)</strong> 은 β세포가 인슐린과 함께 분비하는 37개 아미노산 펩타이드다(Cooper et al., 1987). 위 배출을 늦추고 뇌간의 최후야(area postrema)에 작용해 포만감을 높인다고 알려져 있다. 아밀린 수용체는 칼시토닌 수용체와 <strong>수용체 활성 변형 단백질(receptor activity-modifying protein, RAMP)</strong> 의 복합체로 구성된다. 아밀린 유사체는 당뇨병 치료에 먼저 쓰였고, 현재는 비만 약물로도 개발되고 있다. 현황은 시간이 지나며 빠르게 바뀌므로 12장에서 최신 문헌으로 정리한다.</p>
+<p><strong>렙틴(leptin)</strong> 은 1장에서 본 것처럼 지방세포가 만들며, 지방이 많을수록 혈중 농도가 높다. 3장에서 보았듯이 렙틴은 궁상핵에서 POMC 뉴런을 켜고 AgRP 뉴런을 끈다. 그런데 비만인 사람은 렙틴 농도가 높은데도 체중이 줄지 않는다. 이를 <strong>렙틴 저항성(leptin resistance)</strong> 이라 한다. 이 현상의 기전은 아직 완전히 정리되지 않았으며, 렙틴을 그대로 약으로 쓰는 방식이 일반 비만에서 성공하지 못한 이유로 자주 거론된다.</p>
+<h3 id="위가-비는-속도-호르몬의-또-다른-길">4.6 위가 비는 속도: 호르몬의 또 다른 길</h3>
+<p>호르몬이 뇌에 직접 말하는 것과 별개로, 같은 호르몬은 위장의 움직임을 바꿔 포만을 만든다. GLP-1, PYY, CCK, 아밀린은 모두 위 배출을 늦춘다고 알려져 있다. 위가 천천히 비면 포만감이 오래 지속되고, 식후 혈당의 급상승도 완만해진다. 반대로 위 배출이 빠르면 영양분이 소장으로 급하게 내려가 장 호르몬이 짧고 강하게 분비된다.</p>
+<p>이 효과는 약물 해석에서 중요하다. 2장의 GLP-1 작용제를 처음 투여하면 위 배출이 확연히 느려지지만, 지속 투여하면 이 효과가 약해진다는 서술이 문헌에 있다(이른바 속성내성). 반면 뇌를 통한 식욕 억제는 지속된다고 해석된다. 이 구분의 정확한 근거는 2권 19장에서 문헌 자료로 제시한다. 위 배출 지연은 약 복용 후 오심·구토와도 연결되므로 12장의 이상반응 논의에서 다시 만난다.</p>
+<h3 id="신호가-뇌에-닿는-두-길">4.7 신호가 뇌에 닿는 두 길</h3>
+<p>장과 췌장의 신호가 뇌에 닿는 경로는 크게 둘이다. <strong>혈액 경로</strong>는 호르몬이 혈류를 타고 가서, 3장에서 본 혈액-뇌 장벽이 느슨한 부위(궁상핵, 최후야)에 닿는 방식이다. <strong>신경 경로</strong>는 장 벽의 미주신경 말단이 호르몬이나 영양분, 장의 팽창을 감지해 뇌간의 <strong>고립로핵(nucleus of the solitary tract, NTS)</strong> 으로 신호를 올려 보내는 방식이다. 그림 4-1의 점선이 이 경로다.</p>
+<p>GLP-1이 혈액에서 반감기가 매우 짧은 점(2장)을 생각하면, 장에서 분비된 GLP-1이 혈액으로 뇌에 도달하는 몫은 작고 장 가까운 미주신경 신호의 몫이 크다는 가설이 제기된 적이 있다. 반면 약으로 투여한 GLP-1 작용제는 반감기가 길어 혈액 경로로 뇌에 닿는다. 천연 호르몬이 일하는 방식과 약이 일하는 방식이 다를 수 있다는 점은 약물 설계에서 반복해서 등장하는 주제이며, 2권 15장과 19장에서 정량적으로 다룬다.</p>
+<h3 id="약물-지도-어떤-호르몬이-약이-되었나">4.8 약물 지도: 어떤 호르몬이 약이 되었나</h3>
+<p>표 4-1은 이 장의 호르몬을 한 장에 정리한 것이다. 마지막 열은 비만 약물 개발에서 그 신호가 어떻게 쓰이는지 개요만 적었다. 임상 시험의 숫자와 구조는 2장과 이후 장에서 다룬다.</p>
+<p><strong>표 4-1. 에너지 항상성 호르몬의 분비 부위, 수용체, 작용, 약물 연결.</strong></p>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>호르몬</th>
+<th>분비 세포·부위</th>
+<th>주 수용체</th>
+<th>식욕·대사 작용</th>
+<th>비만 약물과의 연결</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>그렐린</td>
+<td>위 X/A형 세포</td>
+<td>GHSR</td>
+<td>배고픔 증가(AgRP/NPY 활성)</td>
+<td>억제 시도(근거 검증 대기)</td>
+</tr>
+<tr class="even">
+<td>CCK</td>
+<td>십이지장·공장 I세포</td>
+<td>CCK1 수용체</td>
+<td>식사 종결 신호, 담낭 수축</td>
+<td>단독 약물은 어려움</td>
+</tr>
+<tr class="odd">
+<td>GIP</td>
+<td>십이지장·공장 K세포</td>
+<td>GIP 수용체</td>
+<td>인슐린 분비 촉진</td>
+<td>티르제파타이드의 한 축(2장)</td>
+</tr>
+<tr class="even">
+<td>GLP-1</td>
+<td>회장·대장 L세포</td>
+<td>GLP-1 수용체</td>
+<td>포만, 인슐린 분비, 위 배출 지연</td>
+<td>리라글루타이드, 세마글루타이드(2장)</td>
+</tr>
+<tr class="odd">
+<td>PYY</td>
+<td>회장·대장 L세포</td>
+<td>Y2 수용체(PYY3-36)</td>
+<td>식사 후 포만</td>
+<td>병용·다중 작용제 연구</td>
+</tr>
+<tr class="even">
+<td>옥신토모듈린</td>
+<td>회장·대장 L세포</td>
+<td>GLP-1 수용체, 글루카곤 수용체</td>
+<td>식욕 감소, 에너지 소비 증가 가능성</td>
+<td>이중·삼중 작용제 설계의 원형</td>
+</tr>
+<tr class="odd">
+<td>인슐린</td>
+<td>췌장 β세포</td>
+<td>인슐린 수용체</td>
+<td>포도당 이용, 뇌에서 섭식 억제 신호</td>
+<td>체중 증가 위험</td>
+</tr>
+<tr class="even">
+<td>아밀린</td>
+<td>췌장 β세포</td>
+<td>칼시토닌 수용체+RAMP</td>
+<td>위 배출 지연, 포만</td>
+<td>유사체 개발 중</td>
+</tr>
+<tr class="odd">
+<td>렙틴</td>
+<td>지방세포</td>
+<td>렙틴 수용체</td>
+<td>포만, 에너지 소비</td>
+<td>일반 비만에선 효과 제한(렙틴 저항성)</td>
+</tr>
+</tbody>
+</table>
+<p>표에서 읽을 것이 있다. 약물이 된 신호는 GLP-1과 GIP처럼 <strong>하나의 호르몬이 여러 곳(뇌, 췌장, 위)에 동시에 작용하는 것</strong>이다. 그런데 한 호르몬만 쓴 약은 효과의 한계가 있었고, 옥신토모듈린처럼 두 수용체를 함께 켜는 분자가 다음 세대의 설계 원리가 되었다. 옥신토모듈린은 Wynne 등(2005)이 과체중·비만 성인에서 피하 투여로 체중이 줄었다고 보고한 바 있다. 여러 호르몬을 한 분자에 담는 전략은 13장과 16장에서 본격적으로 다룬다.</p>
+<h3 id="이-장의-요점">이 장의 요점</h3>
+<p>장에서는 그렐린만이 배고픔 신호이고 나머지는 대부분 포만 신호다. 신호는 혈액과 미주신경을 거쳐 3장의 궁상핵과 뇌간에 닿는다. 약이 된 것은 GLP-1과 GIP였고, 여러 신호를 동시에 쓰는 다중 작용제가 다음 단계다. 이 장의 곡선과 표는 방향과 구조를 보인 개념 자료이며, 정량 값은 2권에서 원자료로 확인한다.</p>
+<section id="참고문헌" class="refs">
+<h4>참고문헌</h4>
+<p>Batterham, R. L., Cowley, M. A., Small, C. J., Herzog, H., Cohen, M. A., Dakin, C. L., Wren, A. M., Brynes, A. E., Low, M. J., Ghatei, M. A., Cone, R. D., &amp; Bloom, S. R. (2002). Gut hormone PYY3-36 physiologically inhibits food intake. <em>Nature, 418</em>(6898), 650–654. https://doi.org/10.1038/nature00887</p>
+<p>Cooper, G. J. S., Willis, A. C., Clark, A., Turner, R. C., Sim, R. B., &amp; Reid, K. B. M. (1987). Purification and characterization of a peptide from amyloid-rich pancreases of type 2 diabetic patients. <em>Proceedings of the National Academy of Sciences, 84</em>(23), 8628–8632. https://doi.org/10.1073/pnas.84.23.8628</p>
+<p>Cummings, D. E., Purnell, J. Q., Frayo, R. S., Schmidova, K., Wisse, B. E., &amp; Weigle, D. S. (2001). A preprandial rise in plasma ghrelin levels suggests a role in meal initiation in humans. <em>Diabetes, 50</em>(8), 1714–1719. https://doi.org/10.2337/diabetes.50.8.1714</p>
+<p>Gibbs, J., Young, R. C., &amp; Smith, G. P. (1973). Cholecystokinin decreases food intake in rats. <em>Journal of Comparative and Physiological Psychology, 84</em>(3), 488–495. https://doi.org/10.1037/h0034870</p>
+<p>Gribble, F. M., &amp; Reimann, F. (2016). Enteroendocrine cells: Chemosensors in the intestinal epithelium. <em>Annual Review of Physiology, 78</em>, 277–299. https://doi.org/10.1146/annurev-physiol-021115-105439</p>
+<p>Holst, J. J. (2007). The physiology of glucagon-like peptide 1. <em>Physiological Reviews, 87</em>(4), 1409–1439. https://doi.org/10.1152/physrev.00034.2006</p>
+<p>Kojima, M., Hosoda, H., Date, Y., Nakazato, M., Matsuo, H., &amp; Kangawa, K. (1999). Ghrelin is a growth-hormone-releasing acylated peptide from stomach. <em>Nature, 402</em>(6762), 656–660. https://doi.org/10.1038/45230</p>
+<p>Woods, S. C., Lotter, E. C., McKay, L. D., &amp; Porte, D., Jr. (1979). Chronic intracerebroventricular infusion of insulin reduces food intake and body weight of baboons. <em>Nature, 282</em>(5738), 503–505. https://doi.org/10.1038/282503a0</p>
+<p>Wren, A. M., Seal, L. J., Cohen, M. A., Brynes, A. E., Frost, G. S., Murphy, K. G., Dhillo, W. S., Ghatei, M. A., &amp; Bloom, S. R. (2001). Ghrelin enhances appetite and increases food intake in humans. <em>Journal of Clinical Endocrinology &amp; Metabolism, 86</em>(12), 5992. https://doi.org/10.1210/jcem.86.12.8111</p>
+<p>Wynne, K., Park, A. J., Small, C. J., Patterson, M., Ellis, S. M., Murphy, K. G., Wren, A. M., Frost, G. S., Meeran, K., Ghatei, M. A., &amp; Bloom, S. R. (2005). Subcutaneous oxyntomodulin reduces body weight in overweight and obese subjects: A double-blind, randomized, controlled trial. <em>Diabetes, 54</em>(8), 2390–2395. https://doi.org/10.2337/diabetes.54.8.2390</p>
+</section>
+
+<h2 id="제5장-표적-장기-췌장-지방-간-근육-신장-심장">제5장 표적 장기: 췌장, 지방, 간, 근육, 신장, 심장</h2>
+<blockquote>
+<p><strong>이 장의 출발점</strong> 4장에서 우리는 호르몬이 어디서 나와 뇌에 닿는지를 보았다. 그러나 인크레틴 계열 약물은 뇌에서만 일하지 않는다. 몸 여러 장기에서 동시에 일하고, 그 가운데 어떤 효과는 약이 직접 만든 것이고 어떤 효과는 체중이 줄어서 따라온 결과다. 이 장은 장기별로 그 구분을 정리한다. 장기별 대사의 상세는 2권 31장(간), 32장(근육), 33장(지방조직), 34장(뇌와 β세포)에서 다룬다.</p>
+</blockquote>
+<h3 id="랑게르한스의-섬-췌장">5.1 랑게르한스의 섬: 췌장</h3>
+<p>1869년 독일의 의학도 Paul Langerhans는 현미경으로 췌장을 들여다보다가, 소화액을 만드는 세포 사이에 작은 세포 무리가 흩어져 있는 것을 보고 학위 논문에 기록했다. 그는 이 세포 무리의 기능을 몰랐다. 훗날 이 무리는 <strong>랑게르한스섬(islets of Langerhans, 췌도)</strong> 으로 불리게 되고, 몸의 혈당을 조절하는 중심 기관으로 밝혀진다. 이 이야기의 연도와 서술은 검증 대기 목록에 두었다.</p>
+<p>췌도에는 세 종류의 세포가 있다. <strong>α세포</strong>는 <strong>글루카곤(glucagon)</strong> 을 분비해 간에서 포도당을 내놓게 한다. <strong>β세포</strong>는 인슐린을 분비한다. <strong>δ세포</strong>는 <strong>소마토스타틴(somatostatin)</strong> 을 분비해 두 세포 모두에 브레이크 역할을 한다. 인크레틴 계열 약물의 췌장 작용은 이 세 세포에 대한 작용으로 정리된다. GLP-1은 β세포의 인슐린 분비를 포도당이 높을 때에만 늘리고, α세포의 글루카곤 분비를 줄이는 방향으로 작용한다고 알려져 있다(Campbell &amp; Drucker, 2013). 7장에서 보겠지만 “포도당이 높을 때에만”이라는 조건이 저혈당 위험을 낮추는 핵심이다.</p>
+<p>이 장면에서 한 가지 눈여겨볼 점이 있다. 비만약으로 쓰는 GLP-1 작용제의 가장 확실한 직접 작용점이 췌장이지만, 비만 환자의 체중 감소는 주로 뇌를 통한 식욕 감소로 설명된다(3장). 따라서 췌장 작용은 당뇨병 치료 효과의 기반이고, 체중 감소는 다른 경로가 만든다고 정리하는 것이 안전하다. 2권 19장에서 식후 인슐린 분비의 시간 곡선과 함께 정량적으로 다룬다.</p>
+<h3 id="지방조직-저장소에서-내분비-기관으로">5.2 지방조직: 저장소에서 내분비 기관으로</h3>
+<p>과거에는 지방을 에너지를 쌓아 두는 창고로만 여겼다. 렙틴의 발견(1장)이 이 인식을 바꾸었다. 지방은 호르몬을 분비하는 내분비 기관이다.</p>
+<p>지방조직에는 세 종류가 있다. <strong>백색지방</strong>은 에너지를 중성지방으로 저장한다. <strong>갈색지방</strong>은 미토콘드리아가 많고 탈공역 단백질 1(UCP1)로 에너지를 열로 태운다. <strong>베이지지방</strong>은 백색지방 속에서 자극에 따라 갈색지방과 비슷한 성질을 띠는 세포다. 성인에게도 갈색지방이 있다는 사실은 2009년 양전자 단층촬영 연구로 확인되었다(Cypess et al., 2009). 이 발견 때문에 갈색지방을 약물 표적으로 삼으려는 시도가 이어졌다. 이 열발생의 세포 내 기전은 2권 12장에서 자세히 본다.</p>
+<p>인크레틴 계열 약물로 줄어든 체중은 대부분 지방 감소로 보고된다. 그런데 이 지방 감소가 약물이 지방세포에 직접 작용해서 생기는지, 섭취가 줄어서 생기는지는 구분해야 한다. 현재의 일반적 해석은 후자다. 즉 약물이 먼저 식욕을 낮추고, 그 결과 에너지 수지가 음이 되어 지방이 줄어든다. 지방세포에 GLP-1 수용체가 거의 없다는 점도 이 해석과 맞는다. 이 해석은 검증 대기 목록에 있으며 33장에서 다시 정리한다.</p>
+<h3 id="간-지방간이라는-조용한-동반-질환">5.3 간: 지방간이라는 조용한 동반 질환</h3>
+<p>간은 지방산을 합성하고 저장하는 장기이자, 포도당을 만들어 내놓는 장기다. 비만에서는 간에 지방이 쌓이는 경우가 많다. 이 상태를 이 책은 앞서 1장에서 쓴 대로 <strong>대사이상 관련 지방간질환</strong>이라 부른다. 용어는 최근 몇 해 사이 국제적으로 개정되었으므로 문헌마다 명칭이 다르다.</p>
+<p>GLP-1 작용제가 이 질환을 개선한다는 근거는 임상시험에서 나왔다. Newsome 등(2021)은 세마글루타이드를 지방간염 환자에게 투여한 시험에서 지방간염의 소실이 위약군보다 많았다고 보고했다. 다만 이 효과가 간세포의 GLP-1 수용체에 직접 작용한 결과인지, 체중과 인슐린 저항의 개선을 통한 간접 효과인지는 아직 논쟁 중이다. 간세포에서의 수용체 발현 자체가 연구마다 일치하지 않는 것으로 알려져 있다. 이 논점은 2권 31장에서 다룬다.</p>
+<h3 id="근육-줄어든-몸무게-속에-무엇이-들어-있나">5.4 근육: 줄어든 몸무게 속에 무엇이 들어 있나</h3>
+<p>체중이 줄 때 줄어드는 것이 지방만은 아니다. 근육을 포함한 제지방량도 일부 줄어든다. 이는 약물과 상관없이 식이 제한으로 체중을 줄일 때도 나타나는 현상이다. 문제는 인크레틴 계열 약물이 만드는 체중 감소의 폭이 크기 때문에 절대적인 근육 감소량도 클 수 있다는 점이다. 임상시험에서 보고된 제지방 감소의 비율은 시험과 측정 방법에 따라 다르며, 어떤 비율이 정상 범위인지에 대해서는 합의가 완전하지 않다. 정확한 수치는 2권 32장에서 원논문의 측정 방법과 함께 정리한다.</p>
+<p>근육은 몸에서 가장 큰 포도당 소비 조직이다. 근육이 줄면 기초대사량이 낮아지고 체중이 다시 늘기 쉬운 조건이 만들어진다는 우려가 제기된다. 이 때문에 16장의 차세대 표적에는 근육을 보존하려는 접근이 포함된다. 단백질 섭취와 저항 운동 같은 비약물적 개입의 근거도 함께 다룬다.</p>
+<h3 id="신장과-심장-체중-이상의-이득">5.5 신장과 심장: 체중 이상의 이득</h3>
+<p>비만약의 임상적 의미는 체중 감소만으로 끝나지 않는다. 대규모 심혈관 결과 시험은 이 약물들이 심장과 신장에 미치는 영향을 보여 주었다.</p>
+<p>당뇨병 환자를 대상으로 한 세마글루타이드 시험(SUSTAIN-6)에서 주요 심혈관 사건이 위약보다 적었다(Marso et al., 2016). 비만하지만 당뇨병이 없는 심혈관 질환자를 대상으로 한 SELECT 시험에서도 세마글루타이드가 주요 심혈관 사건의 위험을 낮추었다(Lincoff et al., 2023). 신장에서는 당뇨병성 신장병 환자를 대상으로 한 FLOW 시험이 신장 결과를 낮추는 방향의 결과를 보고했다(Perkovic et al., 2024). 각 시험의 정확한 위험비와 대상, 추적 기간은 검증을 마친 뒤 13~17장에서 해당 약물과 함께 서술한다.</p>
+<p>여기서 반드시 구분할 것이 있다. 이 이득이 체중 감소 때문인지, 혈압·혈당·염증의 개선 때문인지, 약물이 심장과 신장에 직접 작용하기 때문인지는 아직 분리되지 않았다. 심근에서 GLP-1 수용체의 발현은 사람에서 일관되지 않다는 보고가 있다. 이 구분은 3권 12장에서 “약물 밖의 신호”를 논할 때도 중요하다.</p>
+<h3 id="지도로-정리하기">5.6 지도로 정리하기</h3>
+<p>그림 5-1은 이 장의 내용을 한 장에 모은 것이다. 중앙에 약물을 두고, 장기별 작용을 화살표로 이었다. 화살표 색은 해석의 위상을 나타낸다.</p>
+<p><strong>그림 5-1. 인크레틴 계열 약물의 장기별 효과 지도.</strong> 중앙의 약물에서 여섯 장기로 가는 화살표. 갈색은 직접 작용이 비교적 분명한 장기(췌장)와 체중 감소의 결과로 설명되는 지방조직, 초록은 임상 결과가 보고되었으나 직접·간접 구분이 열려 있는 장기(간, 신장, 심장·혈관), 붉은색은 부정적 영향이 우려되는 장기(근육)를 뜻한다. 개념도이며 효과의 크기는 나타내지 않는다.</p>
+<figure>
+<img src="../figures/out/그림5-1.png" alt="그림 5-1" />
+<figcaption aria-hidden="true">그림 5-1</figcaption>
+</figure>
+<p>그림에서 읽을 것은 두 가지다. 첫째, 이 약물의 장기별 작용은 위상이 서로 다르다. 췌장 작용은 수용체-세포 수준에서 설명이 가능하지만, 심장과 신장의 이득은 아직 임상 결과가 설명보다 앞서 있다. 둘째, 근육은 유일하게 부정적 방향으로 표시되었다. 이것이 16장 이후에서 새 약물의 요구 조건이 되는 이유다.</p>
+<p>표 5-1은 장기별 근거의 수준을 비교하기 위한 것이다. 근거 수준은 “임상시험 결과 존재”, “기전 근거 존재”, “직접 작용 확인” 세 단계로 구분했고, 이 구분은 책 전체에서 일관되게 쓴다.</p>
+<p><strong>표 5-1. 장기별 작용 방식과 근거 수준.</strong></p>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>장기</th>
+<th>관찰된 변화</th>
+<th>직접 작용 근거</th>
+<th>대표 시험 또는 문헌</th>
+<th>이 책의 상세 위치</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>췌장</td>
+<td>포도당 의존성 인슐린 분비 증가, 글루카곤 감소</td>
+<td>비교적 분명</td>
+<td>Campbell &amp; Drucker (2013)</td>
+<td>2권 19장, 1권 7장</td>
+</tr>
+<tr class="even">
+<td>지방조직</td>
+<td>지방량 감소</td>
+<td>간접(섭취 감소)으로 해석</td>
+<td>Cypess 등 (2009; 갈색지방)</td>
+<td>2권 33장</td>
+</tr>
+<tr class="odd">
+<td>간</td>
+<td>지방간염 소실 증가</td>
+<td>논쟁 중</td>
+<td>Newsome 등 (2021)</td>
+<td>2권 31장</td>
+</tr>
+<tr class="even">
+<td>근육</td>
+<td>제지방 감소 우려</td>
+<td>해당 없음(체중 감소의 부작용)</td>
+<td>시험별 측정</td>
+<td>2권 32장, 1권 16장</td>
+</tr>
+<tr class="odd">
+<td>신장</td>
+<td>신장 결과 감소 방향</td>
+<td>논쟁 중</td>
+<td>Perkovic 등 (2024)</td>
+<td>1권 17장</td>
+</tr>
+<tr class="even">
+<td>심장·혈관</td>
+<td>주요 심혈관 사건 감소</td>
+<td>논쟁 중</td>
+<td>Marso 등 (2016); Lincoff 등 (2023)</td>
+<td>1권 13장</td>
+</tr>
+</tbody>
+</table>
+<h3 id="이-장의-요점">이 장의 요점</h3>
+<p>약물이 표적으로 삼는 것은 뇌와 췌장이지만, 임상 효과는 간, 신장, 심장으로 퍼진다. 어느 부분이 직접 작용이고 어느 부분이 체중 감소의 결과인지를 구분하는 일이 새 약물 설계의 출발점이다. 이 구분은 3권 2장의 표적 점수화에서 “직접 작용 근거” 항목으로 쓰인다.</p>
+<p><strong>2부 점검:</strong> 4~5장으로 호르몬-회로-장기 지도가 완성되었다(산출물 1).</p>
+<section id="참고문헌" class="refs">
+<h4>참고문헌</h4>
+<p>Campbell, J. E., &amp; Drucker, D. J. (2013). Pharmacology, physiology, and mechanisms of incretin hormone action. <em>Cell Metabolism, 17</em>(6), 819–837. https://doi.org/10.1016/j.cmet.2013.04.008</p>
+<p>Cypess, A. M., Lehman, S., Williams, G., Tal, I., Rodman, D., Goldfine, A. B., Kuo, F. C., Palmer, E. L., Tseng, Y.-H., Doria, A., Kolodny, G. M., &amp; Kahn, C. R. (2009). Identification and importance of brown adipose tissue in adult humans. <em>New England Journal of Medicine, 360</em>(15), 1509–1517. https://doi.org/10.1056/NEJMoa0810780</p>
+<p>Lincoff, A. M., Brown-Frandsen, K., Colhoun, H. M., Deanfield, J., Emerson, S. S., Esbjerg, S., Hardt-Lindberg, S., Hovingh, G. K., Kahn, S. E., Kushner, R. F., Lingvay, I., Oral, T. K., Michelsen, M. M., Plutzky, J., Tornøe, C. W., &amp; Ryan, D. H. (2023). Semaglutide and cardiovascular outcomes in obesity without diabetes. <em>New England Journal of Medicine, 389</em>(24), 2221–2232. https://doi.org/10.1056/NEJMoa2307563</p>
+<p>Marso, S. P., Bain, S. C., Consoli, A., Eliaschewitz, F. G., Jódar, E., Leiter, L. A., Lingvay, I., Rosenstock, J., Seufert, J., Warren, M. L., Woo, V., Hansen, O., Holst, A. G., Pettersson, J., &amp; Vilsbøll, T. (2016). Semaglutide and cardiovascular outcomes in patients with type 2 diabetes. <em>New England Journal of Medicine, 375</em>(19), 1834–1844. https://doi.org/10.1056/NEJMoa1607141</p>
+<p>Newsome, P. N., Buchholtz, K., Cusi, K., Linder, M., Okanoue, T., Ratziu, V., Sanyal, A. J., Sejling, A.-S., &amp; Harrison, S. A. (2021). A placebo-controlled trial of subcutaneous semaglutide in nonalcoholic steatohepatitis. <em>New England Journal of Medicine, 384</em>(12), 1113–1124. https://doi.org/10.1056/NEJMoa2028395</p>
+<p>Perkovic, V., Tuttle, K. R., Rossing, P., Mahaffey, K. W., Mann, J. F. E., Bakris, G., Baeres, F. M. M., Idorn, T., Bosch-Traberg, H., Lausvig, N. L., &amp; Pratley, R. (2024). Effects of semaglutide on chronic kidney disease in patients with type 2 diabetes. <em>New England Journal of Medicine, 391</em>(2), 109–121. https://doi.org/10.1056/NEJMoa2403347</p>
+</section>
+
+<h1 class="part" id="제3부-세포학과-신호전달">제3부 세포학과 신호전달</h1>
+<h2 id="제6장-수용체의-세포학-b군-g단백질-연결-수용체와-세포막">제6장 수용체의 세포학: B군 G단백질 연결 수용체와 세포막</h2>
+<blockquote>
+<p><strong>이 장의 출발점</strong> 5장까지 우리는 약물이 몸의 어느 장기에서 무엇을 바꾸는지 보았다. 이제 시선을 한 개의 세포로 옮긴다. 약물은 세포막 위의 수용체 한 종류에 붙고, 그 순간부터의 사건이 모든 효과를 만든다. 이 장은 그 수용체가 무엇이고, 약이 붙으면 어떻게 모양을 바꾸며, 신호가 어디로 갈라지는지를 다룬다. 호르몬 신호의 일반 원리는 2권 15장에서 이어서 다룬다.</p>
+</blockquote>
+<h3 id="수용체를-잡아라-복제의-시대">6.1 수용체를 잡아라: 복제의 시대</h3>
+<p>2장에서 우리는 GLP-1이라는 호르몬이 1980년대에 발견되는 과정을 보았다. 호르몬이 있다면 그것을 받는 수용체가 있어야 한다. 그러나 수용체는 세포막에 박힌 단백질이고, 한 세포에 많지 않아서 혈액이나 조직에서 정제하기가 극히 어려웠다. 수용체를 찾는 길은 결국 그 유전자를 찾는 일이었다.</p>
+<p>1992년 Thorens는 쥐의 췌도 세포에서 GLP-1 수용체의 유전자를 복제했다(Thorens, 1992). 이 수용체는 세포막을 일곱 번 가로지르는 구조를 가진 <strong>G단백질 연결 수용체(G protein-coupled receptor, GPCR)</strong> 였다. 그런데 이 수용체는 우리가 교과서에서 흔히 보던 GPCR과 달랐다. 세포 밖으로 나온 부분이 유난히 길었고, 서열 계통도 아드레날린 수용체와 같은 큰 가족(A군)에 속하지 않고 세크레틴 수용체 가족, 곧 <strong>B군(class B1)</strong> 에 속했다. 이 가족에는 GLP-1 수용체 외에 GIP 수용체, 글루카곤 수용체, 칼시토닌 수용체 등이 들어 있다. 이 가족의 이름과 분류는 검증 대기 목록에 두었다.</p>
+<p>이 사실이 약물 설계에 의미하는 바는 크다. A군 수용체는 작은 분자가 막 안쪽의 포켓에 들어가 켜고 끄는 방식이 많다. B군 수용체의 리간드는 30~40개 아미노산으로 이루어진 비교적 큰 펩타이드다. 그래서 오랫동안 이 수용체를 겨냥한 약은 펩타이드 주사제였고, 경구 소분자는 거의 없었다. 15장에서 다룰 소분자 작용제가 왜 어려운 과제인지는 이 구조에서 나온다.</p>
+<h3 id="두-도메인-모형-펩타이드는-수용체를-어떻게-잡는가">6.2 두 도메인 모형: 펩타이드는 수용체를 어떻게 잡는가</h3>
+<p>B군 수용체는 크게 두 부분으로 이루어진다. 세포 밖에 길게 나온 <strong>세포 외 도메인(extracellular domain, ECD)</strong> 과, 막을 일곱 번 가로지르는 <strong>막횡단 도메인(transmembrane domain, TMD)</strong> 이다. 펩타이드 리간드의 한쪽 끝(C 말단 쪽)이 먼저 세포 외 도메인에 붙어 위치를 잡고, 다른 쪽 끝(N 말단 쪽)이 막횡단 도메인의 안쪽으로 들어가 수용체를 활성화시킨다는 설명이 오래 전부터 널리 받아들여졌다. 이를 <strong>두 도메인 모형</strong>이라 부른다.</p>
+<p>이 모형은 2017년 극저온 전자현미경으로 활성화된 GLP-1 수용체와 G단백질의 복합체 구조가 풀리면서 눈으로 확인되었다(Zhang et al., 2017). 구조에서 펩타이드는 막횡단 도메인이 만든 틈 안으로 N 말단 쪽이 깊이 들어가 있고, 수용체의 막 안쪽 부분이 벌어지면서 G단백질이 들어올 자리가 열린다. 이 이야기에서 약물 설계자가 얻는 것은 두 가지다. 첫째, 리간드의 N 말단 몇 개 아미노산이 활성의 열쇠다. 2장의 세마글루타이드에서 8번 위치에 Aib를 넣은 이유가 효소 분해를 막으려는 것이었다는 점을 떠올리면 좋다. 둘째, 수용체의 모양 변화가 막 속에서 일어난다는 것은 지질 환경이 활성에 영향을 준다는 뜻이다.</p>
+<h3 id="세포막이라는-무대">6.3 세포막이라는 무대</h3>
+<p>세포막은 지질 이중층이다. 수용체는 이 이중층에 박혀 있고, 막의 두께와 지질 조성, 콜레스테롤의 양이 단백질의 모양과 움직임에 영향을 준다는 보고가 있다. 이 효과가 GLP-1 수용체 신호에 어느 정도 기여하는지는 아직 정리되어 있지 않아서, 이 책은 막 환경이 수용체 기능의 변수가 될 수 있다는 정도로만 서술한다. 3권 6장에서 막단백질을 분자동역학으로 계산할 때 지질 이중층을 직접 구성하는 이유가 바로 이것이다.</p>
+<h3 id="두-갈래의-신호-g단백질과-아레스틴">6.4 두 갈래의 신호: G단백질과 아레스틴</h3>
+<p>리간드가 붙은 수용체는 모양을 바꾸고, 세포 안쪽에서 두 종류의 단백질을 부른다. 그림 6-1이 이 갈림길이다.</p>
+<p><strong>그림 6-1. B군 수용체 활성화 뒤의 두 신호 경로.</strong> 펩타이드 작용제가 수용체에 붙으면 한쪽(왼쪽)에서는 Gs 단백질이 아데닐릴 고리화효소를 켜서 cAMP가 늘고 PKA와 EPAC2가 활성화된다. 다른 쪽(오른쪽)에서는 수용체가 GRK에 인산화되어 β-아레스틴이 결합하고, 수용체가 내재화되어 재순환되거나 분해된다. 점선은 내재화된 수용체가 엔도솜에서 신호를 낼 수 있다는 보고를 뜻한다. 개념도이며 속도와 양은 나타내지 않는다. GRK는 G단백질 연결 수용체 인산화효소, PKA는 단백질 인산화효소 A, EPAC2는 cAMP 직접 활성화 교환인자 2.</p>
+<figure>
+<img src="../figures/out/그림6-1.png" alt="그림 6-1" />
+<figcaption aria-hidden="true">그림 6-1</figcaption>
+</figure>
+<p>왼쪽 경로가 약리 효과의 주경로다. GLP-1 수용체는 주로 <strong>Gs 단백질</strong>과 연결되어 <strong>아데닐릴 고리화효소</strong>를 켜고, 세포 안의 <strong>고리형 아데노신 일인산(cyclic AMP, cAMP)</strong> 이 늘어난다. cAMP는 <strong>단백질 인산화효소 A(PKA)</strong> 와 <strong>cAMP 직접 활성화 교환인자 2(EPAC2)</strong> 를 켜서 인슐린 분비와 유전자 발현을 일으킨다. 이 흐름의 하류는 7장에서 따라간다. 일부 보고는 GLP-1 수용체가 Gq 단백질과도 연결될 수 있다고 하나, 연결의 크기와 생리적 의미는 세포 종류와 조건에 따라 달라 아직 논쟁 중이다.</p>
+<p>오른쪽 경로는 신호를 끄는 장치로 알려졌다. 활성화된 수용체는 <strong>G단백질 연결 수용체 인산화효소(GRK)</strong> 에 의해 인산화되고, 여기에 <strong>β-아레스틴(β-arrestin)</strong> 이 달라붙는다. 아레스틴이 붙으면 수용체는 G단백질과 더 이상 만나지 못하고, 막에서 안쪽으로 끌려 들어간다. 이 과정을 <strong>내재화(internalization)</strong> 라 한다. 내재화된 수용체는 다시 막으로 돌아가 재사용되거나(재순환), 분해된다. 어느 쪽으로 가는지가 약의 효과 지속 시간과 내성에 영향을 줄 수 있다.</p>
+<p>그런데 이 구도는 지난 십수 년 사이에 수정되었다. 내재화된 수용체가 엔도솜 안에서도 신호를 계속 낼 수 있다는 개념이 다른 수용체에서 먼저 보고되었다(Irannejad et al., 2013). 그림의 점선 상자가 이것이다. 이 개념이 GLP-1 수용체에 어느 정도 적용되는지는 연구가 진행 중이며, 이 책은 가능성으로만 서술한다. 어떤 경우든 수용체의 신호를 “켜기”와 “끄기”로 나누는 이분법은 지나친 단순화다.</p>
+<h3 id="같은-수용체-다른-신호-편향-작용">6.5 같은 수용체, 다른 신호: 편향 작용</h3>
+<p>같은 수용체에 붙는 약물이라도 두 경로를 똑같이 켜지 않을 수 있다. 어떤 약물은 G단백질 경로를 강하게 켜고 아레스틴 경로는 약하게 켠다. 반대 경우도 있다. 이 현상을 <strong>편향 작용(biased agonism)</strong> 이라 한다(Kenakin &amp; Christopoulos, 2013). 약학적으로 말하면 수용체는 켜짐과 꺼짐의 두 상태만 가진 스위치가 아니라, 리간드가 어떻게 붙느냐에 따라 여러 모양을 취하는 다기능 단백질이다.</p>
+<p><strong>그림 6-2. 편향 작용의 개념도.</strong> 같은 수용체에 세 종류의 작용제가 붙었을 때 cAMP 신호와 β-아레스틴 신호의 세기 비율이 달라진다. 화살표의 굵기가 신호의 세기를 나타내며, 균형 작용제는 두 신호를 비슷하게, G단백질 편향 작용제는 cAMP 쪽을 강하게, 아레스틴 편향 작용제는 아레스틴 쪽을 강하게 일으킨다. 개념도이며 실제 측정값이 아니다.</p>
+<figure>
+<img src="../figures/out/그림6-2.png" alt="그림 6-2" />
+<figcaption aria-hidden="true">그림 6-2</figcaption>
+</figure>
+<p>이 개념이 비만약에서 중요한 이유는 두 가지다. 첫째, 아레스틴 경로가 약하면 내재화가 줄어 수용체가 막에 더 오래 남고, 효과가 오래갈 수 있다는 가설이 있다(Jones et al., 2018). 둘째, 두 경로의 신호가 서로 다른 생리 효과와 부작용에 연결될 수 있다는 가설이 있다. 티르제파타이드가 GLP-1 수용체에서 cAMP 쪽으로 편향되어 있다는 보고가 있다(Willard et al., 2020). 다만 편향의 크기가 임상 효과나 이상반응의 차이로 이어지는지는 아직 정립되지 않았다. 이 책은 편향을 “설계 변수의 하나”로 두되, 임상적 의미는 단정하지 않는다. 3권 10장에서 독자가 직접 편향 계수를 계산해 보도록 사례로 구성한 이유다.</p>
+<h3 id="가족의-다른-구성원-gip-글루카곤-아밀린-수용체">6.6 가족의 다른 구성원: GIP, 글루카곤, 아밀린 수용체</h3>
+<p>같은 B군에 속한 수용체들은 구조가 비슷해서 한 약물이 둘 이상에 붙을 수 있다. 티르제파타이드가 GIP 수용체와 GLP-1 수용체에 모두 작용하는 것이 대표적이다(14장). 글루카곤 수용체는 간에서 포도당을 내놓는 신호를 맡지만, 에너지 소비를 늘리는 쪽으로도 연구되고 있다.</p>
+<p>아밀린 수용체는 구성이 특이하다. 칼시토닌 수용체 하나만으로는 아밀린을 잘 받지 못하고, <strong>수용체 활성 변형 단백질(receptor activity-modifying protein, RAMP)</strong> 이 붙어서 짝을 이루어야 아밀린 수용체가 된다. 1998년 McLatchie 등은 비슷한 수용체인 CGRP 수용체에서 이 현상을 처음 보고했고(McLatchie et al., 1998), 이후 칼시토닌 수용체와 RAMP1, RAMP2, RAMP3의 조합이 서로 다른 수용체 약리를 만든다는 것이 정리되었다(Poyner et al., 2002). 하나의 유전자 산물이 짝에 따라 다른 수용체가 된다는 점이 약물 선택성을 설계할 때 변수가 된다. 표 6-1에 이 가족의 특징을 모았다.</p>
+<p><strong>표 6-1. 비만약 관련 B군 수용체의 특징.</strong></p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>수용체</th>
+<th>주 리간드</th>
+<th>주 연결 G단백질</th>
+<th>주요 발현 부위(보고)</th>
+<th>관련 약물</th>
+<th>비고</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>GLP1R</td>
+<td>GLP-1</td>
+<td>Gs(Gq 연결은 논쟁)</td>
+<td>췌도 β세포, 뇌(시상하부·뇌간)</td>
+<td>리라글루타이드, 세마글루타이드, 티르제파타이드</td>
+<td>내재화·재순환 연구 활발</td>
+</tr>
+<tr class="even">
+<td>GIPR</td>
+<td>GIP</td>
+<td>Gs</td>
+<td>췌도, 지방조직, 뇌</td>
+<td>티르제파타이드</td>
+<td>작용 방향에 논쟁</td>
+</tr>
+<tr class="odd">
+<td>GCGR</td>
+<td>글루카곤</td>
+<td>Gs</td>
+<td>간, 일부 다른 조직</td>
+<td>삼중 작용제 후보</td>
+<td>에너지 소비 증가 가능성</td>
+</tr>
+<tr class="even">
+<td>아밀린 수용체</td>
+<td>아밀린</td>
+<td>Gs</td>
+<td>뇌간 최후야 등</td>
+<td>아밀린 유사체</td>
+<td>칼시토닌 수용체와 RAMP의 복합체</td>
+</tr>
+</tbody>
+</table>
+<h3 id="이-장의-요점">이 장의 요점</h3>
+<p>B군 수용체는 큰 세포 외 도메인과 막횡단 도메인을 가지고, 펩타이드의 한쪽 끝은 도메인 사이에서 위치를 잡고 다른 끝은 안쪽으로 들어가 활성화한다. 활성화된 수용체는 G단백질과 아레스틴의 두 갈래로 신호를 낸다. 같은 수용체도 약물에 따라 두 갈래의 비율이 달라질 수 있고, 이것이 새 약물 설계의 변수다. 다음 7장에서는 첫 갈래의 신호가 췌장 β세포에서 인슐린 분비로 이어지는 하류를 따라간다.</p>
+<section id="참고문헌" class="refs">
+<h4>참고문헌</h4>
+<p>Irannejad, R., Tomshine, J. C., Tomshine, J. R., Chevalier, M., Mahoney, J. P., Steyaert, J., Rasmussen, S. G. F., Sunahara, R. K., El-Samad, H., Huang, B., &amp; von Zastrow, M. (2013). Conformational biosensors reveal GPCR signalling from endosomes. <em>Nature, 495</em>(7442), 534–538. https://doi.org/10.1038/nature12000</p>
+<p>Jones, B., Buenaventura, T., Kanda, N., Chabosseau, P., Owen, B. M., Scott, R., Goldin, R., Angkathunyakul, N., Corrêa, I. R., Jr., Bosco, D., Johnson, P. R., Piemonti, L., Marchetti, P., Shapiro, A. M. J., Cochran, B. J., Hanyaloglu, A. C., Inoue, A., Tan, T., Rutter, G. A., … Bloom, S. R. (2018). Targeting GLP-1 receptor trafficking to improve agonist efficacy. <em>Nature Communications, 9</em>, Article 1602. https://doi.org/10.1038/s41467-018-03941-2</p>
+<p>Kenakin, T., &amp; Christopoulos, A. (2013). Signalling bias in new drug discovery: Detection, quantification and therapeutic impact. <em>Nature Reviews Drug Discovery, 12</em>(3), 205–216. https://doi.org/10.1038/nrd3954</p>
+<p>McLatchie, L. M., Fraser, N. J., Main, M. J., Wise, A., Brown, J., Thompson, N., Solari, R., Lee, M. G., &amp; Foord, S. M. (1998). RAMPs regulate the transport and ligand specificity of the calcitonin-receptor-like receptor. <em>Nature, 393</em>(6683), 333–339. https://doi.org/10.1038/30666</p>
+<p>Poyner, D. R., Sexton, P. M., Marshall, I., Smith, D. M., Quirion, R., Born, W., Muff, R., Fischer, J. A., &amp; Foord, S. M. (2002). International Union of Pharmacology. XXXII. The mammalian calcitonin gene-related peptides, adrenomedullin, amylin, and calcitonin receptors. <em>Pharmacological Reviews, 54</em>(2), 233–246. https://doi.org/10.1124/pr.54.2.233</p>
+<p>Thorens, B. (1992). Expression cloning of the pancreatic beta cell receptor for the gluco-incretin hormone glucagon-like peptide 1. <em>Proceedings of the National Academy of Sciences, 89</em>(18), 8641–8645. https://doi.org/10.1073/pnas.89.18.8641</p>
+<p>Willard, F. S., Douros, J. D., Gabe, M. B. N., Showalter, A. D., Wainscott, D. B., Suter, T. M., Capozzi, M. E., van der Velden, W. J. C., Stutsman, C., Cardona, G. R., Urva, S., Emmerson, P. J., Holst, J. J., D’Alessio, D. A., Coghlan, M. P., Rosenkilde, M. M., Campbell, J. E., &amp; Sloop, K. W. (2020). Tirzepatide is an imbalanced and biased dual GIP and GLP-1 receptor agonist. <em>JCI Insight, 5</em>(17), Article e140532. https://doi.org/10.1172/jci.insight.140532</p>
+<p>Zhang, Y., Sun, B., Feng, D., Hu, H., Chu, M., Qu, Q., Tarrasch, J. T., Li, S., Sun Kobilka, T., Kobilka, B. K., &amp; Skiniotis, G. (2017). Cryo-EM structure of the activated GLP-1 receptor in complex with a G protein. <em>Nature, 546</em>(7657), 248–253. https://doi.org/10.1038/nature22394</p>
+</section>
+
+<h2 id="제7장-camp에서-인슐린-분비까지-신호의-하류">제7장 cAMP에서 인슐린 분비까지: 신호의 하류</h2>
+<blockquote>
+<p><strong>이 장의 출발점</strong> 6장에서 우리는 GLP-1 수용체가 Gs 단백질을 깨워 세포 안에 cAMP(cyclic adenosine monophosphate, 고리형 아데노신 일인산)를 만든다는 데까지 왔다. 이 장은 그 cAMP가 췌장 β세포 안에서 어떤 단백질을 움직여 마침내 인슐린 과립이 세포 밖으로 나가게 하는지를 따라간다. 그리고 왜 이 약이 혈당이 낮을 때는 거의 인슐린을 내지 않는지, 곧 포도당 의존성의 뿌리를 설명한다. (2권 19장 β세포 에너지 감지, 21장 칼슘 신호와 연결된다.)</p>
+</blockquote>
+<h3 id="신호를-따라가는-법-상류와-하류">7.1 신호를 따라가는 법: 상류와 하류</h3>
+<p>생물학에서 신호의 흐름을 말할 때, 수용체에 가까운 쪽을 상류, 최종 반응에 가까운 쪽을 하류라고 부른다. 6장까지가 상류의 이야기였다면 이 장은 하류다. 약을 만드는 사람에게 하류를 아는 일은 두 가지 이유로 중요하다. 첫째, 약이 왜 어떤 조건에서는 듣고 어떤 조건에서는 듣지 않는지가 하류의 구조에서 나온다. 둘째, 상류의 수용체를 건드리는 방법 말고도 하류의 단백질을 직접 겨냥하는 길이 있기 때문이다.</p>
+<p>β세포(beta cell)는 췌도(pancreatic islet)에서 인슐린을 만드는 세포다. 이 세포는 혈액 속 포도당 농도를 재는 센서이면서 동시에 그 결과로 호르몬을 내보내는 분비기관이다. 한 세포 안에 “재는 장치”와 “내보내는 장치”가 함께 있다는 점이, 이 세포를 이해하는 열쇠다.</p>
+<h3 id="포도당이-스스로-내는-신호-방아쇠-경로">7.2 포도당이 스스로 내는 신호: 방아쇠 경로</h3>
+<p>인슐린 분비를 일으키는 첫 번째 길은 포도당 자체다. 이 길은 헨퀸(Henquin, 2000)의 정리에 따라 흔히 방아쇠 경로(triggering pathway)라고 부른다. 단계는 다음과 같다.</p>
+<ol type="1">
+<li>포도당이 수송체를 통해 β세포 안으로 들어온다.</li>
+<li>글루코키네이스(glucokinase)가 포도당을 인산화한다. 이 효소는 혈당 범위에서 반응 속도가 농도에 민감하게 달라져서 포도당 센서 역할을 한다고 이해된다.</li>
+<li>해당과정과 미토콘드리아 산화로 ATP(adenosine triphosphate, 아데노신 삼인산)가 만들어져 세포 안의 ATP/ADP 비가 올라간다.</li>
+<li>ATP에 민감한 칼륨 채널(KATP 채널)이 닫힌다.</li>
+<li>칼륨이 나가지 못해 막이 탈분극(depolarization)되고, 전압 의존성 칼슘 채널이 열린다.</li>
+<li>칼슘 이온(Ca2+)이 세포 안으로 들어와 인슐린 과립의 방출을 일으킨다.</li>
+</ol>
+<p>KATP 채널은 Kir6.2라는 구멍 단백질과 SUR1이라는 조절 단백질이 함께 이룬 복합체다. 이 채널이 닫히는 것을 처음 단일 채널 수준에서 보인 연구가 애쉬크로프트와 동료들(Ashcroft et al., 1984)의 실험이다. 이 채널은 약의 표적이기도 하다. 설폰요소제(sulfonylurea)는 SUR1에 붙어 채널을 닫아 인슐린을 내게 하는데, 포도당이 낮아도 채널을 닫기 때문에 저혈당 위험이 있다. 반대로 채널 유전자(KCNJ11, ABCC8)의 기능 획득 돌연변이는 채널이 닫히지 못해 신생아 당뇨병을 일으키며, 이 환자들이 설폰요소제로 치료될 수 있음이 보고되었다(Gloyn et al., 2004). 한 단백질의 이야기가 병, 진단, 약을 모두 설명하는 드문 사례다.</p>
+<h3 id="camp가-더하는-신호-증폭-경로">7.3 cAMP가 더하는 신호: 증폭 경로</h3>
+<p>방아쇠 경로만으로도 인슐린은 나온다. 그러나 포도당만 있을 때보다 훨씬 많이 나오게 하는 것이 증폭 경로(amplifying pathway)이고, 여기에 GLP-1이 들어온다. 헨퀸(2000)은 포도당이 칼슘 신호 외에도 분비를 키우는 신호를 낸다고 정리했으며, 장 호르몬은 cAMP를 통해 이 증폭을 더한다.</p>
+<p>GLP-1 수용체에서 Gs가 아데닐릴 사이클레이스(adenylyl cyclase)를 켜면 cAMP가 늘고, cAMP는 크게 두 갈래의 단백질을 움직인다.</p>
+<ul>
+<li><strong>PKA(protein kinase A, 단백질 인산화효소 A)</strong>: 여러 단백질을 인산화하여 칼슘 채널의 활동과 과립 방출 준비 상태에 영향을 준다.</li>
+<li><strong>EPAC2(exchange protein directly activated by cAMP 2)</strong>: PKA를 거치지 않고 cAMP에 직접 반응하는 단백질로, 과립 방출 장치와 관련된 단백질(Rim2 등)과 연결되어 인슐린 분비의 증폭에 기여한다고 보고되었다(Kashima et al., 2001).</li>
+</ul>
+<p>두 갈래의 상대적 기여 비율은 조건과 연구 방법에 따라 보고가 다르므로, 이 책에서는 “둘 다 관여한다”는 수준으로만 쓴다. 중요한 것은 구조다. cAMP는 방아쇠를 당기는 신호가 아니라, 이미 당겨진 방아쇠의 효과를 키우는 신호라는 점이다.</p>
+<p><strong>그림 7-1. β세포의 두 신호 경로.</strong> 왼쪽은 포도당이 만드는 방아쇠 경로, 오른쪽은 GLP-1이 만드는 증폭 경로다. 두 경로는 인슐린 과립 분비에서 만난다. 가운데 점선 상자는 포도당이 낮을 때 증폭이 약한 이유를 요약한다.</p>
+<p><img src="../figures/out/그림7-1.png" /></p>
+<p>그림 7-1을 읽는 방법은 간단하다. 왼쪽 줄이 끊기면, 곧 포도당이 낮아 ATP와 칼슘이 오르지 않으면, 오른쪽 줄이 아무리 켜져 있어도 분비를 크게 키울 재료가 없다. 증폭은 곱셈에 가깝고, 기본 신호가 0에 가까우면 결과도 작다. 이것이 GLP-1 계열 약이 정상 혈당에서는 인슐린을 크게 올리지 않는 구조적 이유로 이해된다.</p>
+<h3 id="포도당-의존성-약에게-안전장치가-있는-이유">7.4 포도당 의존성: 약에게 안전장치가 있는 이유</h3>
+<p>이 현상은 임상에서도 관찰되었다. 낫이 같은 연구자들(Nauck et al., 1993)은 GLP-1 주입이 높은 혈당에서는 인슐린 분비를 크게 늘렸지만 혈당이 정상 범위로 내려오면 그 효과가 사라지는 양상을 보고했다. 홀츠와 동료들(Holz et al., 1993)은 세포 수준에서, GLP-1이 포도당에 반응하지 못하던 β세포가 반응하도록 만들 수 있음을 보였다. 두 보고는 “포도당이 있어야 GLP-1이 일한다”는 같은 이야기를 서로 다른 규모에서 말한다.</p>
+<p>다만 포도당 의존성이 저혈당 위험이 없다는 뜻은 아니다. 설폰요소제나 인슐린과 함께 쓰면 위험이 올라간다는 점은 임상에서 잘 알려져 있다. 약이 하나의 안전장치를 갖는 것과, 다른 약과 겹쳐 그 안전장치가 무력해지는 것은 별개의 일이다.</p>
+<h3 id="시간-눈금으로-보는-신호">7.5 시간 눈금으로 보는 신호</h3>
+<p>세포 안의 신호는 서로 다른 속도로 흐른다. 채널이 열리고 닫히는 것은 밀리초에서 초, 칼슘과 cAMP의 변동은 초에서 분, 과립 분비는 분 단위, 유전자 발현과 인슐린 합성은 시간 단위, β세포의 수와 생존 변화는 일에서 주 단위의 일이다. 약을 설계할 때 어느 눈금의 효과를 노리는지를 분명히 해야 하는 이유가 여기에 있다. 하루 한 번 맞는 약과 주 한 번 맞는 약이 같은 수용체를 쓰더라도 세포 안에서 겪는 신호의 시간 눈금은 같지 않다.</p>
+<p><strong>그림 7-2. 인슐린 분비 신호의 시간 눈금.</strong> 위에서 아래로 갈수록 느린 현상이다. 왼쪽 상자는 대략의 시간 범위, 오른쪽 상자는 그 시간대에 일어나는 대표 현상이다.</p>
+<p><img src="../figures/out/그림7-2.png" /></p>
+<p>그림 7-2에서 보듯 한 번의 자극이 짧게는 세포막의 전기 변화, 길게는 세포 집단의 변화까지 이어진다. 만성 투여 약의 효과는 아래쪽 눈금까지 닿는 반면, 식후 한 번의 반응은 위쪽 눈금에서 끝난다. 2권에서 다룰 에너지 대사의 시간 눈금도 같은 방식으로 읽을 수 있다.</p>
+<h3 id="하류의-단백질들을-한눈에">7.6 하류의 단백질들을 한눈에</h3>
+<p><strong>표 7-1. β세포 인슐린 분비 신호의 주요 구성요소.</strong></p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>구성요소</th>
+<th>역할</th>
+<th>약·질환과의 연결</th>
+<th>비고</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>글루코키네이스</td>
+<td>포도당 센서 효소</td>
+<td>활성화제 개발 시도</td>
+<td>간에도 존재</td>
+</tr>
+<tr class="even">
+<td>KATP 채널(Kir6.2/SUR1)</td>
+<td>ATP 증가를 막전위로 번역</td>
+<td>설폰요소제 표적, 신생아 당뇨병</td>
+<td>채널 닫힘이 방아쇠</td>
+</tr>
+<tr class="odd">
+<td>전압 의존성 칼슘 채널</td>
+<td>Ca2+ 유입</td>
+<td>칼슘 신호</td>
+<td>탈분극에 반응</td>
+</tr>
+<tr class="even">
+<td>아데닐릴 사이클레이스</td>
+<td>cAMP 생성</td>
+<td>GLP-1·GIP 수용체의 하류</td>
+<td>Gs가 활성화</td>
+</tr>
+<tr class="odd">
+<td>PKA</td>
+<td>인산화로 분비 준비 조절</td>
+<td>증폭 경로</td>
+<td>cAMP 표적</td>
+</tr>
+<tr class="even">
+<td>EPAC2</td>
+<td>cAMP 직접 감지, 과립 방출 연결</td>
+<td>증폭 경로</td>
+<td>PKA 비의존</td>
+</tr>
+</tbody>
+</table>
+<h3 id="이-장의-요점">이 장의 요점</h3>
+<p>β세포의 인슐린 분비는 포도당이 만드는 방아쇠 신호와 cAMP가 만드는 증폭 신호가 만나는 곳에서 결정된다. 증폭은 기본 신호가 있을 때만 크게 나타나므로 GLP-1 계열 약은 포도당 의존적으로 인슐린을 늘린다. 이 약리가 세포 안의 구조에서 나온다는 점이 이 장의 핵심이다. 다음 8장에서는 같은 약이 뇌의 뉴런 안에서 렙틴, 멜라노코르틴, AMPK, mTOR 신호와 어떻게 만나는지를 살펴본다.</p>
+<section id="참고문헌" class="refs">
+<h4>참고문헌</h4>
+<p>Ashcroft, F. M., Harrison, D. E., &amp; Ashcroft, S. J. H. (1984). Glucose induces closure of single potassium channels in isolated rat pancreatic β-cells. <em>Nature, 312</em>(5993), 446–448. https://doi.org/10.1038/312446a0</p>
+<p>Gloyn, A. L., Pearson, E. R., Antcliff, J. F., Proks, P., Bruining, G. J., Slingerland, A. S., Howard, N., Srinivasan, S., Silva, J. M. C. L., Molnes, J., Edghill, E. L., Frayling, T. M., Temple, I. K., Mackay, D., Shield, J. P. H., Sumnik, Z., van Rhijn, A., Wales, J. K. H., Clark, P., … Hattersley, A. T. (2004). Activating mutations in the gene encoding the ATP-sensitive potassium-channel subunit Kir6.2 and permanent neonatal diabetes. <em>New England Journal of Medicine, 350</em>(18), 1838–1849. https://doi.org/10.1056/NEJMoa032922</p>
+<p>Henquin, J. C. (2000). Triggering and amplifying pathways of regulation of insulin secretion by glucose. <em>Diabetes, 49</em>(11), 1751–1760. https://doi.org/10.2337/diabetes.49.11.1751</p>
+<p>Holz, G. G., IV, Kühtreiber, W. M., &amp; Habener, J. F. (1993). Pancreatic beta-cells are rendered glucose-competent by the insulinotropic hormone glucagon-like peptide-1(7-37). <em>Nature, 361</em>(6410), 362–365. https://doi.org/10.1038/361362a0</p>
+<p>Kashima, Y., Miki, T., Shibasaki, T., Ozaki, N., Miyazaki, M., Yano, H., &amp; Seino, S. (2001). Critical role of cAMP-GEFII·Rim2 complex in incretin-potentiated insulin secretion. <em>Journal of Biological Chemistry, 276</em>(49), 46046–46053. https://doi.org/10.1074/jbc.C100388200</p>
+<p>Nauck, M. A., Kleine, N., Ørskov, C., Holst, J. J., Willms, B., &amp; Creutzfeldt, W. (1993). Normalization of fasting hyperglycaemia by exogenous glucagon-like peptide 1 (7-36 amide) in type 2 (non-insulin-dependent) diabetic patients. <em>Diabetologia, 36</em>(8), 741–744. https://doi.org/10.1007/BF00401145</p>
+</section>
+</body></html>
