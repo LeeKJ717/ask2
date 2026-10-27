@@ -23,6 +23,8 @@ CREATE TABLE IF NOT EXISTS toc(name TEXT PRIMARY KEY, md TEXT, sha256 TEXT);
 CREATE TABLE IF NOT EXISTS rules(name TEXT PRIMARY KEY, md TEXT, sha256 TEXT);
 CREATE TABLE IF NOT EXISTS skills(name TEXT PRIMARY KEY, md TEXT, sha256 TEXT);
 CREATE TABLE IF NOT EXISTS decisions(id INTEGER PRIMARY KEY AUTOINCREMENT, item TEXT);
+CREATE TABLE IF NOT EXISTS typeset(k TEXT PRIMARY KEY, v TEXT, note TEXT);
+CREATE TABLE IF NOT EXISTS builds(path TEXT PRIMARY KEY, kind TEXT, size INTEGER, sha256 TEXT, loaded TEXT, blob BLOB);
 CREATE TABLE IF NOT EXISTS status(item TEXT PRIMARY KEY, state TEXT, note TEXT);
 """
 cur.executescript(SCHEMA)
@@ -118,9 +120,26 @@ if os.path.exists(hp):
             c = [x.strip() for x in ln.strip("|").split("|")]
             if len(c) == 3 and c[0] not in ("단계", "---"):
                 cur.execute("INSERT OR REPLACE INTO status VALUES(?,?,?)", tuple(c))
+
+# 6. 조판 파라미터와 빌드 산출물(PDF) — 향후 같은 판면으로 재조판하기 위한 기록
+cur.execute("DELETE FROM typeset"); cur.execute("DELETE FROM builds")
+TS = [("판형","B5(176 x 250 mm)","1권 기준"),("본문 폭","176 mm(그림·표 전폭)","buildpdf.py CSS img/table width"),
+ ("왼쪽 여백","35.2 mm(본문 폭의 20%)","텍스트만 적용, 그림·표는 전폭"),("오른쪽 여백","14 mm","텍스트"),
+ ("PDF 상하 여백","위 18 mm, 아래 20 mm","playwright page.pdf margin"),("쪽번호","모든 쪽 하단 중앙 8 pt","footer_template"),
+ ("본문 글꼴","Noto Serif CJK KR 10 pt, 행간 1.75","buildpdf.py"),("제목 글꼴","Noto Sans CJK KR(장 15 pt, 절 11.5 pt)","buildpdf.py"),
+ ("변환 도구","pandoc 3.1.3 + playwright Chromium PDF","markdown+fenced_divs -> html -> pdf"),
+ ("그림 도구","figlib.py(SVG, viewBox 800) -> cairosvg PNG 2079 px -> PIL 흑백","figures/scripts/figlib.py"),
+ ("그림 규칙","컬러/흑백 쌍(-흑백.png), 글자 최소 22 단위, F.report() 겹침 검사","figures/scripts"),
+ ("표 규칙","한 쪽에 들어가게(page-break-inside:avoid), 번호+제목","buildpdf.py"),
+ ("참고문헌","APA 7th, 장 끝","#### 참고문헌"),("목차","쪽번호 포함, 3회 패스로 번호 확정","buildpdf.py"),
+ ("장 템플릿","부 제목(첫 장만) / 장 / 출발점 인용 / N.M 절 / 그림·표 + 해석 / 요점 / 참고문헌","manuscript/*.md")]
+cur.executemany("INSERT INTO typeset VALUES(?,?,?)", TS)
+for p in sorted(glob.glob(os.path.join(ROOT, "build", "*.pdf"))):
+    b = open(p, "rb").read()
+    cur.execute("INSERT INTO builds VALUES(?,?,?,?,?,?)", ("build/" + os.path.basename(p), "pdf", len(b), sha(b), now, b))
 cur.execute("INSERT OR REPLACE INTO meta VALUES('loaded',?)", (now,))
 cur.execute("INSERT OR REPLACE INTO meta VALUES('project','비만치료약물 책 시리즈 (obese2)')")
 con.commit()
-for t in ("files", "chapters", "figures", "tables_", "refs", "tocheck", "toc", "rules", "skills", "decisions", "status"):
+for t in ("files", "chapters", "figures", "tables_", "refs", "tocheck", "toc", "rules", "skills", "decisions", "status", "typeset", "builds"):
     print(t, cur.execute(f"SELECT COUNT(*) FROM {t}").fetchone()[0])
 con.close()
