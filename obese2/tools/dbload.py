@@ -55,37 +55,37 @@ for dp, dn, fn in os.walk(ROOT):
 # 2. chapters / figures / tables / refs
 for t in ("chapters", "figures", "tables_", "refs"):
     cur.execute(f"DELETE FROM {t}")
-for p in sorted(glob.glob(os.path.join(ROOT, "manuscript", "*.md"))):
-    name = os.path.basename(p)
-    m = re.match(r"(\d+)장-v(\d+)", name)
-    if not m: continue
-    ch, ver = int(m.group(1)), "v" + m.group(2)
-    vol = 1
-    md = open(p, encoding="utf-8").read()
-    part = (re.search(r"^# (.+)$", md, re.M) or [None, ""])[1]
-    title = (re.search(r"^## (.+)$", md, re.M) or [None, ""])[1]
-    cur.execute("INSERT INTO chapters VALUES(?,?,?,?,?,?,?,?,?,?)", (vol, ch, part, title, ver, "manuscript/" + name, md, len(md), sha(md.encode()), now))
-    for fm in re.finditer(r"\*\*그림 (\d+-\d+)\. (.+?)\.\*\*\s*(.*?)\n\s*\n!\[[^\]]*\]\(([^)]+)\)", md, re.S):
-        num, ttl, cap, img = fm.group(1), fm.group(2), fm.group(3).strip(), fm.group(4)
-        base = os.path.basename(img)
-        stem = os.path.splitext(base)[0]
-        bw = "figures/out/" + stem + "-흑백.png"
-        kind = "개념도" if "개념도" in cap else "데이터"
-        def ex(rel): return rel if os.path.exists(os.path.join(ROOT, rel)) else None
-        cur.execute("INSERT OR REPLACE INTO figures VALUES(?,?,?,?,?,?,?,?,?,?)", (vol, num, ttl, cap, kind,
-            ex("figures/out/" + base), ex(bw), ex(f"figures/data/fig{num}-" + "") ,
-            ex(f"figures/scripts/fig{num}.py"), ex(f"figures/svg/fig{num}.svg")))
-    for tm in re.finditer(r"\*\*표 (\d+-\d+)\. (.+?)\.\*\*\s*\n\s*\n((?:\|.*\n?)+)", md):
-        cur.execute("INSERT OR REPLACE INTO tables_ VALUES(?,?,?,?)", (vol, tm.group(1), tm.group(2), tm.group(3).strip()))
-    rm = re.search(r"#### 참고문헌\s*\n(.*)$", md, re.S)
-    if rm:
-        for para in [x.strip() for x in rm.group(1).split("\n\n") if x.strip()]:
-            d = re.search(r"https://doi\.org/(\S+)", para)
-            cur.execute("INSERT INTO refs(vol,ch,apa,doi) VALUES(?,?,?,?)", (vol, ch, para, d.group(1) if d else None))
+for vol, MS, FG in ((1,"manuscript","figures"),(2,"manuscript2","figures2")):
+  for p in sorted(glob.glob(os.path.join(ROOT, MS, "*.md"))):
+      name = os.path.basename(p)
+      m = re.match(r"(\d+)장-v(\d+)", name)
+      if not m: continue
+      ch, ver = int(m.group(1)), "v" + m.group(2)
+      md = open(p, encoding="utf-8").read()
+      part = (re.search(r"^# (.+)$", md, re.M) or [None, ""])[1]
+      title = (re.search(r"^## (.+)$", md, re.M) or [None, ""])[1]
+      cur.execute("INSERT INTO chapters VALUES(?,?,?,?,?,?,?,?,?,?)", (vol, ch, part, title, ver, MS + "/" + name, md, len(md), sha(md.encode()), now))
+      for fm in re.finditer(r"\*\*그림 (\d+-\d+)\. (.+?)\.\*\*\s*(.*?)\n\s*\n!\[[^\]]*\]\(([^)]+)\)", md, re.S):
+          num, ttl, cap, img = fm.group(1), fm.group(2), fm.group(3).strip(), fm.group(4)
+          base = os.path.basename(img)
+          stem = os.path.splitext(base)[0]
+          bw = FG + "/out/" + stem + "-흑백.png"
+          kind = "개념도" if "개념도" in cap else "데이터"
+          def ex(rel): return rel if os.path.exists(os.path.join(ROOT, rel)) else None
+          cur.execute("INSERT OR REPLACE INTO figures VALUES(?,?,?,?,?,?,?,?,?,?)", (vol, num, ttl, cap, kind,
+              ex(FG + "/out/" + base), ex(bw), ex(f"{FG}/data/fig{num}-" + "") ,
+              ex(f"{FG}/scripts/fig{num}.py"), ex(f"{FG}/svg/fig{num}.svg")))
+      for tm in re.finditer(r"\*\*표 (\d+-\d+)\. (.+?)\.\*\*\s*\n\s*\n((?:\|.*\n?)+)", md):
+          cur.execute("INSERT OR REPLACE INTO tables_ VALUES(?,?,?,?)", (vol, tm.group(1), tm.group(2), tm.group(3).strip()))
+      rm = re.search(r"#### 참고문헌\s*\n(.*)$", md, re.S)
+      if rm:
+          for para in [x.strip() for x in rm.group(1).split("\n\n") if x.strip()]:
+              d = re.search(r"https://doi\.org/(\S+)", para)
+              cur.execute("INSERT INTO refs(vol,ch,apa,doi) VALUES(?,?,?,?)", (vol, ch, para, d.group(1) if d else None))
 # 그림 데이터 경로 보정(CSV는 fig{번호}-*.csv)
-for num, in cur.execute("SELECT num FROM figures").fetchall():
-    g = glob.glob(os.path.join(ROOT, "figures", "data", f"fig{num}-*.csv"))
-    cur.execute("UPDATE figures SET data_path=? WHERE num=?", (os.path.relpath(g[0], ROOT).replace(os.sep, "/") if g else None, num))
+for vv, num in cur.execute("SELECT vol,num FROM figures").fetchall():
+    g = glob.glob(os.path.join(ROOT, "figures" if vv == 1 else "figures2", "data", f"fig{num}-*.csv"))
+    cur.execute("UPDATE figures SET data_path=? WHERE num=? AND vol=?", (os.path.relpath(g[0], ROOT).replace(os.sep, "/") if g else None, num, vv))
 
 # 3. tocheck
 cur.execute("DELETE FROM tocheck")

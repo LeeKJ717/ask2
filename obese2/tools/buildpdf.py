@@ -7,6 +7,8 @@ import os, re, sys, glob, subprocess, html
 from playwright.sync_api import sync_playwright
 
 ROOT = os.getcwd(); BUILD = os.path.join(ROOT, "build"); os.makedirs(BUILD, exist_ok=True)
+VOL = int(os.environ.get("VOL", "1"))
+MSDIR = "manuscript" if VOL == 1 else "manuscript2"
 VERSION = "v1"
 CSS_COMMON = """
 html{font-family:'Noto Serif CJK KR','Malgun Gothic',serif;font-size:10pt;line-height:1.75;color:#111}
@@ -56,7 +58,7 @@ def pages_of(pdf):
 def build_draft(bw):
     accent, bg = ("#555555", "#eeeeee") if bw else ("#2f5f7a", "#e8eef2")
     css = CSS_COMMON.replace("ACCENT", accent).replace("BG", bg)
-    chapters = sorted(glob.glob(os.path.join(ROOT, "manuscript", "*장-v*.md")))
+    chapters = sorted(glob.glob(os.path.join(ROOT, MSDIR, "*장-v*.md")))
     heads = []  # (level, text)
     parts = []
     lastpart = None
@@ -72,14 +74,14 @@ def build_draft(bw):
         parts.append(out)
     body = "\n".join(parts)
     # 이미지 경로는 manuscript 기준(../figures) → build 기준도 동일
-    title = f'<div class="cover"><h1 style="font-size:24pt">비만치료약물의 신호전달과 신약 설계</h1><p style="font-size:13pt">1권 원리편 · 조판 시험본 {VERSION} ({"흑백" if bw else "컬러"})</p><p>이광조 · 과학과영성출판사</p></div>'
+    title = f'<div class="cover"><h1 style="font-size:24pt">비만치료약물의 신호전달과 신약 설계</h1><p style="font-size:13pt">{"1권 원리편" if VOL == 1 else "2권 세포에너지대사학"} · 조판 시험본 {VERSION} ({"흑백" if bw else "컬러"})</p><p>이광조 · 과학과영성출판사</p></div>'
     def toc_html(pn):
         rows = "".join(f'<div style="{"margin-left:6mm" if lv==2 else "font-weight:700;margin-top:3mm"}"><span class="t">{html.escape(t)}</span><span>{pn.get(t, "")}</span></div>' for lv, t in heads)
         return '<h2 style="page-break-before:always;border:none">차례</h2><div class="toc">' + rows + '</div>'
     def doc(pn):
         return f"<!doctype html><html><head><meta charset='utf-8'><style>{css}</style></head><body>{title}{toc_html(pn)}{body}</body></html>"
     tag = "bw" if bw else "color"
-    hf = os.path.join(BUILD, f"draft-{tag}.html"); pf = os.path.join(BUILD, f"obese2-draft-{VERSION}-{tag}.pdf")
+    hf = os.path.join(BUILD, f"draft{VOL}-{tag}.html"); pf = os.path.join(BUILD, f"obese2-draft-{VERSION}-{tag}.pdf" if VOL == 1 else f"obese2-vol2-draft-{VERSION}-{tag}.pdf")
     open(hf, "w", encoding="utf-8").write(doc({})); render(hf, pf)
     pn = {}
     pgs = pages_of(pf)
