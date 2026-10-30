@@ -19,7 +19,7 @@ th,td{border:1px solid #888;padding:1.6mm 2mm;vertical-align:top}th{background:#
 .toc{font-family:'Noto Sans CJK KR',sans-serif;font-size:10pt}.toc div{display:flex;margin:1mm 0}.toc span.t{flex:1;border-bottom:1px dotted #888;margin-right:2mm}
 .cover{height:200mm;display:flex;flex-direction:column;justify-content:center}
 em{font-style:italic}
-</style></head><body><div class="cover"><h1 style="font-size:24pt">비만치료약물의 신호전달과 신약 설계</h1><p style="font-size:13pt">2권 세포에너지대사학 · 조판 시험본 v1 (컬러)</p><p>이광조 · 과학과영성출판사</p></div><h2 style="page-break-before:always;border:none">차례</h2><div class="toc"><div style="font-weight:700;margin-top:3mm"><span class="t">제1부 에너지의 기초</span><span>3</span></div><div style="margin-left:6mm"><span class="t">제1장 에너지란 무엇인가: 열역학과 생명</span><span>3</span></div></div><h1 class="part" id="제1부-에너지의-기초">제1부 에너지의 기초</h1>
+</style></head><body><div class="cover"><h1 style="font-size:24pt">비만치료약물의 신호전달과 신약 설계</h1><p style="font-size:13pt">2권 세포에너지대사학 · 조판 시험본 v1 (컬러)</p><p>이광조 · 과학과영성출판사</p></div><h2 style="page-break-before:always;border:none">차례</h2><div class="toc"><div style="font-weight:700;margin-top:3mm"><span class="t">제1부 에너지의 기초</span><span>3</span></div><div style="margin-left:6mm"><span class="t">제1장 에너지란 무엇인가: 열역학과 생명</span><span>3</span></div><div style="margin-left:6mm"><span class="t">제2장 ATP와 에너지 전하</span><span>7</span></div><div style="margin-left:6mm"><span class="t">제3장 산화환원: NAD, FAD, NADPH</span><span>10</span></div><div style="margin-left:6mm"><span class="t">제4장 대사 지도 읽기</span><span>14</span></div></div><h1 class="part" id="제1부-에너지의-기초">제1부 에너지의 기초</h1>
 <h2 id="제1장-에너지란-무엇인가-열역학과-생명">제1장 에너지란 무엇인가: 열역학과 생명</h2>
 <blockquote>
 <p><strong>이 장의 출발점</strong> 1780년대 파리에서 앙투안 라부아지에(Antoine Lavoisier)와 피에르 시몽 라플라스(Pierre-Simon Laplace)는 얼음으로 둘러싼 통 안에 기니피그를 넣고, 녹아 흘러내린 물의 양으로 동물이 내는 열을 쟀다. 같은 양의 탄소를 태울 때 나오는 열과 견주어 보니, 숨 쉬는 일은 천천히 타는 불과 같았다. 먹은 것이 몸에서 타서 열과 일이 된다는 생각은 여기서 시작된다. 이 책 2권 전체는 그 “천천히 타는 불”이 세포 안에서 어떻게 조절되는지를 따라간다.</p>
@@ -98,5 +98,259 @@ em{font-style:italic}
 <p>Lavoisier, A.-L., &amp; Laplace, P.-S. (1783). Mémoire sur la chaleur. <em>Histoire de l’Académie Royale des Sciences</em> (1780), 355–408.</p>
 <p>Nelson, D. L., &amp; Cox, M. M. (2021). <em>Lehninger principles of biochemistry</em> (8th ed.). W. H. Freeman.</p>
 <p>Schrödinger, E. (1944). <em>What is life? The physical aspect of the living cell</em>. Cambridge University Press.</p>
+</section>
+
+<h2 id="제2장-atp와-에너지-전하">제2장 ATP와 에너지 전하</h2>
+<blockquote>
+<p><strong>이 장의 출발점</strong> 1929년 독일의 카를 로만(Karl Lohmann)은 근육 추출물에서 인산 화합물 하나를 분리했다. 이 물질이 아데노신 삼인산(adenosine triphosphate, ATP)이다. 12년 뒤 프리츠 리프만(Fritz Lipmann)은 ATP가 세포 안에서 에너지를 한 곳에서 다른 곳으로 옮기는 “화폐” 구실을 한다고 정리했다. 이 장은 그 화폐의 구조, 값어치, 그리고 세포가 화폐 잔고를 얼마나 알뜰하게 지키는지를 다룬다.</p>
+</blockquote>
+<h3 id="atp의-구조">2.1 ATP의 구조</h3>
+<p>ATP는 아데닌(adenine)이라는 염기, 리보스(ribose)라는 오탄당, 그리고 세 개의 인산기로 이루어진다. 아데닌과 리보스가 합쳐진 부분을 아데노신(adenosine)이라 하고, 리보스에 가까운 쪽부터 알파(α), 베타(β), 감마(γ) 인산기라 부른다.</p>
+<p><strong>그림 2-1. ATP의 구조.</strong> 아데닌과 리보스로 이루어진 아데노신에 세 개의 인산기(Pα, Pβ, Pγ)가 한 줄로 붙어 있다. 효소는 가장 바깥의 Pγ를 떼어 내어 ADP와 무기인산을 만들고, 이때 에너지가 나온다. 개념도이다.</p>
+<p><img src="../figures2/out/그림2-1.png" /></p>
+<p>그림 2-1에서 눈여겨볼 곳은 인산기 사이의 결합이다. 이 결합은 흔히 “고에너지 결합”이라 불리지만, 결합 자체에 에너지가 담겨 있다는 뜻은 아니다. 가수분해 뒤의 생성물이 더 안정하기 때문에, 가수분해 반응의 자유에너지 변화가 큰 음수가 되는 것이다. 인산기들의 음전하끼리의 반발, 생성물인 무기인산의 공명 안정화, 용매화가 그 이유로 꼽힌다.</p>
+<h3 id="atp의-값어치-표준-조건과-세포-안">2.2 ATP의 값어치: 표준 조건과 세포 안</h3>
+<p>1장 표 1-1에서 ATP 가수분해의 표준 자유에너지 변화는 −30.5 kJ/mol이었다. 그러나 세포 안의 ATP, ADP, 인산 농도는 표준 조건(1 M)과 아주 다르다. 세포는 ATP를 ADP보다 훨씬 높게 유지하므로 Q가 작아지고, 1장의 식 ΔG = ΔG°′ + RT ln Q에 따라 실제 ΔG는 더 큰 음수가 된다. 문헌에서는 세포 안 값을 대체로 −50 kJ/mol 안팎으로 본다. 세포가 ATP를 평형 농도보다 훨씬 높게 지킨다는 사실이 이 값의 핵심이다. ATP는 평형에서 먼 곳에 놓인 “충전된 전지”인 셈이다.</p>
+<h3 id="atp는-쓰이는-즉시-다시-만들어진다">2.3 ATP는 쓰이는 즉시 다시 만들어진다</h3>
+<p>몸에 한 번에 들어 있는 ATP의 양은 많지 않지만, 하루에 쓰이는 ATP의 총량은 체중에 맞먹을 만큼 크다고 흔히 설명한다. 어느 한 순간의 ATP는 몇 분 안에 다시 쓰이고 다시 만들어진다. 따라서 ATP는 저장 물질이 아니라 순환하는 중간 물질이다.</p>
+<p><strong>그림 2-2. ATP-ADP 순환.</strong> ATP는 근수축, 이온 수송, 생합성 같은 일에 쓰여 ADP와 무기인산이 되고, 해당과 산화적 인산화가 이를 다시 ATP로 되돌린다. 순환이 한쪽으로 쏠리면 ADP와 AMP가 늘어나며, AMP는 아데닐산 키네이스(adenylate kinase) 반응으로 만들어진다.</p>
+<p><img src="../figures2/out/그림2-2.png" /></p>
+<p>그림 2-2의 아래쪽 상자는 이 장의 둘째 주제를 예고한다. 두 분자의 ADP가 ATP와 AMP로 바뀌는 평형 반응(2 ADP ⇌ ATP + AMP)은 ATP가 조금만 줄어도 AMP를 크게 늘린다. ATP 농도가 약간 변할 때 AMP 농도는 훨씬 큰 비율로 변하므로, AMP는 에너지 부족을 알리는 예민한 신호가 된다. 4부 14장의 AMPK(AMP-activated protein kinase)가 바로 이 신호를 읽는다.</p>
+<h3 id="에너지-전하">2.4 에너지 전하</h3>
+<p>대니얼 앳킨슨(Daniel Atkinson)은 1960년대에 세포의 에너지 상태를 한 숫자로 나타내는 방법을 제안했다. 에너지 전하(energy charge)는 아데닌 뉴클레오타이드 총량 중에서 에너지가 충전된 정도를 나타낸다.</p>
+<p>에너지 전하 = ([ATP] + 0.5 × [ADP]) / ([ATP] + [ADP] + [AMP])</p>
+<p>ATP만 있으면 1, ADP만 있으면 0.5, AMP만 있으면 0이다. ADP는 인산 고에너지 결합이 하나이므로 절반으로 센다. 앳킨슨은 에너지를 생산하는 경로는 에너지 전하가 낮을 때 활발해지고, 소비하는 합성 경로는 높을 때 활발해진다고 보았다. 정상 세포의 에너지 전하는 대체로 0.8~0.95 범위에서 유지된다고 알려져 있다.</p>
+<p><strong>표 2-1. 에너지 전하의 해석.</strong> 값은 위 정의식으로 계산한 이론 값이며, 실제 세포의 해석 범위는 조직과 조건에 따라 다르다.</p>
+<table>
+<thead>
+<tr class="header">
+<th>아데닌 뉴클레오타이드 구성</th>
+<th>에너지 전하</th>
+<th>해석</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>ATP 100%</td>
+<td>1.00</td>
+<td>완전 충전</td>
+</tr>
+<tr class="even">
+<td>ATP 80%, ADP 20% (AMP 없음)</td>
+<td>0.90</td>
+<td>정상 범위의 예</td>
+</tr>
+<tr class="odd">
+<td>ATP 70%, ADP 20%, AMP 10%</td>
+<td>0.80</td>
+<td>정상 범위 하한의 예</td>
+</tr>
+<tr class="even">
+<td>ATP 40%, ADP 40%, AMP 20%</td>
+<td>0.60</td>
+<td>에너지 부족 신호</td>
+</tr>
+<tr class="odd">
+<td>ADP 100%</td>
+<td>0.50</td>
+<td>전체가 한 단계 방전</td>
+</tr>
+<tr class="even">
+<td>AMP 100%</td>
+<td>0.00</td>
+<td>완전 방전</td>
+</tr>
+</tbody>
+</table>
+<p>표 2-1을 읽을 때 주의할 점이 있다. 에너지 전하가 0.90에서 0.80으로 내려가는 것은 겉보기에 작은 변화이지만, 표의 세 번째 줄처럼 AMP가 10%나 차지하는 상태이다. 앞에서 본 아데닐산 키네이스 증폭 때문에 이 정도의 변화에도 AMPK가 켜진다. 2권 5부와 6부에서 식후와 공복의 세포가 다른 에너지 전하의 영역을 오간다는 이야기가 나올 때 이 점을 다시 쓴다.</p>
+<h3 id="이-장의-요점">이 장의 요점</h3>
+<ul>
+<li>ATP는 아데노신에 세 인산기가 붙은 분자이며, 말단 인산의 가수분해가 에너지를 낸다.</li>
+<li>세포 안의 ATP는 평형보다 훨씬 높게 유지되어, 실제 가수분해 ΔG는 표준 값보다 크다.</li>
+<li>ATP는 쓰이는 대로 되살려지는 순환 물질이다.</li>
+<li>에너지 전하는 아데닌 뉴클레오타이드의 충전 정도이고, AMP는 그 변화의 예민한 신호이다.</li>
+</ul>
+<section id="참고문헌" class="refs">
+<h4>참고문헌</h4>
+<p>Atkinson, D. E. (1977). <em>Cellular energy metabolism and its regulation</em>. Academic Press.</p>
+<p>Lipmann, F. (1941). Metabolic generation and utilization of phosphate bond energy. <em>Advances in Enzymology, 1</em>, 99–162.</p>
+<p>Lohmann, K. (1929). Über die Pyrophosphatfraktion im Muskel. <em>Naturwissenschaften, 17</em>(31), 624–625.</p>
+<p>Nelson, D. L., &amp; Cox, M. M. (2021). <em>Lehninger principles of biochemistry</em> (8th ed.). W. H. Freeman.</p>
+</section>
+
+<h2 id="제3장-산화환원-nad-fad-nadph">제3장 산화환원: NAD, FAD, NADPH</h2>
+<blockquote>
+<p><strong>이 장의 출발점</strong> 1906년 아서 하든(Arthur Harden)과 윌리엄 영(William Young)은 효모 즙에서 발효를 돕는, 끓여도 살아남는 작은 분자를 찾아냈다. 코엔자임(조효소)이라 불리게 된 이 물질은 훗날 오토 바르부르크(Otto Warburg)가 수소를 나르는 역할을 밝히면서 정체가 드러났다. 이것이 니코틴아마이드 아데닌 다이뉴클레오타이드, NAD이다. 세포의 연료 분해는 결국 전자를 NAD와 그 사촌들에게 맡기는 일이며, 이 장은 그 전자 운반의 규칙을 정리한다.</p>
+</blockquote>
+<h3 id="산화와-환원-전자를-주고받는-일">3.1 산화와 환원: 전자를 주고받는 일</h3>
+<p>산화(oxidation)는 전자를 잃는 일, 환원(reduction)은 전자를 얻는 일이다. 둘은 항상 짝으로 일어난다. 영양소의 분해는 연료 분자가 산화되고 전자 운반체가 환원되는 반응이며, 마지막에는 산소가 전자를 받아 물이 된다. 생체 반응에서는 전자가 수소 원자(양성자 하나와 전자 하나) 또는 수소화 이온(양성자 하나와 전자 둘)의 형태로 옮겨지는 경우가 많다.</p>
+<p>전자를 받으려는 경향은 표준 환원 전위(standard reduction potential, E°′)로 나타낸다. 값이 더 음수인 쌍은 전자를 내놓기 쉽고, 더 양수인 쌍은 전자를 받기 쉽다. 전자는 음수 쪽에서 양수 쪽으로 흘러내려 가며, 흐른 전위차 ΔE°′에서 자유에너지가 얻어진다.</p>
+<p>ΔG°′ = −n F ΔE°′</p>
+<p>n은 옮겨진 전자의 수, F는 패러데이 상수(96.485 kJ/V·mol)이다.</p>
+<p><strong>그림 3-1. 산화환원 쌍의 전위 사다리.</strong> 위쪽의 NAD+/NADH(−0.32 V)에서 아래쪽의 산소/물(+0.82 V)로 갈수록 전자를 받으려는 경향이 커진다. 전자는 사다리를 따라 내려가며 에너지를 내놓는다. 값은 교과서 표준 값이다.</p>
+<p><img src="../figures2/out/그림3-1.png" /></p>
+<p>그림 3-1은 3부의 전자전달계를 미리 보여 주는 지도이다. NADH에서 산소까지의 전위차는 0.82 − (−0.32) = 1.14 V이다. 전자 둘이 옮겨가는 반응이므로 ΔG°′ = −2 × 96.485 × 1.14 ≈ −220 kJ/mol로, 포도당 한 분자의 완전 산화 에너지에서 NADH 하나가 차지하는 몫이 얼마나 큰지를 한눈에 보여 준다. 이 큰 낙차를 한꺼번에 쓰지 않고 여러 단계로 쪼개 ATP 합성에 이용하는 장치가 전자전달계이다.</p>
+<h3 id="nad-fad-분해의-전자-운반체">3.2 NAD, FAD: 분해의 전자 운반체</h3>
+<p>니코틴아마이드 아데닌 다이뉴클레오타이드(nicotinamide adenine dinucleotide, NAD)는 산화형 NAD+와 환원형 NADH로 존재한다. 탈수소효소(dehydrogenase)가 기질에서 수소화 이온을 떼어 NAD+에 건네면 NADH가 된다. 비타민 B3인 니아신(niacin)이 NAD의 재료이다.</p>
+<p>플라빈 아데닌 다이뉴클레오타이드(flavin adenine dinucleotide, FAD)는 비타민 B2인 리보플래빈(riboflavin)에서 만들어진다. FAD는 보통 효소에 단단히 붙어 있으면서 전자 둘을 받아 FADH2가 된다. TCA 회로의 숙신산 탈수소효소와 지방산 β산화의 첫 효소가 FAD를 쓴다.</p>
+<h3 id="nadph-합성의-환원력">3.3 NADPH: 합성의 환원력</h3>
+<p>NADPH는 NADH에 인산기 하나가 더 붙은 분자이다. 구조는 거의 같지만 세포는 둘을 다른 용도로 쓴다. NADH는 연료를 분해하면서 얻은 전자를 전자전달계에 보내는 “분해의 운반체”이고, NADPH는 지방산과 콜레스테롤 합성, 항산화 방어(글루타티온 환원)에 전자를 공급하는 “합성과 방어의 운반체”이다.</p>
+<p>역할이 나뉘는 비결은 비율에 있다. 세포질에서 NAD+는 NADH보다 훨씬 많은 산화형으로 유지되어 분해 반응이 끌려가고, NADP+는 NADPH보다 훨씬 적은 형태로 유지되어 합성 반응에 쓸 환원력이 늘 충전되어 있다. 문헌에서는 간 세포질의 NAD+/NADH 비를 수백 대 1 수준, NADP+/NADPH 비를 1보다 훨씬 작은 값으로 본다. 같은 효소 모양에서 인산 하나 차이로 서로 다른 효소 집단이 구별해 쓰는 것이다. NADPH의 주요 공급원은 오탄당 인산 경로와 사이토솔 NADP 의존 효소들이다.</p>
+<h3 id="nadnadh-비가-방향을-정한다">3.4 NAD+/NADH 비가 방향을 정한다</h3>
+<p>반응이 어느 쪽으로 진행하는지는 ΔG에 달렸고, ΔG는 농도비 Q에 의해 움직인다(1장). 따라서 세포 안의 NAD+/NADH 비가 크면 NAD+를 쓰는 산화 반응(예: 젖산 → 피루브산)이 유리하고, 비가 작으면 반대 방향(피루브산 → 젖산)이 유리하다. 산소가 부족해 전자전달계가 NADH를 다 비우지 못하면 NAD+/NADH 비가 떨어지고, 세포는 젖산 생성으로 NAD+를 재생한다. 이 원리는 5부의 식후·공복 전환에서 반복해 쓰인다. 식사 뒤에 미토콘드리아 안 NADH가 늘면 TCA 회로와 지방산 산화의 속도가 떨어지고, 공복에는 반대가 된다. 4부에서 다룰 시르투인(sirtuin)은 NAD+ 농도 자체를 신호로 읽는 효소이다.</p>
+<p><strong>표 3-1. 주요 산화환원 조효소 요약.</strong></p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>조효소</th>
+<th>비타민 재료</th>
+<th>주된 역할</th>
+<th>대표 반응</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>NAD+/NADH</td>
+<td>니아신(B3)</td>
+<td>분해 경로의 전자 운반, 전자전달계 입력</td>
+<td>해당 과정의 글리세르알데하이드 3-인산 탈수소효소, TCA 회로 탈수소효소</td>
+</tr>
+<tr class="even">
+<td>NADP+/NADPH</td>
+<td>니아신(B3)</td>
+<td>합성과 항산화에 환원력 공급</td>
+<td>지방산 합성, 콜레스테롤 합성, 글루타티온 환원</td>
+</tr>
+<tr class="odd">
+<td>FAD/FADH2</td>
+<td>리보플래빈(B2)</td>
+<td>효소에 결합한 전자 운반</td>
+<td>숙신산 탈수소효소, 아실-CoA 탈수소효소</td>
+</tr>
+<tr class="even">
+<td>FMN/FMNH2</td>
+<td>리보플래빈(B2)</td>
+<td>복합체 I의 전자 수용</td>
+<td>복합체 I(NADH 탈수소효소)</td>
+</tr>
+<tr class="odd">
+<td>유비퀴논(CoQ)</td>
+<td>세포 내 합성</td>
+<td>막 안에서 전자 이동</td>
+<td>복합체 I·II에서 III로 전자 전달</td>
+</tr>
+</tbody>
+</table>
+<p>표 3-1을 읽는 요령은 두 가지이다. 첫째, 같은 비타민(니아신)에서 만들어진 NAD와 NADP가 “분해”와 “합성”으로 나뉘어 쓰인다는 점이다. 둘째, FAD와 FMN이 효소에 단단히 붙어 있는 데 비해 NAD는 효소 사이를 오가는 운반체라는 점이다. 이 차이가 3부와 6부에서 NADH와 FADH2가 전자전달계의 서로 다른 입구로 들어가는 이유를 이해하는 단서가 된다.</p>
+<h3 id="이-장의-요점">이 장의 요점</h3>
+<ul>
+<li>산화환원 반응은 전자의 이동이며, 전위가 낮은 쪽에서 높은 쪽으로 흐르며 에너지를 낸다.</li>
+<li>NADH에서 산소까지의 전위차는 1.14 V로, 전자 둘 기준 약 220 kJ/mol의 자유에너지에 해당한다.</li>
+<li>NAD+/NADH는 분해, NADP+/NADPH는 합성과 항산화를 맡는다.</li>
+<li>NAD+/NADH 비는 대사 반응의 방향과 신호 효소(시르투인)를 좌우한다.</li>
+</ul>
+<section id="참고문헌" class="refs">
+<h4>참고문헌</h4>
+<p>Berg, J. M., Tymoczko, J. L., Gatto, G. J., Jr., &amp; Stryer, L. (2019). <em>Biochemistry</em> (9th ed.). W. H. Freeman.</p>
+<p>Nelson, D. L., &amp; Cox, M. M. (2021). <em>Lehninger principles of biochemistry</em> (8th ed.). W. H. Freeman.</p>
+<p>Williamson, D. H., Lund, P., &amp; Krebs, H. A. (1967). The redox state of free nicotinamide-adenine dinucleotide in the cytoplasm and mitochondria of rat liver. <em>Biochemical Journal, 103</em>(2), 514–527.</p>
+</section>
+
+<h2 id="제4장-대사-지도-읽기">제4장 대사 지도 읽기</h2>
+<blockquote>
+<p><strong>이 장의 출발점</strong> 1930년대 한스 크렙스(Hans Krebs)는 간 조직 조각이 여러 유기산을 태우는 속도를 하나하나 재면서, 물질들이 줄줄이 이어진 하나의 고리를 이룬다는 것을 알아냈다. 낱낱의 반응이 지도 위의 길로 합쳐진 순간이다. 대사 지도는 처음 보면 화살표 덩어리지만, 읽는 요령이 몇 가지 있다. 이 장은 그 요령을 정리한다. 이 요령을 알면 이후 38개 장의 경로 그림이 같은 문법으로 읽힌다.</p>
+</blockquote>
+<h3 id="경로-효소-대사물질">4.1 경로, 효소, 대사물질</h3>
+<p>대사(metabolism)는 세포 안의 모든 화학 반응의 총합이다. 분해 쪽을 이화(catabolism), 합성 쪽을 동화(anabolism)라 한다. 반응 하나하나는 효소(enzyme)가 촉매하며, 한 효소의 생성물이 다음 효소의 기질이 되어 이어진 연쇄를 경로(pathway)라 한다. 지도에서 물질은 점(노드), 효소는 선(화살표)이고, 선 옆에 효소 이름이 적힌다.</p>
+<p><strong>그림 4-1. 중심 대사 지도.</strong> 포도당은 해당을 거쳐 피루브산이 되고, 피루브산 탈수소효소(PDH)를 거쳐 아세틸-CoA가 된다. 지방산은 β산화로 아세틸-CoA가 되며, 아미노산은 피루브산 등으로 들어온다. 아세틸-CoA는 TCA 회로와 전자전달계로 흘러 ATP를 만들고, 간에서는 케톤체로도 쓰인다. 개념도이다.</p>
+<p><img src="../figures2/out/그림4-1.png" /></p>
+<p>그림 4-1에서 가장 중요한 점은 아세틸-CoA가 모든 연료의 합류점이라는 사실이다. 탄수화물, 지방, 단백질이 서로 다른 입구로 들어와 아세틸-CoA라는 공통 통로를 거친다. 이후의 장들에서 반복되는 “한 병목, 여러 입구” 구조이다. 이 지도의 모든 화살표를 처음부터 외울 필요는 없다. 각 장은 이 지도의 한 구역을 확대한다.</p>
+<h3 id="가역-단계와-비가역-단계">4.2 가역 단계와 비가역 단계</h3>
+<p>대사 경로의 반응 대부분은 평형에 가까워, 반응물과 생성물의 농도 비에 따라 양방향으로 움직인다. 이런 가역 단계는 경로의 속도를 정하지 않는다. 경로의 속도를 정하는 것은 평형에서 멀리 떨어진, 곧 ΔG가 큰 음수인 단계이다. 이 단계는 한쪽 방향으로만 진행하므로 비가역 단계라 한다.</p>
+<p>비가역 단계가 중요한 이유는 두 가지이다. 첫째, 이 단계가 경로의 “수도꼭지”이므로 조절이 여기에 모인다. 둘째, 역방향 경로(예: 포도당 신생)는 같은 단계를 다른 효소로 우회해야 한다. 분해와 합성이 같은 길을 되돌아가지 않고 서로 다른 길을 쓰는 것은 대사 조절의 보편 원리이다.</p>
+<h3 id="조절-지점-어디를-누르는가">4.3 조절 지점: 어디를 누르는가</h3>
+<p>효소의 활성을 바꾸는 방법은 크게 세 가지이다. 첫째는 알로스테릭 조절로, 기질이나 생성물, ATP, AMP 같은 신호 물질이 효소에 붙어 활성을 바꾼다. 둘째는 공유 결합 변형으로, 인산화·탈인산화로 효소를 켜고 끈다. 셋째는 효소의 양을 바꾸는 유전자 발현 조절이다. 앞의 둘은 초 단위, 셋째는 시간 단위로 작동한다. 식후와 공복처럼 몇 시간 단위로 바뀌는 상태에서는 세 방법이 모두 쓰인다.</p>
+<p><strong>표 4-1. 핵심 조절 효소 목록.</strong> 이후 장에서 자세히 다룬다. 방향은 일반적인 교과서 서술이다.</p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>경로</th>
+<th>조절 효소</th>
+<th>주요 조절자</th>
+<th>이후 장</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>해당</td>
+<td>헥소키네이스, 포스포프럭토키네이스-1(PFK-1), 피루브산 키네이스</td>
+<td>ATP·시트르산이 억제, AMP·프럭토스 2,6-이인산이 활성화</td>
+<td>5장</td>
+</tr>
+<tr class="even">
+<td>연결 반응</td>
+<td>피루브산 탈수소효소(PDH)</td>
+<td>아세틸-CoA·NADH가 억제, 인슐린 신호가 활성화</td>
+<td>6장</td>
+</tr>
+<tr class="odd">
+<td>TCA 회로</td>
+<td>시트르산 합성효소, 이소시트르산 탈수소효소, α-케토글루타르산 탈수소효소</td>
+<td>ATP·NADH가 억제, ADP·칼슘이 활성화</td>
+<td>6장</td>
+</tr>
+<tr class="even">
+<td>글리코겐</td>
+<td>글리코겐 합성효소, 글리코겐 포스포릴레이스</td>
+<td>인슐린과 글루카곤·에피네프린이 인산화로 반대로 조절</td>
+<td>5장</td>
+</tr>
+<tr class="odd">
+<td>지방산</td>
+<td>아세틸-CoA 카르복실화효소(ACC), 카르니틴 팔미토일기 전이효소 1(CPT1)</td>
+<td>말로닐-CoA가 CPT1을 억제</td>
+<td>7장</td>
+</tr>
+<tr class="even">
+<td>포도당 신생</td>
+<td>프럭토스 1,6-이인산 가수분해효소, PEP 카르복시키네이스(PEPCK)</td>
+<td>글루카곤·코르티솔이 증가, 인슐린이 감소</td>
+<td>23장</td>
+</tr>
+<tr class="odd">
+<td>케톤 생성</td>
+<td>HMG-CoA 합성효소(미토콘드리아)</td>
+<td>인슐린이 억제, 공복에서 증가</td>
+<td>8장</td>
+</tr>
+</tbody>
+</table>
+<p>표 4-1에서 눈여겨볼 점은 같은 대사물질이 여러 경로를 한꺼번에 조절한다는 점이다. 시트르산이 해당(PFK-1)을 억제하는 것은 TCA 회로가 막혔을 때 입구를 닫는 되먹임이다. 말로닐-CoA는 지방산 합성의 재료이면서 지방산 산화의 입구(CPT1)를 막아, 합성과 분해가 동시에 돌아가는 낭비를 막는 스위치가 된다. 이 스위치는 7장에서, 식후와 공복의 전환은 29장에서 다시 만난다.</p>
+<h3 id="분기점에서-길을-고르는-법">4.4 분기점에서 길을 고르는 법</h3>
+<p>지도 위의 분기점에서 물질이 어느 길로 가는지는 세 요소가 정한다. 하나는 효소의 친화도(Km)로, 기질이 낮은 농도에서도 효소와 결합하는 정도이다. 둘은 기질의 농도이며, 셋은 최종 산물의 되먹임 신호이다. 예를 들어 포도당 6-인산은 해당, 글리코겐 합성, 오탄당 인산 경로로 갈라지는데, 어느 쪽이 우세한지는 세포의 에너지 상태(2장)와 환원력 요구량(3장)이 정한다. 이 책이 에너지 전하와 NADPH를 앞에서 먼저 다룬 이유이다.</p>
+<h3 id="이-장의-요점">이 장의 요점</h3>
+<ul>
+<li>대사 지도는 물질(점)과 효소(선)로 이루어지고, 아세틸-CoA가 연료의 합류점이다.</li>
+<li>경로의 속도는 비가역 단계가 정하며, 조절은 이 단계에 모인다.</li>
+<li>효소 조절에는 알로스테릭, 공유 결합 변형, 발현량 조절의 세 가지가 있다.</li>
+<li>분해와 합성은 비가역 단계를 서로 다른 효소로 우회한다.</li>
+</ul>
+<section id="참고문헌" class="refs">
+<h4>참고문헌</h4>
+<p>Berg, J. M., Tymoczko, J. L., Gatto, G. J., Jr., &amp; Stryer, L. (2019). <em>Biochemistry</em> (9th ed.). W. H. Freeman.</p>
+<p>Krebs, H. A., &amp; Johnson, W. A. (1937). The role of citric acid in intermediate metabolism in animal tissues. <em>Enzymologia, 4</em>, 148–156.</p>
+<p>Nelson, D. L., &amp; Cox, M. M. (2021). <em>Lehninger principles of biochemistry</em> (8th ed.). W. H. Freeman.</p>
 </section>
 </body></html>
