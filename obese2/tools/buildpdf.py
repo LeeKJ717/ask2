@@ -23,6 +23,7 @@ h3{font-family:'Noto Sans CJK KR',sans-serif;font-size:11.5pt;margin-top:6mm;mar
 h4{font-family:'Noto Sans CJK KR',sans-serif;font-size:10.5pt;margin-top:8mm;margin-bottom:2mm}
 p{margin-top:0;margin-bottom:2.4mm;text-align:justify;word-break:keep-all}
 blockquote{margin-top:3mm;margin-bottom:3mm;padding:2mm 3mm;border-left:3px solid ACCENT;background:BG;font-size:9.5pt}
+p.cap{break-after:avoid;page-break-after:avoid}
 img{display:block;margin:4mm 0 2mm 0;width:176mm;max-width:none;page-break-inside:avoid}
 table{border-collapse:collapse;margin:3mm 0;width:176mm;font-size:9pt;line-height:1.45;page-break-inside:avoid}
 th,td{border:1px solid #888;padding:1.6mm 2mm;vertical-align:top}th{background:BG}
@@ -73,6 +74,7 @@ def build_draft(bw):
         out = subprocess.run(["pandoc", "-f", "markdown+fenced_divs", "-t", "html", "--wrap=none"], input=s, capture_output=True, text=True).stdout
         parts.append(out)
     body = "\n".join(parts)
+    body = re.sub(r'<p><strong>((?:그림|표) \d+-\d+\.)', r'<p class="cap"><strong>\1', body)
     # 이미지 경로는 manuscript 기준(../figures) → build 기준도 동일
     title = f'<div class="cover"><h1 style="font-size:24pt">비만치료약물의 신호전달과 신약 설계</h1><p style="font-size:13pt">{"1권 원리편" if VOL == 1 else "2권 세포에너지대사학"} · 조판 시험본 {VERSION} ({"흑백" if bw else "컬러"})</p><p>이광조 · 과학과영성출판사</p></div>'
     def toc_html(pn):
