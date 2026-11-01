@@ -75,7 +75,7 @@ for vol, MS, FG in ((1,"manuscript","figures"),(2,"manuscript2","figures2")):
           cur.execute("INSERT OR REPLACE INTO figures VALUES(?,?,?,?,?,?,?,?,?,?)", (vol, num, ttl, cap, kind,
               ex(FG + "/out/" + base), ex(bw), ex(f"{FG}/data/fig{num}-" + "") ,
               ex(f"{FG}/scripts/fig{num}.py"), ex(f"{FG}/svg/fig{num}.svg")))
-      for tm in re.finditer(r"\*\*표 (\d+-\d+)\. (.+?)\.\*\*\s*\n\s*\n((?:\|.*\n?)+)", md):
+      for tm in re.finditer(r"\*\*표 (\d+-\d+)\. (.+?)\.\*\*[^\n]*\n\s*\n((?:\|.*\n?)+)", md):
           cur.execute("INSERT OR REPLACE INTO tables_ VALUES(?,?,?,?)", (vol, tm.group(1), tm.group(2), tm.group(3).strip()))
       rm = re.search(r"#### 참고문헌\s*\n(.*)$", md, re.S)
       if rm:
@@ -142,4 +142,37 @@ cur.execute("INSERT OR REPLACE INTO meta VALUES('project','비만치료약물 �
 con.commit()
 for t in ("files", "chapters", "figures", "tables_", "refs", "tocheck", "toc", "rules", "skills", "decisions", "status", "typeset", "builds"):
     print(t, cur.execute(f"SELECT COUNT(*) FROM {t}").fetchone()[0])
+
+# 7. 조판 파싱 결과(parsed/) -> 질의 가능한 표. 2판·수정 작업에서 SQL로 바로 사용
+import csv, json
+for (t,) in cur.execute("SELECT name FROM sqlite_master WHERE type='table' AND name LIKE 'parsed_%'").fetchall():
+    cur.execute(f'DROP TABLE "{t}"')
+PD = os.path.join(ROOT, "parsed")
+if os.path.isdir(PD):
+    for p in sorted(glob.glob(os.path.join(PD, "*.csv"))):
+        name = "parsed_" + os.path.splitext(os.path.basename(p))[0]
+        rows = list(csv.reader(open(p, encoding="utf-8-sig")))
+        if not rows: continue
+        cols = [re.sub(r"\W", "_", c) or "c" for c in rows[0]]
+        cur.execute(f'CREATE TABLE "{name}"(' + ",".join(f'"{c}" TEXT' for c in cols) + ")")
+        cur.executemany(f'INSERT INTO "{name}" VALUES(' + ",".join("?" * len(cols)) + ")", [r + [""] * (len(cols) - len(r)) for r in rows[1:]])
+    pg = os.path.join(PD, "pages.jsonl")
+    if os.path.exists(pg):
+        cur.execute('CREATE TABLE parsed_pages(pdf TEXT, page INTEGER, text TEXT)')
+        for ln in open(pg, encoding="utf-8"):
+            if ln.strip():
+                d = json.loads(ln); cur.execute("INSERT INTO parsed_pages VALUES(?,?,?)", (d.get("pdf"), d.get("page"), d.get("text")))
+    cur.execute('CREATE TABLE parsed_chapter_json(file TEXT PRIMARY KEY, json TEXT)')
+    for p in sorted(glob.glob(os.path.join(PD, "chapters", "*.json"))):
+        cur.execute("INSERT INTO parsed_chapter_json VALUES(?,?)", (os.path.basename(p), open(p, encoding="utf-8").read()))
+    for fn in ("layout.json", "summary.json"):
+        p = os.path.join(PD, fn)
+        if os.path.exists(p):
+            cur.execute("INSERT OR REPLACE INTO typeset VALUES(?,?,?)", ("parsed/" + fn, open(p, encoding="utf-8").read(), "파서 산출"))
+# 8. 개정(2판) 작업 대장: 수정 사항을 장·그림·표 단위로 기록
+cur.execute("CREATE TABLE IF NOT EXISTS revisions(id INTEGER PRIMARY KEY AUTOINCREMENT, vol INTEGER, ch INTEGER, target TEXT, note TEXT, status TEXT DEFAULT 'open', created TEXT)")
+cur.execute("INSERT OR REPLACE INTO meta VALUES('db_contents','원고(md) 전 장, 그림(스크립트·svg·png 컬러/흑백)·표, 인용 문헌 목록(refs)과 검증 대장(tocheck), 조판 규칙, 파싱 결과(parsed_*), 조판본 PDF, 도구(tools), revisions(2판 대장)')")
+con.commit()
+for (t,) in cur.execute("SELECT name FROM sqlite_master WHERE type='table' AND name LIKE 'parsed_%'").fetchall():
+    print(t, cur.execute(f'SELECT COUNT(*) FROM "{t}"').fetchone()[0])
 con.close()
