@@ -55,7 +55,7 @@ for dp, dn, fn in os.walk(ROOT):
 # 2. chapters / figures / tables / refs
 for t in ("chapters", "figures", "tables_", "refs"):
     cur.execute(f"DELETE FROM {t}")
-for vol, MS, FG in ((1,"manuscript","figures"),(2,"manuscript2","figures2")):
+for vol, MS, FG in ((1,"manuscript","figures"),(2,"manuscript2","figures2"),(3,"manuscript3","figures3")):
   for p in sorted(glob.glob(os.path.join(ROOT, MS, "*.md"))):
       name = os.path.basename(p)
       m = re.match(r"(\d+)장-v(\d+)", name)
@@ -84,7 +84,7 @@ for vol, MS, FG in ((1,"manuscript","figures"),(2,"manuscript2","figures2")):
               cur.execute("INSERT INTO refs(vol,ch,apa,doi) VALUES(?,?,?,?)", (vol, ch, para, d.group(1) if d else None))
 # 그림 데이터 경로 보정(CSV는 fig{번호}-*.csv)
 for vv, num in cur.execute("SELECT vol,num FROM figures").fetchall():
-    g = glob.glob(os.path.join(ROOT, "figures" if vv == 1 else "figures2", "data", f"fig{num}-*.csv"))
+    g = glob.glob(os.path.join(ROOT, {1:"figures",2:"figures2",3:"figures3"}[vv], "data", f"fig{num}-*.csv"))
     cur.execute("UPDATE figures SET data_path=? WHERE num=? AND vol=?", (os.path.relpath(g[0], ROOT).replace(os.sep, "/") if g else None, num, vv))
 
 # 3. tocheck

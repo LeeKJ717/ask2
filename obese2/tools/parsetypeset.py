@@ -3,7 +3,7 @@
 import re, json, csv, glob, os, sys, subprocess, hashlib
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, 'parsed'); os.makedirs(OUT, exist_ok=True)
-VOLS = {1: 'manuscript', 2: 'manuscript2'}
+VOLS = {1: 'manuscript', 2: 'manuscript2', 3: 'manuscript3'}
 FIGRE = re.compile(r'^\*\*(그림 \d+-\d+)\.\s*(.*?)\*\*\s*(.*)$')
 TABRE = re.compile(r'^\*\*(표 \d+-\d+)\.\s*(.*?)\*\*\s*(.*)$')
 IMGRE = re.compile(r'^!\[.*?\]\((.*?)\)')
@@ -91,7 +91,7 @@ with open(os.path.join(OUT, 'pages.jsonl'), 'w', encoding='utf-8') as f:
 toc = []
 for p in pdfs:
     if 'color' not in p: continue
-    vol = 2 if 'vol2' in p else 1
+    vol = 3 if 'vol3' in p else (2 if 'vol2' in p else 1)
     pgs = [json.loads(l) for l in open(os.path.join(OUT, 'pages.jsonl'), encoding='utf-8') if json.loads(l)['pdf'] == os.path.basename(p)]
     for ch in [c for c in chapters if c['vol'] == vol]:
         key = f"제{ch['chapter_no']}장 {ch['title']}"

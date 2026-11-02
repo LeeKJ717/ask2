@@ -543,3 +543,13 @@
 # 2권 42장
 - 서두: 페럴·매클레더 1998 Science(개구리 난모세포 all-or-none, 양성 되먹임) 서술·서지 확인; Ferrell 2002 서지 확인
 - 식 J = Jmax/(1+(r/K)^n)는 설명용 형태이며 인용 아님; 표 42-3 1권↔2권 대응은 toc/vol2-toc-v1.md 기준
+# 3권 1장
+- 연구 단계 깔때기(그림 1-1)·표 1-1·표 1-2의 단계별 설명은 일반 서술; FDA 2007 지침 항목, EMA 2016 서술, Kelsey 서두 서술, Button 2013/Ioannidis 2005/Minikel 2024/Nelson 2015/Plenge 2013/Hay 2014 서지·DOI·결론 서술 확인
+# 3권 2장
+- 서두: Vaisse 1998, Yeo 1998 (Nature Genetics 20) 서지·내용(가족/환자군 구분, 프레임시프트 변이) 확인
+- 표 2-1 범주 평가(강함·중간·약함)와 정성 서술 칸 전체 근거 확인(GIPR 작용 방향 논쟁, GFRAL, 아밀린 등)
+- Davey Smith 2003, Finan 2017, Giambartolomei 2014, Hemani 2018, Wolf 2018 서지·DOI 확인; 실습 코드 함수·인수는 설치 버전으로 실행 검증 필요
+# 3권 3장
+- 서두: Fisher 1935/Salsburg 2001 서술(로담스테드, 홍차 일화) 확인; Hill 1910 서지(Suppl. 쪽수)·서술 확인
+- Zhang 1999 서지·DOI, Z′ 해석 기준 확인; Assay Guidance Manual 항목 서지 확인; Cohen 1988, Motulsky 2004, Holm 1979, Benjamini 1995, Percie du Sert 2020 서지·DOI 확인
+- 표 3-2 표본 수는 scipy 비중심 t로 계산(data/fig3-2-power.json); 실습 코드 실행 검증 필요

@@ -8,7 +8,9 @@ from playwright.sync_api import sync_playwright
 
 ROOT = os.getcwd(); BUILD = os.path.join(ROOT, "build"); os.makedirs(BUILD, exist_ok=True)
 VOL = int(os.environ.get("VOL", "1"))
-MSDIR = "manuscript" if VOL == 1 else "manuscript2"
+MSDIR = {1:"manuscript",2:"manuscript2",3:"manuscript3"}[VOL]
+VOLNAME = {1:"1권 원리편",2:"2권 세포에너지대사학",3:"3권 실무편"}[VOL]
+VOLTAG = {1:"",2:"vol2-",3:"vol3-"}[VOL]
 VERSION = "v1"
 CSS_COMMON = """
 html{font-family:'Noto Serif CJK KR','Malgun Gothic',serif;font-size:10pt;line-height:1.75;color:#111}
@@ -76,14 +78,14 @@ def build_draft(bw):
     body = "\n".join(parts)
     body = re.sub(r'<p><strong>((?:그림|표) \d+-\d+\.)', r'<p class="cap"><strong>\1', body)
     # 이미지 경로는 manuscript 기준(../figures) → build 기준도 동일
-    title = f'<div class="cover"><h1 style="font-size:24pt">비만치료약물의 신호전달과 신약 설계</h1><p style="font-size:13pt">{"1권 원리편" if VOL == 1 else "2권 세포에너지대사학"} · 조판 시험본 {VERSION} ({"흑백" if bw else "컬러"})</p><p>이광조 · 과학과영성출판사</p></div>'
+    title = f'<div class="cover"><h1 style="font-size:24pt">비만치료약물의 신호전달과 신약 설계</h1><p style="font-size:13pt">{VOLNAME} · 조판 시험본 {VERSION} ({"흑백" if bw else "컬러"})</p><p>이광조 · 과학과영성출판사</p></div>'
     def toc_html(pn):
         rows = "".join(f'<div style="{"margin-left:6mm" if lv==2 else "font-weight:700;margin-top:3mm"}"><span class="t">{html.escape(t)}</span><span>{pn.get(t, "")}</span></div>' for lv, t in heads)
         return '<h2 style="page-break-before:always;border:none">차례</h2><div class="toc">' + rows + '</div>'
     def doc(pn):
         return f"<!doctype html><html><head><meta charset='utf-8'><style>{css}</style></head><body>{title}{toc_html(pn)}{body}</body></html>"
     tag = "bw" if bw else "color"
-    hf = os.path.join(BUILD, f"draft{VOL}-{tag}.html"); pf = os.path.join(BUILD, f"obese2-draft-{VERSION}-{tag}.pdf" if VOL == 1 else f"obese2-vol2-draft-{VERSION}-{tag}.pdf")
+    hf = os.path.join(BUILD, f"draft{VOL}-{tag}.html"); pf = os.path.join(BUILD, f"obese2-{VOLTAG}draft-{VERSION}-{tag}.pdf")
     open(hf, "w", encoding="utf-8").write(doc({})); render(hf, pf)
     pn = {}
     pgs = pages_of(pf)
