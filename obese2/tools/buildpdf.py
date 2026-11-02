@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""원고 마크다운 → 조판 시험본 PDF (B5, 왼쪽 여백 20%, 그림·표 전폭, 쪽번호, 목차 쪽번호, 컬러·흑백).
+"""원고 마크다운 → 조판 시험본 PDF (B5, 좌우 여백 20mm 통일, 그림·표는 글 영역 폭(136mm), 쪽번호, 목차 쪽번호, 컬러·흑백).
 사용(프로젝트 루트에서):  python tools/buildpdf.py draft   → build/obese2-draft-v1-color.pdf, -bw.pdf
                           python tools/buildpdf.py handoff → build/handoff-v1.pdf
 필요: pandoc, playwright(chromium), poppler(pdftotext)"""
@@ -13,8 +13,8 @@ VERSION = "v1"
 CSS_COMMON = """
 html{font-family:'Noto Serif CJK KR','Malgun Gothic',serif;font-size:10pt;line-height:1.75;color:#111}
 body{margin:0;padding:0}
-/* 쪽 좌우 여백은 0으로 두고, 글 요소에만 왼쪽 20%(35.2mm)·오른쪽 14mm를 준다. 그림·표는 여백 없이 쪽 전체 폭(176mm)을 쓴다 */
-h1,h2,h3,h4,p,blockquote,ul,ol,.toc,.refs,.cover{margin-left:35.2mm;margin-right:14mm}
+/* 쪽 좌우 여백 20mm 통일(제본 대비). 그림·표도 글 영역 폭(136mm) 안에 둔다 */
+h1,h2,h3,h4,p,blockquote,ul,ol,.toc,.refs,.cover{margin-left:0;margin-right:0}
 h1{font-family:'Noto Sans CJK KR',sans-serif;font-size:17pt;margin-top:0;margin-bottom:4mm}
 h2{font-family:'Noto Sans CJK KR',sans-serif;font-size:15pt;margin-top:0;margin-bottom:5mm;page-break-before:always;border-bottom:1.5px solid ACCENT;padding-bottom:2mm}
 h1.part{page-break-before:always;font-size:19pt;margin-top:70mm;text-align:left;color:ACCENT}
@@ -24,8 +24,8 @@ h4{font-family:'Noto Sans CJK KR',sans-serif;font-size:10.5pt;margin-top:8mm;mar
 p{margin-top:0;margin-bottom:2.4mm;text-align:justify;word-break:keep-all}
 blockquote{margin-top:3mm;margin-bottom:3mm;padding:2mm 3mm;border-left:3px solid ACCENT;background:BG;font-size:9.5pt}
 p.cap{break-after:avoid;page-break-after:avoid}
-img{display:block;margin:4mm 0 2mm 0;width:176mm;max-width:none;page-break-inside:avoid}
-table{border-collapse:collapse;margin:3mm 0;width:176mm;font-size:9pt;line-height:1.45;page-break-inside:avoid}
+img{display:block;margin:4mm 0 2mm 0;width:100%;max-width:100%;page-break-inside:avoid}
+table{border-collapse:collapse;margin:3mm 0;width:100%;font-size:9pt;line-height:1.45;page-break-inside:avoid}
 th,td{border:1px solid #888;padding:1.6mm 2mm;vertical-align:top}th{background:BG}
 .refs{font-size:9pt;line-height:1.5}.refs p{text-align:left;margin-left:0;margin-right:0;margin-bottom:1.6mm;padding-left:6mm;text-indent:-6mm}
 .refs h4{margin-left:0;margin-right:0}
@@ -49,7 +49,7 @@ def render(htmlfile, pdffile, footer=True):
         tmpl = '<div style="font-size:8pt;width:100%;text-align:center;font-family:sans-serif"><span class="pageNumber"></span></div>'
         pg.pdf(path=pdffile, width="176mm", height="250mm", print_background=True, display_header_footer=footer,
                header_template="<div></div>", footer_template=tmpl,
-               margin=dict(top="18mm", bottom="20mm", left="0mm", right="0mm"))
+               margin=dict(top="18mm", bottom="20mm", left="20mm", right="20mm"))
         b.close()
 
 def pages_of(pdf):
