@@ -11,7 +11,7 @@ VOL = int(os.environ.get("VOL", "1"))
 MSDIR = {1:"manuscript",2:"manuscript2",3:"manuscript3"}[VOL]
 VOLNAME = {1:"1권 원리편",2:"2권 세포에너지대사학",3:"3권 실무편"}[VOL]
 VOLTAG = {1:"",2:"vol2-",3:"vol3-"}[VOL]
-VERSION = "v1"
+VERSION = os.environ.get("VER", "v1")
 CSS_COMMON = """
 html{font-family:'Noto Serif CJK KR','Malgun Gothic',serif;font-size:10pt;line-height:1.75;color:#111}
 body{margin:0;padding:0}
