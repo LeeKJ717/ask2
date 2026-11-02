@@ -61,7 +61,7 @@ def pages_of(pdf):
 def build_draft(bw):
     accent, bg = ("#555555", "#eeeeee") if bw else ("#2f5f7a", "#e8eef2")
     css = CSS_COMMON.replace("ACCENT", accent).replace("BG", bg)
-    chapters = sorted(glob.glob(os.path.join(ROOT, MSDIR, "*장-v*.md")))
+    chapters = sorted(glob.glob(os.path.join(ROOT, MSDIR, "*-v*.md")))
     heads = []  # (level, text)
     parts = []
     lastpart = None
