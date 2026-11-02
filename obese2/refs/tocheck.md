@@ -553,3 +553,21 @@
 - 서두: Fisher 1935/Salsburg 2001 서술(로담스테드, 홍차 일화) 확인; Hill 1910 서지(Suppl. 쪽수)·서술 확인
 - Zhang 1999 서지·DOI, Z′ 해석 기준 확인; Assay Guidance Manual 항목 서지 확인; Cohen 1988, Motulsky 2004, Holm 1979, Benjamini 1995, Percie du Sert 2020 서지·DOI 확인
 - 표 3-2 표본 수는 scipy 비중심 t로 계산(data/fig3-2-power.json); 실습 코드 실행 검증 필요
+# 3권 4장
+- 서두: Stone 2007(J Comput Chem 28:2618) 서지·내용(GPU 분자 모형 가속), Eastman 2017 OpenMM 7 서지 확인
+- 실습 명령(nvidia-smi 옵션, docker --gpus, openmm.testInstallation) 설치 버전으로 실행 검증; 표 4-2 장비·GPU 구성은 사용자 제공 배치안(실측 전)
+# 3권 5장
+- 서두: PDB 1971 Brookhaven 설립·"처음 구조 일곱 개" 서술 확인(Berman 2000 서지·DOI 확인); 각 자료원 이용 조건(라이선스)·접속 방식은 최신 사이트 확인; Jumper 2021, Varadi 2022, Mendez 2019, UniProt 2023, Wilkinson 2016 서지·DOI 확인
+# 3권 6장
+- 서두: Kuntz 1982 DOCK 서지·DOI(10.1016/0022-2836(82)90153-X) 확인; Trott 2010, McNutt 2021, Abraham 2015, Jo 2008, Lee 2016, Michaud-Agrawal 2011, Mirdita 2022 서지·DOI 확인
+- Vina 옵션 이름, OpenMM 예제 코드 실행 검증; AutoDock-GPU, Uni-Dock, DiffDock, OpenFE, PLUMED, OpenFF, Boltz, Chai-1, OpenFold, Foldseek, MMseqs2 설명 확인(인용 없음)
+# 3권 7장
+- Weininger 1988 서지·SMILES 서술 확인; Yang 2019, Swanson 2024, Loeffler 2024, Watson 2023, Dauparas 2022, Hoops 2006, Choi 2018 서지·DOI 확인
+- RDKit, DeepChem, AiZynthFinder, BindCraft, BioNetGen, Virtual Cell 서술 확인(인용 추가 필요: RDKit 소프트웨어 인용, BindCraft 논문)
+- 실습 코드(RDKit, tellurium) 실행 검증; 7.7절 매개변수는 설명용 가상 값
+# 3권 8장
+- Ji 2023(ACM CSUR 55(12):248), Lewis 2020(NeurIPS 33:9459) 서지 확인; obesepharma_db 표 구조 서술은 실제 스키마와 대조; 표 8-1은 산술(매개변수×바이트) 어림값
+- 실습 코드(sentence-transformers, FAISS) 및 Crossref 조회 주소 실행 검증
+# 3권 9장
+- Baker 2016 설문 결과 서술("대다수"가 타인 실험 재현 실패 경험, "상당수"가 본인 실험도 실패) 원문 수치와 대조(현재 서술은 수치 미기재); Sandve 2013, Mölder 2021, Di Tommaso 2017 서지·DOI 확인
+- Snakemake 규칙 예 실행 검증
