@@ -602,3 +602,12 @@
   - 오래된 논문·학회 논문: Hill 1910(J Physiol 40 Suppl, iv–vii), Holm 1979(Scand J Stat 6(2), 65–70), Lewis 2020(NeurIPS 33, 9459–9474) → 학술지·PMC·NeurIPS 사이트에서 수동 확인.
   - 기관 문서·법령: EMA 2016 가이드라인(1-2, 13-3), FDA 2007 지침 초안(1-8, 13-4; 429 오류는 요청 과다), 1984 Hatch-Waxman법(13-2) → 기관 사이트에서 문서명·연도 수동 확인.
 - 3-7 Motulsky: Crossref 후보는 같은 저자의 다른 장(제목 불일치). 원고는 Motulsky & Christopoulos(2004) 단행본으로 표기 중.
+
+# 1·2권 인용 Crossref 대조(2026-11-05, crossrefcheck12v3)
+- 결과: 285건 중 204건 일치. DOI 없는 문헌은 후보 일치 36건을 제외하고 대부분 단행본·기관 문서·오래된 문헌이다.
+- 수정함: 2권 23장 Cori & Cori(1929) DOI 끝자리 오류(-2 → -4, scilit 기록으로 확인). 2권 36장 Himsworth(1936) DOI를 21장의 Crossref 일치 DOI(10.1016/S0140-6736(01)36134-2)로 통일(기존 36646-3은 404).
+- 7장 Kashima 외(2001): 기재한 DOI(10.1074/jbc.C100388200)가 Crossref에서 다른 논문(Li 2001)이므로 DOI를 삭제했다. 올바른 DOI와 권 276(49), 46046–46053쪽은 PubMed(PMID 11598134)에서 확인 필요.
+- 저자명 불일치로 나왔으나 문제 없음(서지 표기 차이): NCD-RisC(단체 저자, Crossref는 개인 저자 표기), Holz IV, Margulis(=Sagan, 개명), Cahill 1970(Crossref 저자 표기 상이), Frayling 제목 서식.
+- DOI 없는 항목 중 확인 불가·수동 확인 필요: WHO 2000 보고서, Anand 1951, Zhang 2020(12·15장; 제목 재확인), Zhang 2017 cryo-EM(후보가 다른 문헌), Lincoff 2023 제목 표기, Wilding 2021(13장), Willard 2020(14장), Wilding 2022(17장). 2권의 단행본(Nelson, Berg 등)과 고전 논문 45건은 Crossref 대상이 아니다.
+
+- 1권 12~17장 DOI 누락 7건(Zhang 2020 ×2, Zhang 2017, Lincoff 2023, Wilding 2021, Willard 2020, Wilding 2022): 후보 DOI를 Crossref(crossrefcheck12bv3)로 대조해 제목·저자·연도가 모두 일치한 것만 원고에 추가했다.
